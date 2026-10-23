@@ -1,0 +1,5 @@
+# Local Qwen manuscript second opinion — scope and disposition
+
+The archived request contains an earlier manuscript snapshot, before the independent review corrected failure-context completion versus reactive recovery. The verified local Qwen3-4B call returned 1,000 generated tokens and stopped at its output limit, midway through reproducibility. It gives partial dimension comments but no complete overall score or final verdict. It is not counted as a second completed scientific review.
+
+It rates novelty 4 and significance 6, but its reliability criticisms often quote explicit finite-scope statements as if they were generalized claims. The pinned component provenance and finite persisted-state counts are independently verified by the separate reviewer; component tests are not claimed as production validation. No uncalibrated local score is an acceptance criterion. Its constructive concern about public reproducibility remains a real limitation. Raw request and raw truncated response are preserved; no missing text or final score is fabricated. The dedicated CPU server was stopped and its ephemeral API key deleted.

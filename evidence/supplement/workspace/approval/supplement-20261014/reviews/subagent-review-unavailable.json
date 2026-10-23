@@ -1,0 +1,7 @@
+{
+  "task": "approval_supplement_review",
+  "status": "failed_before_review",
+  "reason": "account usage limit",
+  "fallback": "separate local checkpoint second opinion plus recorded parent technical checks",
+  "claimed_pass": false
+}

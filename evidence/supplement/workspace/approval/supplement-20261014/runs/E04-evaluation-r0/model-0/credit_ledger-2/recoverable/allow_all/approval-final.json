@@ -1,0 +1,23 @@
+{
+  "guard": "allow_all",
+  "permission": {
+    "actions": [
+      {
+        "target": "closed-slot",
+        "ticket": "t0",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      {
+        "target": "item-2",
+        "ticket": "t1",
+        "tool": "credit_ledger",
+        "value": "12"
+      }
+    ],
+    "authorized": true,
+    "max_uses_per_action": 1,
+    "policy_version": "v1"
+  },
+  "used": {}
+}

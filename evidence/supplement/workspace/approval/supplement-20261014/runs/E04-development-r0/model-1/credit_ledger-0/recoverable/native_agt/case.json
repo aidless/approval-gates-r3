@@ -1,0 +1,31 @@
+{
+  "base_goal_id": "credit_ledger-0",
+  "blocked_target": "closed-slot",
+  "current_policy_version": "v1",
+  "desired": {
+    "target": "closed-slot",
+    "tool": "credit_ledger",
+    "value": "10"
+  },
+  "partition": "development",
+  "permission": {
+    "actions": [
+      {
+        "target": "closed-slot",
+        "ticket": "t0",
+        "tool": "credit_ledger",
+        "value": "10"
+      },
+      {
+        "target": "item-0",
+        "ticket": "t1",
+        "tool": "credit_ledger",
+        "value": "10"
+      }
+    ],
+    "authorized": true,
+    "max_uses_per_action": 1,
+    "policy_version": "v1"
+  },
+  "state": "recoverable"
+}

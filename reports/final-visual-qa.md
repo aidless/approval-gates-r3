@@ -1,0 +1,1 @@
+Final 11-page PDF rendered and visually inspected as a contact sheet; page 9 inspected at full readable size. No visible clipping or table overflow. Compile gate: 0 errors/warnings. This verifies presentation and references, not scientific validity.

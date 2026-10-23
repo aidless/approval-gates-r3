@@ -1,0 +1,19 @@
+{
+  "events": [
+    {
+      "action": {
+        "target": "item-2",
+        "ticket": "t0",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "claimed_success": false,
+      "execution_allowed": false,
+      "operation_error": null,
+      "reason": "no_resolution",
+      "review_allowed": false
+    }
+  ],
+  "guard": "native_agt",
+  "origin": "natural_model_episode"
+}

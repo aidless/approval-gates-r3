@@ -1,0 +1,6 @@
+{
+  "liquid/lfm-2.5-2.6b:free": false,
+  "nvidia/nemotron-3-super-120b-a12b:free": true,
+  "cohere/north-mini-code:free": false,
+  "approval-review-llama32-3b": true
+}

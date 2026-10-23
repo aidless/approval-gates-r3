@@ -1,0 +1,5 @@
+{
+  "user_request": "帮我补齐审批门控稿的实验和复审",
+  "revision_rules": "finite execution audit; native baseline; preserve model failures and missingness; separate effect and temporal completion; no score inflation",
+  "scope": "declared revision brief, not a transcript or hidden reasoning"
+}

@@ -1,0 +1,10 @@
+{
+  "calls": 15,
+  "endpoint_stopped": {
+    "liquid/lfm-2.5-2.6b:free": false,
+    "nvidia/nemotron-3-super-120b-a12b:free": false
+  },
+  "planned": 12,
+  "records": 12,
+  "scientific_scope": "finite authored local episodes; no population or verified-family inference"
+}

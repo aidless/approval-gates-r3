@@ -1,0 +1,50 @@
+{
+  "guard": "native_agt",
+  "requests": {
+    "t0": {
+      "entries": [
+        {
+          "approval_request_id": "ar_c13f13ff5a71496185f32d46b66b88bc",
+          "approver_identity": "did:example:trusted-harness",
+          "approver_kind": "service",
+          "chain_entry_id": "ace_6234d30908fe4ef4873e154c88fae1e6",
+          "decided_at": "2026-10-14 13:06:33.505100+00:00",
+          "decision": "allow",
+          "entry_digest": "sha256:9f924f1e7eeb70216edd2cdf8caba5a80266b3c89ea522962f9a68d206db5b72",
+          "identity_assurance": "synthetic trusted fixture",
+          "input_digest": "sha256:31dee0d27bbe359e963ba63b9852fb926dae6b3e58db77448208e0a78a15f2f4",
+          "previous_entry_digest": null,
+          "reason_code": "",
+          "stage_index": 0
+        }
+      ],
+      "request": {
+        "action_digest": "sha256:d6e119ac527310657820028c23282f0e93409046e290de779b90436584524ebe",
+        "agent_id": "local-actor",
+        "approval_chain_id": "local-chain",
+        "approval_chain_version": "1",
+        "approval_request_id": "ar_c13f13ff5a71496185f32d46b66b88bc",
+        "expires_at": "2026-10-14 00:10:00+00:00",
+        "fail_closed_on_timeout": true,
+        "operation": "tool.invoke",
+        "policy_decision_id": "pd_16f1ab39f268407e84daab9e20091e3d",
+        "policy_version": "v1",
+        "requested_at": "2026-10-14 13:06:33.505039+00:00",
+        "status": "allowed",
+        "subject_id": "local-principal",
+        "target_resource": "item-2"
+      },
+      "resolution": {
+        "action_digest": "sha256:d6e119ac527310657820028c23282f0e93409046e290de779b90436584524ebe",
+        "approval_chain_version": "1",
+        "approval_request_id": "ar_c13f13ff5a71496185f32d46b66b88bc",
+        "approval_resolution_id": "apr_5c0a1c55447b4c78954e98d0427397af",
+        "final_entry_digest": "sha256:9f924f1e7eeb70216edd2cdf8caba5a80266b3c89ea522962f9a68d206db5b72",
+        "outcome": "allow",
+        "policy_version": "v1",
+        "resolved_at": "2026-10-14 13:06:33.505148+00:00"
+      }
+    }
+  },
+  "synthetic_clock": "2026-10-14T00:00:00+00:00"
+}

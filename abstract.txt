@@ -1,0 +1,18 @@
+A zero count of unapproved actions can reflect review, proposal suppression, failed
+parsing or operational failure. We first audit 1,620 retained planning-emulator cells
+adapted from 30 authored travel scenarios. Matching action names to approval logs
+does not establish authorization, and individual assertion checks confuse planned
+or refused bookings with completed ones. Policy mismatch and cross-scenario memory
+prevent a fair gate-versus-prompt efficacy interpretation. We then add a separate
+execution audit on file, SQLite and local-outbox adapters with explicit permissions.
+Across 540 constructed evaluation cells, name-only and exact-precheck controls admit
+63 and 45 unauthorized effects while their name/log proxy remains positive. A pinned
+native third-party action-bound component and a local implementation control both
+have zero such effects and complete nine clean goals; deny all has zero clean utility.
+Model-in-the-loop panels preserve valid actions, abstentions, format failures and
+incomplete upstream availability separately, including a complete 108-episode
+byte-verified local-model panel. The new cases are authored local studies, not a
+natural failure distribution, a new defense or deployment validation. We prepare local
+finite-count recomputation and execution provenance while leaving unknown historical
+checkpoints, authenticated consent, external task validity and generalized benefit
+unresolved.

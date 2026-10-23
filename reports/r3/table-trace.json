@@ -1,0 +1,109 @@
+{
+  "schema": "figure-trace-report/1",
+  "traces": [
+    {
+      "artifact_id": "tab:design",
+      "verdict": "PASS",
+      "issues": [],
+      "advisories": [
+        "[CAPTION-COMPOSITE] caption_claim 复合，已原子分解为 4 条，需逐条判定：['The nine configurations, generated from the harness configuration.\\n\\\\emph{Auditor} is \\\\emph{model} (a model call decides), \\\\emph{rule} (a fixed\\ndeterministic rule decides, zero auditor-model calls) or \\\\emph{---} (no gate).\\n\\\\emph{Force} means the regeneration step is required to name refused actions.\\n\\\\emph{Rounds} is the maximum auditor rounds per dangerous action.\\n\\\\texttt{Full}, \\\\texttt{Fact-gateOn-safetyOn}, \\\\texttt{Abl-noNegot}', '\\\\texttt{Baseline-promptSafety} form the $2\\\\times2$ over (auditor, safety sentence)', \"the remaining arms vary answer regeneration, memory eviction, the auditor's\\nround budget,\", 'a deterministic stand-in for policy-based enforcement']",
+        "[CAPTION-PAIRED] caption_claim 已与稿件 label tab:design 自己的 \\caption{} 对上"
+      ],
+      "covered_lines": [
+        "L108"
+      ]
+    },
+    {
+      "artifact_id": "tab:outcomes-27b",
+      "verdict": "PASS",
+      "issues": [],
+      "advisories": [
+        "[CAPTION-COMPOSITE] caption_claim 复合，已原子分解为 2 条，需逐条判定：['27B-labelled service: counts over the retained 90 cells per configuration. Pass denotes the harness assertion-pass proxy', 'Ap./Dn. are auditor verdict counts. Parse is failed planning JSON. These are finite-record summaries, with no independence or population-coverage claim']",
+        "[CAPTION-PAIRED] caption_claim 已与稿件 label tab:outcomes-27b 自己的 \\caption{} 对上"
+      ],
+      "covered_lines": [
+        "L355"
+      ]
+    },
+    {
+      "artifact_id": "tab:cost-27b",
+      "verdict": "PASS",
+      "issues": [],
+      "advisories": [
+        "[CAPTION-COMPOSITE] caption_claim 复合，已原子分解为 5 条，需逐条判定：['27B-labelled service: recorded logical calls, audit calls, regeneration calls, prompt-token totals,', 'mean per-cell sum of recorded last-attempt request times in seconds. Retries', 'pre-request waiting are not fully represented', 'execution order', 'shared-GPU contention were uncontrolled']",
+        "[CAPTION-PAIRED] caption_claim 已与稿件 label tab:cost-27b 自己的 \\caption{} 对上"
+      ],
+      "covered_lines": [
+        "L412"
+      ]
+    },
+    {
+      "artifact_id": "tab:outcomes-qwen35_9b",
+      "verdict": "PASS",
+      "issues": [],
+      "advisories": [
+        "[CAPTION-COMPOSITE] caption_claim 复合，已原子分解为 2 条，需逐条判定：['9B-labelled service: counts over the retained 90 cells per configuration. Pass denotes the harness assertion-pass proxy', 'Ap./Dn. are auditor verdict counts. Parse is failed planning JSON. These are finite-record summaries, with no independence or population-coverage claim']",
+        "[CAPTION-PAIRED] caption_claim 已与稿件 label tab:outcomes-qwen35_9b 自己的 \\caption{} 对上"
+      ],
+      "covered_lines": [
+        "L355"
+      ]
+    },
+    {
+      "artifact_id": "tab:cost-qwen35_9b",
+      "verdict": "PASS",
+      "issues": [],
+      "advisories": [
+        "[CAPTION-COMPOSITE] caption_claim 复合，已原子分解为 5 条，需逐条判定：['9B-labelled service: recorded logical calls, audit calls, regeneration calls, prompt-token totals,', 'mean per-cell sum of recorded last-attempt request times in seconds. Retries', 'pre-request waiting are not fully represented', 'execution order', 'shared-GPU contention were uncontrolled']",
+        "[CAPTION-PAIRED] caption_claim 已与稿件 label tab:cost-qwen35_9b 自己的 \\caption{} 对上"
+      ],
+      "covered_lines": [
+        "L412"
+      ]
+    },
+    {
+      "artifact_id": "tab:markers",
+      "verdict": "PASS",
+      "issues": [],
+      "advisories": [
+        "[CAPTION-COMPOSITE] caption_claim 复合，已原子分解为 4 条，需逐条判定：['Refusal-containing runs', 'final-answer keyword-list hits. A run may include multiple refusals', 'columns A', 'B use different, non-nested lists. Neither validates semantic explanation quality']",
+        "[CAPTION-PAIRED] caption_claim 已与稿件 label tab:markers 自己的 \\caption{} 对上"
+      ],
+      "covered_lines": [
+        "L403"
+      ]
+    },
+    {
+      "artifact_id": "tab:execution-contract",
+      "verdict": "PASS",
+      "issues": [],
+      "advisories": [
+        "[CAPTION-COMPOSITE] caption_claim 复合，已原子分解为 3 条，需逐条判定：['Constructed local-effect audit on nine evaluation base goals. Each guard\\nhas 90 cells. U counts unauthorized persisted effects', 'M counts cells with U', 'positive action-name/log consistency. Clean utility uses nine granted goals.\\nThese are authored contract cases, with duplicate effects counted separately']",
+        "[CAPTION-PAIRED] caption_claim 已与稿件 label tab:execution-contract 自己的 \\caption{} 对上"
+      ],
+      "covered_lines": [
+        "L525"
+      ]
+    },
+    {
+      "artifact_id": "tab:model-episodes",
+      "verdict": "PASS",
+      "issues": [],
+      "advisories": [
+        "[CAPTION-COMPOSITE] caption_claim 复合，已原子分解为 5 条，需逐条判定：['Finite model episodes, separated by serving condition. Obs./plan counts\\nepisodes without transport failure or an endpoint stop. Clean gives goal completion', 'failure ctx. gives a safe granted effect in that context', 'reactive requires a recorded\\nprimary-operation error followed by a granted fallback effect. Denominators are observed context episodes', 'each context originally\\nhas nine planned goals per guard. U is an observed effect count. Missing free-service\\nepisodes are not successful restraint', 'prevent a complete endpoint comparison']",
+        "[CAPTION-PAIRED] caption_claim 已与稿件 label tab:model-episodes 自己的 \\caption{} 对上"
+      ],
+      "covered_lines": [
+        "L561"
+      ]
+    }
+  ],
+  "untraced": [],
+  "overrides": [],
+  "unresolved_from_first_gate": [],
+  "prior_trustworthy": null,
+  "blocked": false,
+  "verdict": "PASS",
+  "block_reasons": [],
+  "note": "本闸只判溯源与叙事对不对；视觉渲染合规（10 条 checklist）见 [缺失:.agent-memory/research/figure_verification_skill.md] .agent-memory/research/figure_verification_skill.md"
+}

@@ -1,0 +1,17 @@
+{
+  "finish_reason": "stop",
+  "latency_s": 7.619381295051426,
+  "requested_model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "returned_model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "usage": {
+    "completion_tokens": 149,
+    "completion_tokens_details": {
+      "reasoning_tokens": 117
+    },
+    "prompt_tokens": 413,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 562
+  }
+}

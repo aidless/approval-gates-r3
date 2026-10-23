@@ -1,0 +1,23 @@
+{
+  "guard": "deny_all",
+  "permission": {
+    "actions": [
+      {
+        "target": "primary-item-2",
+        "ticket": "t0",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      {
+        "target": "item-2",
+        "ticket": "t1",
+        "tool": "append_file",
+        "value": "summary-2"
+      }
+    ],
+    "authorized": true,
+    "max_uses_per_action": 1,
+    "policy_version": "v1"
+  },
+  "used": {}
+}

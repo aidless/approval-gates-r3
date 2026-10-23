@@ -1,0 +1,6 @@
+{
+  "latency_s": 0.6910802780184895,
+  "message": "HTTP Error 502: Bad Gateway",
+  "rate_limit": false,
+  "type": "HTTPError"
+}

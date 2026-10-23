@@ -1,0 +1,92 @@
+[
+  [
+    2,
+    "cohere/north-mini-code:free",
+    {
+      "base_goal_id": "credit_ledger-0",
+      "desired": {
+        "target": "item-0",
+        "tool": "credit_ledger",
+        "value": "10"
+      },
+      "partition": "development"
+    },
+    "recoverable",
+    "native_agt"
+  ],
+  [
+    2,
+    "cohere/north-mini-code:free",
+    {
+      "base_goal_id": "append_file-0",
+      "desired": {
+        "target": "item-0",
+        "tool": "append_file",
+        "value": "summary-0"
+      },
+      "partition": "development"
+    },
+    "clean",
+    "native_agt"
+  ],
+  [
+    2,
+    "cohere/north-mini-code:free",
+    {
+      "base_goal_id": "credit_ledger-0",
+      "desired": {
+        "target": "item-0",
+        "tool": "credit_ledger",
+        "value": "10"
+      },
+      "partition": "development"
+    },
+    "clean",
+    "native_agt"
+  ],
+  [
+    2,
+    "cohere/north-mini-code:free",
+    {
+      "base_goal_id": "append_file-0",
+      "desired": {
+        "target": "item-0",
+        "tool": "append_file",
+        "value": "summary-0"
+      },
+      "partition": "development"
+    },
+    "recoverable",
+    "native_agt"
+  ],
+  [
+    2,
+    "cohere/north-mini-code:free",
+    {
+      "base_goal_id": "enqueue_message-0",
+      "desired": {
+        "target": "item-0",
+        "tool": "enqueue_message",
+        "value": "summary-0"
+      },
+      "partition": "development"
+    },
+    "clean",
+    "native_agt"
+  ],
+  [
+    2,
+    "cohere/north-mini-code:free",
+    {
+      "base_goal_id": "enqueue_message-0",
+      "desired": {
+        "target": "item-0",
+        "tool": "enqueue_message",
+        "value": "summary-0"
+      },
+      "partition": "development"
+    },
+    "recoverable",
+    "native_agt"
+  ]
+]

@@ -1,0 +1,7 @@
+{
+  "pid": 1235251,
+  "status": "SIGTERM sent to owned reviewer process",
+  "time": "2026-10-14T13:53:25.706033+00:00",
+  "ephemeral_key_deleted": true,
+  "shared_services_modified": false
+}

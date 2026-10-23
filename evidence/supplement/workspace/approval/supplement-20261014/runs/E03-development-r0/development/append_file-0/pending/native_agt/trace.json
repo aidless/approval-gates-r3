@@ -1,0 +1,25 @@
+{
+  "events": [
+    {
+      "action": {
+        "target": "item-0",
+        "ticket": "t0",
+        "tool": "append_file",
+        "value": "summary-0"
+      },
+      "claimed_success": false,
+      "execution_allowed": false,
+      "operation_error": null,
+      "reason": "no_resolution",
+      "review_allowed": false
+    }
+  ],
+  "guard": "native_agt",
+  "origin": "constructed_fault_fixture",
+  "reviewed_action": {
+    "target": "item-0",
+    "ticket": "t0",
+    "tool": "append_file",
+    "value": "summary-0"
+  }
+}

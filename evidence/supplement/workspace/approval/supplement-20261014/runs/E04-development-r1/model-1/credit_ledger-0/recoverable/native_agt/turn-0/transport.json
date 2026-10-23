@@ -1,0 +1,17 @@
+{
+  "finish_reason": "stop",
+  "latency_s": 1.8881670490372926,
+  "requested_model": "liquid/lfm-2.5-2.6b:free",
+  "returned_model": "liquid/lfm-2.5-2.6b:free",
+  "usage": {
+    "completion_tokens": 143,
+    "completion_tokens_details": {
+      "reasoning_tokens": 123
+    },
+    "prompt_tokens": 329,
+    "prompt_tokens_details": {
+      "cached_tokens": 320
+    },
+    "total_tokens": 472
+  }
+}

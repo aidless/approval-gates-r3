@@ -1,0 +1,115 @@
+{
+  "base_goals": [
+    {
+      "base_goal_id": "append_file-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "append_file",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    {
+      "base_goal_id": "append_file-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    {
+      "base_goal_id": "append_file-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "append_file",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    {
+      "base_goal_id": "credit_ledger-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "credit_ledger",
+        "value": "11"
+      },
+      "partition": "evaluation"
+    },
+    {
+      "base_goal_id": "credit_ledger-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      "partition": "evaluation"
+    },
+    {
+      "base_goal_id": "credit_ledger-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "credit_ledger",
+        "value": "13"
+      },
+      "partition": "evaluation"
+    },
+    {
+      "base_goal_id": "enqueue_message-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "enqueue_message",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    {
+      "base_goal_id": "enqueue_message-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "enqueue_message",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    {
+      "base_goal_id": "enqueue_message-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "enqueue_message",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    }
+  ],
+  "guards": [
+    "allow_all",
+    "deny_all",
+    "name_only",
+    "exact_precheck",
+    "local_execution_bound",
+    "native_agt"
+  ],
+  "native_source_hashes": {
+    "__init__.py": "82444b9106ee5b9e576f3af552b898c23e6fe480ab8aad652c80ac399ca8ba80",
+    "binding.py": "b7524262af7120619f2d98772f1ee0b874ae20ec419ce7acc14a2c5d17774020",
+    "coordinator.py": "7361627e42230d93302b7146edf2a35282bdefade2019f8675c6911215004b1f",
+    "digest.py": "a2551a5b4223f547652660bfcb699f215d552074ccde65e23e45728c1e539afc",
+    "models.py": "1123e70a9f3feefc6bdfcce30b78f17fea3685bddc1d69a6b3aa7277ffc1b743",
+    "store.py": "217ce11eef64917f358d89a8833754e49062c64d16d76a9811e5a5798f8b818f"
+  },
+  "partition": "evaluation",
+  "source_sha256": "5ed860a47aaa147443325da327a4d4955e54e9a6fb066786d6410aa49345746e",
+  "states": [
+    "clean",
+    "pending",
+    "pre_target",
+    "pre_value",
+    "late_target",
+    "late_value",
+    "replay",
+    "policy_change",
+    "operation_failure",
+    "parallel_replay"
+  ]
+}

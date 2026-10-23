@@ -1,0 +1,93 @@
+[
+  {
+    "key": "shu2024effective",
+    "url": "https://arxiv.org/abs/2412.05449",
+    "title": "Towards Effective GenAI Multi-Agent Collaboration: Design and Evaluation for Enterprise Applications",
+    "sha256": "3f8a96cb8acd59e324fe9745ce9633bb469865b72ee56402498086eeea0c689e",
+    "status": "retrieved"
+  },
+  {
+    "key": "xiang2025guardagent",
+    "url": "https://arxiv.org/abs/2406.09187",
+    "title": "GuardAgent: Safeguard LLM Agents by a Guard Agent via Knowledge-Enabled Reasoning",
+    "sha256": "d398b768a94446b4fc40dd99ed8f87533a7bdc6aef4d807ed10622d688c0c3a5",
+    "status": "retrieved"
+  },
+  {
+    "key": "mou2026toolsafe",
+    "url": "https://arxiv.org/abs/2601.10156",
+    "title": "ToolSafe: Enhancing Tool Invocation Safety of LLM-based agents via Proactive Step-level Guardrail and Feedback",
+    "sha256": "93c6f36229170da7b2351cdd87b1c3165000dedef567900495c169f2e8b373d8",
+    "status": "retrieved"
+  },
+  {
+    "key": "zhang2026guard",
+    "url": "https://arxiv.org/abs/2608.27009",
+    "title": "The Guard That Cried Wolf: How Scary Words Make Agent Guardrails Refuse Legitimate Actions",
+    "sha256": "8f40a4596a8972ca684df37e8c4a820ea3a06394de3c4c45230db7048f1f4cdb",
+    "status": "retrieved"
+  },
+  {
+    "key": "wang2025agentspec",
+    "url": "https://arxiv.org/abs/2503.18666",
+    "title": "AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents",
+    "sha256": "fc2ad5cd3d8dc2ceeab7305e1f363c9fd7f0c9ff4c28cfff3b8e710827a49358",
+    "status": "retrieved"
+  },
+  {
+    "key": "shi2025progent",
+    "url": "https://arxiv.org/abs/2504.11703",
+    "title": "Progent: Securing AI Agents with Privilege Control",
+    "sha256": "377a2e2aebc00eada7f4ac7ad03e04c2cd17f94b199009f5ca333fb3110ecddb",
+    "status": "retrieved"
+  },
+  {
+    "key": "ji2026seagent",
+    "url": "https://arxiv.org/abs/2601.11893",
+    "title": "Taming Various Privilege Escalation in LLM-Based Agent Systems: A Mandatory Access Control Framework",
+    "sha256": "c98b9cff31939e12fe9f87e1cd6e96787b50fd06ff192c45fe7575b179f6aacf",
+    "status": "retrieved"
+  },
+  {
+    "key": "santosgrueiro2026cxi",
+    "url": "https://arxiv.org/abs/2607.06000",
+    "title": "Context-to-Execution Integrity for LLM Agents",
+    "sha256": "d5763b780d632880dc494ce8b865ac43f20a10fbd54e7b036dac287068ef1b76",
+    "status": "retrieved"
+  },
+  {
+    "key": "zheng2026stepguard",
+    "url": "https://arxiv.org/abs/2608.24777",
+    "title": "StepGuard: Learning Step-Level Guardrails with Scalable Supervision and Safety-Utility Balancing",
+    "sha256": "dd7ddabaaf8a45a339626dde9acb0a3d93f2712ab27ee1f3211321e97bf7103a",
+    "status": "retrieved"
+  },
+  {
+    "key": "liu2026harnessaudit",
+    "url": "https://arxiv.org/abs/2605.14271",
+    "title": "Auditing Agent Harness Safety",
+    "sha256": "0b018db2a9798d2713e194fcb8b19a40c838644f2760438df81ba75c7f04fecc",
+    "status": "retrieved"
+  },
+  {
+    "key": "ng2026runtime",
+    "url": "https://arxiv.org/abs/2608.11274",
+    "title": "Agent Safety Should Be a Runtime Contract",
+    "sha256": "f2449382026de58c62ae2a5f2f6706ab33e4a31dcbf03e8bccf4e53510d72794",
+    "status": "retrieved"
+  },
+  {
+    "key": "weng2026consent",
+    "url": "https://arxiv.org/abs/2606.02668",
+    "title": "What You Approve Is What Executes: Consent Integrity for Black-Box LLM Agents",
+    "sha256": "9e51baf11ac07135464b12ddf7e680d122aed2be90efdbfe5b21209a734b2421",
+    "status": "retrieved"
+  },
+  {
+    "key": "singh2026scapegoats",
+    "url": "https://arxiv.org/abs/2607.19449",
+    "title": "Guardrails as Scapegoats: Auditing Unfaithful Safety Refusals in Tool-Augmented LLM Agents",
+    "sha256": "94ccf019708f48b91161af4bdffda2a5419dadae05aaf7a5fe778c41fe30f0bf",
+    "status": "retrieved"
+  }
+]

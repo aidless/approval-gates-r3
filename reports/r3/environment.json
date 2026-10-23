@@ -1,0 +1,6 @@
+{
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+  "runtime_scope": "offline constructed runner and record verifiers use standard library; upstream component test additionally uses pytest",
+  "model_runtime_hashes": "evidence/supplement/workspace/approval/supplement-20261014/reviews/local-review-launch.json"
+}

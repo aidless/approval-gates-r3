@@ -1,0 +1,12 @@
+{
+  "calls": 8,
+  "endpoint_stopped": {
+    "approval-review-llama32-3b": false,
+    "cohere/north-mini-code:free": false,
+    "liquid/lfm-2.5-2.6b:free": false,
+    "nvidia/nemotron-3-super-120b-a12b:free": false
+  },
+  "planned": 6,
+  "records": 6,
+  "scientific_scope": "finite authored local episodes; no population or verified-family inference"
+}

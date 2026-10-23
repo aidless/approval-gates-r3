@@ -1,0 +1,103 @@
+\begin{table}[t]
+\centering\small
+\caption{27B-labelled service: counts over the retained 90 cells per configuration. Pass denotes the harness assertion-pass proxy; Ap./Dn. are auditor verdict counts. Parse is failed planning JSON. These are finite-record summaries, with no independence or population-coverage claim.}
+\label{tab:outcomes-27b}
+\begin{tabular}{lrrrrrr}
+\toprule
+Configuration & Pass & Retained & Bypass & Ap. & Dn. & Parse \\
+\midrule
+Full & 5/90 & 18 & 0 & 18 & 6 & 3 \\
+No forgetting & 5/90 & 18 & 0 & 18 & 6 & 3 \\
+No gate / no safety prompt & 5/90 & 24 & 24 & 0 & 0 & 3 \\
+Safety prompt & 6/90 & 0 & 0 & 0 & 0 & 1 \\
+Higher audit-retry budget & 5/90 & 18 & 0 & 18 & 6 & 3 \\
+Gate + safety prompt & 6/90 & 0 & 0 & 0 & 0 & 1 \\
+No answer regeneration & 5/90 & 18 & 0 & 18 & 6 & 3 \\
+Fixed cue rule & 5/90 & 0 & 0 & 0 & 24 & 3 \\
+Alternative regeneration & 5/90 & 18 & 0 & 18 & 6 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering\small
+\caption{27B-labelled service: recorded logical calls, audit calls, regeneration calls, prompt-token totals, and mean per-cell sum of recorded last-attempt request times in seconds. Retries and pre-request waiting are not fully represented; execution order and shared-GPU contention were uncontrolled.}
+\label{tab:cost-27b}
+\begin{tabular}{lrrrrr}
+\toprule
+Configuration & Calls & Audit & Regen & Prompt tok. & Time (s) \\
+\midrule
+Full & 120 & 24 & 6 & 47,794 & 11.71 \\
+No forgetting & 120 & 24 & 6 & 47,794 & 11.71 \\
+No gate / no safety prompt & 90 & 0 & 0 & 43,612 & 11.12 \\
+Safety prompt & 90 & 0 & 0 & 49,890 & 10.96 \\
+Higher audit-retry budget & 120 & 24 & 6 & 47,794 & 11.57 \\
+Gate + safety prompt & 90 & 0 & 0 & 49,890 & 10.83 \\
+No answer regeneration & 114 & 24 & 0 & 46,960 & 11.68 \\
+Fixed cue rule & 111 & 0 & 21 & 46,333 & 12.91 \\
+Alternative regeneration & 120 & 24 & 6 & 48,088 & 16.29 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering\small
+\caption{9B-labelled service: counts over the retained 90 cells per configuration. Pass denotes the harness assertion-pass proxy; Ap./Dn. are auditor verdict counts. Parse is failed planning JSON. These are finite-record summaries, with no independence or population-coverage claim.}
+\label{tab:outcomes-qwen35_9b}
+\begin{tabular}{lrrrrrr}
+\toprule
+Configuration & Pass & Retained & Bypass & Ap. & Dn. & Parse \\
+\midrule
+Full & 4/90 & 3 & 0 & 3 & 19 & 15 \\
+No forgetting & 4/90 & 3 & 0 & 3 & 19 & 13 \\
+No gate / no safety prompt & 6/90 & 25 & 25 & 0 & 0 & 10 \\
+Safety prompt & 8/90 & 2 & 2 & 0 & 0 & 5 \\
+Higher audit-retry budget & 4/90 & 3 & 0 & 3 & 18 & 13 \\
+Gate + safety prompt & 7/90 & 3 & 0 & 3 & 0 & 5 \\
+No answer regeneration & 4/90 & 3 & 0 & 3 & 20 & 14 \\
+Fixed cue rule & 4/90 & 0 & 0 & 0 & 21 & 15 \\
+Alternative regeneration & 4/90 & 3 & 0 & 3 & 20 & 14 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering\small
+\caption{9B-labelled service: recorded logical calls, audit calls, regeneration calls, prompt-token totals, and mean per-cell sum of recorded last-attempt request times in seconds. Retries and pre-request waiting are not fully represented; execution order and shared-GPU contention were uncontrolled.}
+\label{tab:cost-qwen35_9b}
+\begin{tabular}{lrrrrr}
+\toprule
+Configuration & Calls & Audit & Regen & Prompt tok. & Time (s) \\
+\midrule
+Full & 125 & 22 & 13 & 48,148 & 9.52 \\
+No forgetting & 125 & 22 & 13 & 48,148 & 8.97 \\
+No gate / no safety prompt & 90 & 0 & 0 & 43,583 & 8.18 \\
+Safety prompt & 90 & 0 & 0 & 50,014 & 7.93 \\
+Higher audit-retry budget & 124 & 21 & 13 & 48,064 & 9.14 \\
+Gate + safety prompt & 93 & 3 & 0 & 50,452 & 7.80 \\
+No answer regeneration & 113 & 23 & 0 & 46,653 & 9.06 \\
+Fixed cue rule & 106 & 0 & 16 & 45,586 & 11.35 \\
+Alternative regeneration & 127 & 23 & 14 & 49,122 & 9.89 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering\small
+\caption{Refusal-containing runs and final-answer keyword-list hits. A run may include multiple refusals; columns A and B use different, non-nested lists. Neither validates semantic explanation quality.}
+\label{tab:markers}
+\begin{tabular}{llrrr}
+\toprule
+Service & Configuration & Refusal runs & A hits & B hits \\
+\midrule
+27B & Full & 6 & 0 & 0 \\
+27B & Fixed cue rule & 21 & 12 & 15 \\
+27B & No answer regeneration & 6 & 0 & 3 \\
+27B & Alternative regeneration & 6 & 0 & 6 \\
+9B & Full & 13 & 2 & 2 \\
+9B & Fixed cue rule & 16 & 5 & 5 \\
+9B & No answer regeneration & 14 & 2 & 7 \\
+9B & Alternative regeneration & 14 & 8 & 14 \\
+\bottomrule
+\end{tabular}
+\end{table}

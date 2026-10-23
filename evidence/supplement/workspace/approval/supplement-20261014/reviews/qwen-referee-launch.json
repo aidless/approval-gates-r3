@@ -1,0 +1,32 @@
+{
+  "pid": 1235251,
+  "args": [
+    "/usr/local/lib/ollama/llama-server",
+    "--model",
+    "/data4/OllamaModels/blobs/sha256-3e4cb14174460404e7a233e531675303b2fbf7749c02f91864fe311ab6344e4f",
+    "--alias",
+    "approval-referee-qwen3-4b",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18343",
+    "--ctx-size",
+    "16384",
+    "--threads",
+    "4",
+    "--parallel",
+    "1",
+    "--gpu-layers",
+    "0",
+    "--api-key-file",
+    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/supplement-20261014/reviews/qwen-reviewer-api-key.secret",
+    "--no-webui",
+    "--reasoning",
+    "off",
+    "--reasoning-budget",
+    "0"
+  ],
+  "model_sha256": "3e4cb14174460404e7a233e531675303b2fbf7749c02f91864fe311ab6344e4f",
+  "binary_sha256": "234b05b2138264f8fb263c3205e85f4c290e8afe5067e280a4f6f90cdac5696b",
+  "purpose": "separate checkpoint second-opinion scientific review; CPU only; not subagent/human certification"
+}

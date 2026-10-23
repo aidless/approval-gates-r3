@@ -1,0 +1,1203 @@
+--- R1/main.tex
++++ R2/main.tex
+@@ -1,5 +1,4 @@
+ \documentclass[11pt]{article}
+-
+ \usepackage[utf8]{inputenc}
+ \usepackage{amsmath,amssymb}
+ \usepackage[preprint]{tmlr}
+@@ -10,887 +9,326 @@
+ \usepackage{enumitem}
+ \usepackage{microtype}
+ \usepackage{underscore}
+-
+-\newcommand{\pend}[1]{\textbf{[[PENDING: #1]]}}
+-
+-\title{Approval Gates versus Safety Prompts:\\A Plan-Level Audit of Coverage, Cost, and Disclosure}
+-\author{Zewen Liu \\ \texttt{17353895263@163.com}}
+-
+-
+-
++\title{Approval Gates and Safety Prompts:\\A Descriptive Audit of a Plan-Level Harness}
++\author{Zewen Liu \\ Independent Researcher \\ \texttt{17353895263@163.com}}
+ \date{}
+-
+ \begin{document}
+-
+ \maketitle
+-
+ \begin{abstract}
+-Approval gates and safety prompts can both reduce unapproved actions, but a zero count does not reveal whether actions were never proposed, were reviewed, or disappeared after a parse failure. We study these mechanisms in a plan-level harness using 30 authored travel scenarios, nine configurations, three processing orders, and two recorded model backbones (1,620 cells). A gate-by-safety-prompt factorial is complemented by deterministic-gate, regeneration, disclosure, and memory ablations. With the gate alone, 18 and 3 designated dangerous actions remain in the final plans; with the safety prompt alone, 0 and 2 remain. All gated arms have zero retained actions lacking approval, while the ungated arms have 24 and 25. Under the primary backbone, adding the safety prompt to the gate removes every audit decision because no designated dangerous action is proposed. A deterministic rule also produces an audit trail without model-based auditing. The safety prompt uses no additional model calls but increases prompt-token consumption by 14.4 percent on the primary backbone. No task-success contrast is significant at the scenario unit; this does not establish equivalence. Disclosure is sensitive to both the regeneration instruction and the keyword instrument. Parse failures produce empty plans in 16.7 percent of Full cells under the exploratory backbone. These results concern retained plans, not executed actions or harm: the harness has no tool-execution layer or ground-truth safety labels. We provide a measurement case study separating proposal, review, retention, and user-facing disclosure, rather than evidence that any intervention makes an agent safer.
++A zero count of unapproved actions can arise from review, proposal suppression, or failed parsing. We audit these measurements in a single-model action-name planning emulator adapted from 30 authored travel scenarios in a multi-agent benchmark. Retained records contain nine configurations, three processing orders, and two model-service labels, for 1,620 cells. Model review leaves 18 and 3 designated actions in final plans, while a safety-prompt configuration leaves 0 and 2; all reviewed retained actions have matching approval records. These are descriptive configuration differences: the reviewer asks whether an action is justified, whereas the safety prompt requires explicit purchase confirmation, and their information differs. The task scorer also confuses planned or refused bookings with completed bookings in individual assertions. We therefore report harness assertion-pass counts, not verified task completion. Cross-scenario memory prevents treating the 30 scenarios as automatically independent; no inferential p-values or confidence intervals are claimed. Alternative regeneration changes keyword-marker counts, which do not establish faithful explanations. Missing checkpoint identities, incomplete raw planning traces, and no execution layer further limit interpretation. The contribution is a reproducible audit of retained records and measurement blind spots, rather than a fair same-policy comparison or evidence of safer agent execution.
+ \end{abstract}
+ 
+ \section{Introduction}
+-\label{sec:intro}
+-
+-Runtime controls for multi-agent tool execution---approval gates, guardrails,
+-human-in-the-loop checks---are widely deployed, yet their \emph{measured}
+-cost/benefit on realistic tool-use benchmarks is rarely reported. A gate that
+-blocks dangerous tool calls is intuitively safer, but it also consumes extra
+-model calls, and it is not obvious that it dominates the cheapest alternative:
+-a safety instruction in the system prompt.
+-
+-This paper measures that trade-off in retained plans rather than in live tool execution. We compare a core gate-by-safety-prompt factorial and five additional configurations on the travel domain of a public enterprise multi-agent benchmark. The principal configurations are:
+-
+-\begin{itemize}[leftmargin=*,itemsep=2pt]
+-\item \textbf{Full}: an explicit negotiation gate (one auditor call per
+-      dangerous action) over bounded memory.
+-\item \textbf{Abl-noForget}: the same gate without the forgetting mechanism.
+-\item \textbf{Abl-noNegot}: no gate at all (dangerous actions are retained directly).
+-\item \textbf{Baseline-promptSafety}: no gate; safety rests on a system-prompt
+-      policy that forbids unconfirmed reservation/payment actions
+-      (zero extra model calls).
+-\item \textbf{Baseline-heavyAudit}: a strengthened gate (three auditor rounds per
+-      dangerous action).
+-\end{itemize}
+-
+-Our headline finding is a \emph{mechanism} distinction that a coverage metric
+-cannot see. Both the explicit gate and the prompt-level policy can drive the
+-count of un-negotiated dangerous actions to zero, but they do so in opposite
+-ways: the gate lets the model \emph{propose} the dangerous action and then
+-\emph{audits} it, leaving an auditable record of what was proposed, approved,
+-and denied; the prompt-level policy usually prevents the action from being
+-proposed at all, leaving \emph{no} record---though under our second backbone it
+-did not, and the action was retained unconfirmed (\S\ref{sec:res-coverage}). A low unconfirmed-action count therefore does not establish that a prompt policy and a gate are interchangeable. The prompt adds token cost; both the model-driven and deterministic gates can record decisions. The comparison concerns proposal suppression, recorded review, and retention, rather than a universal safety ranking.
+-
+-We make three scoped contributions: (1) a falsifiable coverage instrument derived from retained plans and audit records; (2) a factorial case study distinguishing proposal suppression from plan filtering; and (3) an audit of parser, disclosure, and cost measurements that can change the apparent ranking of interventions. Task success remains inconclusive at the scenario unit, and all conclusions are limited to this planning harness.
+-
+-\section{Related Work}
+-\label{sec:related}
+-
+-\paragraph{Tool-using agents and safety.}
+-ReAct-style and multi-agent orchestration frameworks interleave reasoning with
+-tool calls~\cite{shu2024effective}. Safety interventions in this setting are
+-typically prompt-level policies, guardrail classifiers, or explicit
+-confirmation steps. GuardAgent~\cite{xiang2025guardagent} compiles a safety
+-guard request into executable guardrail code and reports high accuracy on two
+-purpose-built benchmarks that carry policy labels; ToolSafe~\cite{mou2026toolsafe}
+-trains a step-level guard model on TS-Bench, a benchmark of unsafe tool
+-invocations, and reports a 65\% reduction in harmful invocations. Both therefore
+-measure safety against \emph{ground-truth safety labels}. The enterprise task
+-benchmark we use has none: its assertions only decide whether the task was
+-completed. Our contribution is not a new mechanism---the approval gate is a
+-known pattern---but a measurement of what such a gate buys, and at what cost,
+-when no safety labels exist to score against.
+-
+-\paragraph{Deterministic and policy-based enforcement.}
+-A complementary line of work moves the safety decision out of the model entirely.
+-AgentSpec~\cite{wang2025agentspec} is a domain-specific language for runtime
+-constraints---triggers, predicates and enforcement mechanisms---and reports
+-preventing unsafe executions in over 90\% of code-agent cases;
+-Progent~\cite{shi2025progent} expresses privilege as symbolic rules over tool
+-names and arguments, checks every call deterministically, and uses an SMT solver
+-to apply policy narrowings automatically while requiring explicit approval for
+-expansions, so the effective action space can only shrink without approval;
+-SEAgent~\cite{ji2026seagent} enforces mandatory access control over an
+-information-flow graph; and CXI~\cite{santosgrueiro2026cxi} admits a call only
+-when field authority, exact-effect authorization and invocation authority bind to
+-the same action manifest. These systems supply precisely what our measurement
+-finds missing from a model-driven gate: a \emph{deterministic} decision and a
+-structured audit record that does not depend on the model obeying an instruction.
+-We do not implement such a policy language. We instead measure what a purely
+-model-driven gate buys, and we include a deterministic rule-based gate as the
+-cheapest possible stand-in, to locate the trade-off rather than to claim that no
+-better enforcement mechanism exists.
+-
+-\paragraph{Labelled step-level guards.}
+-On the labelled side, ToolSafe/TS-Bench~\cite{mou2026toolsafe} and
+-StepGuard~\cite{zheng2026stepguard} train step-level guard models and evaluate
+-them against ground-truth unsafe actions on AgentDojo and AgentDyn; StepGuard
+-reports a 77.3\% reduction in mean attack success rate at a 2.8-percentage-point
+-utility cost. Our benchmark carries no such labels, which is why we report
+-coverage and auditability rather than detection accuracy, and why we cannot score
+-a refusal as correct rather than as an over-rejection.
+-
+-\paragraph{Agent benchmarks.}
+-We use the travel domain of the AWS Bedrock Agents Multi-Agent Collaboration
+-Scenario Benchmark~\cite{awsbench2024,shu2024effective}, which provides
+-authored enterprise scenarios with programmatic assertions over a ten-agent
+-tool suite.
+-
+-\paragraph{Coverage versus auditability.}
+-Aggregate safety scores can omit the route by which an intervention changes a plan. We separately report the number of
+-dangerous actions retained without confirmation, and the number of
+-\emph{recorded} auditor decisions. As we show, these can move in opposite
+-directions across mechanisms.
+-
+-\paragraph{Over-safety and the missing label.}
+-Zhang et al.~\cite{zhang2026guard} argue that at the authorization boundary the
+-safe-versus-unsafe label is a choice of authorization policy rather than a
+-property fixed by the action, and build a benchmark whose labels are mechanical
+-consequences of a stated policy. This is exactly the constraint under which we
+-operate, and it is why we refuse to claim that a gate makes the system
+-\emph{safer}: without a policy-derived label, a denial is equally consistent
+-with a correct block and an over-rejection.
+-
+-\paragraph{Trajectory auditing and consent integrity.}
+-HarnessAudit~\cite{liu2026harnessaudit} evaluates full execution trajectories and separates task completion from boundary compliance. Runtime-contract work~\cite{ng2026runtime} likewise distinguishes preventive controls from evidence that an action happened, while consent-integrity work~\cite{weng2026consent} binds approval to the actual action at the execution boundary. Our harness has no such execution boundary and cannot validate those guarantees. Its narrower contribution is a controlled plan-level comparison of a safety sentence, model-driven review, and a fixed deterministic rule. Singh~\cite{singh2026scapegoats} studies misleading safety explanations following silent tool failures; we instead vary regeneration instructions after explicit plan-level denials. These are related measurement problems, not evidence that refusal auditing or approval integrity is new.
+-
+-\paragraph{Bounded memory.}
+-Capacity-limited memory with eviction is a standard technique for keeping agent
+-context small. We include a forgetting ablation to test whether the eviction
+-mechanism itself changes task outcomes on this benchmark.
+-
+-\section{Method}
+-\label{sec:method}
+-
+-\subsection{Dangerous actions}
+-
+-We whitelist six tool actions as \emph{dangerous} (commitment/payment only):
+-\texttt{bookflight}, \texttt{bookhotel}, \texttt{createreservation},
+-\texttt{bookairbnb}, \texttt{neworderevent}, \texttt{checkout}. Actions such as
+-\texttt{selectseat} or \texttt{cancelticket} are excluded because they do not
+-create a new commitment.
+-
+-\subsection{Runtime configurations}
+-\label{sec:config}
+-
+-The configurations form a $2\times2$ factorial over (a) whether a dangerous action
+-is routed through an auditor and (b) whether the safety sentence is present in the
+-system prompt, plus further arms that isolate the remaining factors.
+-Table~\ref{tab:design} lists all nine; the design is declared as a table rather
+-than as prose so that the factorial structure is explicit and every arm can be
+-re-implemented. The table is a fixed design specification; the per-cell configuration snapshots provide the authoritative configuration record.
+-
+-\textbf{Gate.} When an auditor is used it is called with the action and the user
+-request and must answer \texttt{APPROVE} or \texttt{DENY}. \texttt{Full} and
+-\texttt{Abl-noForget} allow up to two rounds per action and
+-\texttt{Baseline-heavyAudit} up to three; the loop breaks at the first unambiguous
+-verdict. Because it can stop early, that budget is an upper bound, so
+-\S\ref{sec:res-cost} reports the rounds actually consumed.
+-
+-\textbf{Deterministic gate.} \texttt{Baseline-detGate} replaces the model with a
+-fixed rule: a dangerous action is approved only if the user's request carries one
+-of a small fixed list of commitment cues (\texttt{i confirm}, \texttt{confirmed},
+-\texttt{go ahead}, \texttt{please proceed}, \texttt{proceed with}, \texttt{book
+-it}, \texttt{make the booking}, \texttt{yes, book}). The list is given verbatim so
+-that the rule can be reproduced, and the arm spends zero model calls. It stands in
+-for the policy-based enforcement discussed in \S\ref{sec:related}; it is one rule,
+-not a policy language.
+-
+-\textbf{Prompt-level safety.} \texttt{Baseline-promptSafety} invokes no auditor.
+-The system prompt additionally instructs the model not to include a
+-reservation/payment action unless the user explicitly confirmed that purchase, and
+-to ask for confirmation otherwise.
+-
+-\textbf{Answer regeneration.} When the retained action set differs from the
+-proposed set, the user-facing answer is regenerated so that a refused action is not
+-reported as done. \texttt{Fact-gateNoRegen} disables this step with the gate on,
+-isolating its effect, and \texttt{Fact-disclosePrompt} additionally requires the
+-regeneration to name the refused actions and give a reason.
+-
++A control can leave no unapproved action in a plan for several reasons: it may review
++proposed actions, suppress them before review, reject everything, or fail to obtain a
++valid plan. Those outcomes answer different operational questions. Evaluating them
++with one counter risks confusing a property of the implementation with a useful
++property of the agent.
++
++We examine this problem through retained records from a planning emulator built around
++the travel scenarios of an enterprise multi-agent benchmark\citep{shu2024effective,awsbench2024}.
++A single planning call emits action names and a final answer; optional model review
++filters designated names, and an optional regeneration call revises the answer.
++The emulator does not instantiate the benchmark's specialist agents or execute tools.
++Its records are useful for auditing measurement, but they do not verify bookings,
++payments, authorization correctness, or multi-agent execution safety.
++
++The intended gate-versus-prompt comparison exposes several limitations of its own
++measurement design. The model reviewer and prompt policy use different authorization
++criteria and inputs. Memory persists across scenarios. The task scorer checks names
++and word overlap, and can mark an already-booked assertion true when the answer says
++that booking cannot yet happen. These are substantive findings about this instrument,
++not limitations that a larger number of cells would automatically repair.
++
++Our contribution is a bounded descriptive case study with three parts: a transparent
++accounting of retained names and review records; a concrete audit of assertion and
++refusal-marker measurements; and a separation between record-level recomputation and
++experimental reproducibility. We report what the recorded configurations did, without
++assigning differences to a single mechanism or generalizing to a population of agents.
++
++\section{Related work and scope}
++Tool-safety systems such as GuardAgent and ToolSafe evaluate guard behavior against
++explicit policy or unsafe-action labels\citep{xiang2025guardagent,mou2026toolsafe}.
++StepGuard similarly studies step-level guard decisions\citep{zheng2026stepguard}.
++Our inherited benchmark has task assertions but no authorization truth; consequently
++we cannot estimate false approval, justified refusal, or harm prevention.
++
++Deterministic and policy-based approaches specify constraints beyond action names:
++AgentSpec, Progent, SEAgent, and execution-integrity work address runtime rules,
++privilege, information flow, or binding to action manifests
++\citep{wang2025agentspec,shi2025progent,ji2026seagent,santosgrueiro2026cxi}.
++Our fixed phrase rule implements none of those systems. Its behavior on this dataset
++is a deny-all proxy, not evidence that deterministic enforcement is generally usable
++or superior. Authorization-boundary evaluation also requires an explicitly chosen
++policy\citep{zhang2026guard}.
++
++HarnessAudit evaluates execution trajectories\citep{liu2026harnessaudit}; runtime-contract
++work distinguishes prevention from evidence that work happened\citep{ng2026runtime};
++consent-integrity work studies binding approval to the actual action\citep{weng2026consent}.
++These works motivate a stronger evaluation boundary than ours. Refusal explanations
++can also misrepresent tool failures\citep{singh2026scapegoats}. We do not claim that
++trajectory auditing, approval integrity, or refusal evaluation is new. Here the
++specific object is a small planning emulator and the ways its own reported metrics
++can be mistaken for evidence of completion, authorization, or explanation quality.
++
++\section{Harness and retained records}
++\subsection{Scenarios, services, and configuration grid}
++We use all 30 authored travel scenarios in the retained dataset snapshot. The source
++repository licenses the dataset under CC-BY-4.0 and scaffolding under MIT-0
++\citep{awsbench2024}. These are authored examples, not sampled user traffic. The
++benchmark supplies background, a user request, and assertions involving a ten-agent
++tool suite. Loading that suite's specification is not the same as running those agents.
++
++Records label the services \texttt{qwen3.8-27b} and \texttt{qwen3.5:9b}. We abbreviate
++these as the 27B-labelled and 9B-labelled services. Neither label is an independently
++verified checkpoint identity: public revision IDs and weight hashes were not retained.
++The configurations identify an OpenAI-compatible backend for the former and Ollama
++for the latter. Cross-service differences therefore combine model and serving-stack
++conditions; they are not controlled scaling comparisons.
++
++The grid has nine configurations and three processing-order seeds. Each configuration
++has 90 cells, giving 810 per service and 1,620 in total. A cell is a scenario evaluated
++within a configuration-specific sequence; it is not an independent experimental
++replicate. Table~\ref{tab:design} specifies the switches.
+ \input{tables/design}
+ 
+-\subsection{Bounded memory}
+-
+-Memory is capacity-limited; on overflow the least-frequently-used entry is
+-evicted. The capacity is deliberately small so that eviction actually fires.
+-\texttt{Abl-noForget} disables eviction.
+-
+-\subsection{Metrics}
+-\label{sec:metrics}
+-
+-\begin{itemize}[leftmargin=*,itemsep=2pt]
+-\item \textbf{Task success} (0/1): every programmatic assertion for the scenario is
+-      satisfied. \textbf{Not every assertion is checkable.} An assertion is
+-      evaluated only if it names a tool action the harness knows or carries the
+-      \texttt{user:} prefix; anything else is recorded as \emph{unchecked} rather
+-      than silently passing or failing, and prefix matching is case-insensitive so
+-      a ``\texttt{User:}'' assertion is still scored. Success therefore means ``no
+-      checked assertion failed'', not ``the scenario was verified'';
+-      \S\ref{sec:res-success} reports the unchecked share alongside it. Assertions
+-      that do carry \texttt{user:} are scored by a keyword-overlap heuristic, a
+-      weak instrument whose behaviour is disclosed where it is used.
+-\item \textbf{\texttt{gate\_bypass}} (stored as \texttt{unnegotiated\_count}): per
+-      run, the number of whitelisted dangerous actions retained in the final plan
+-      that have \emph{no} \texttt{APPROVE} record in the audit log. It is computed
+-      from the plan and the log, never assumed: for a correctly functioning gate it
+-      is zero, but a bypassed gate, a dropped audit record or an exception inside
+-      the audit loop would appear as a non-zero. For an ungated configuration there
+-      is no log, so every retained dangerous action counts. \textbf{This measures
+-      gate coverage, not real-world safety}: the benchmark carries no ground-truth
+-      unsafe labels.
+-\item \textbf{\texttt{retained\_dangerous}}: per run, the number of dangerous
+-      actions left in the final plan. This is a different quantity from
+-      \texttt{gate\_bypass}, because a gate can \emph{approve} an action, which is
+-      then retained and audited rather than bypassed. \S\ref{sec:res-coverage}
+-      reports both, since they answer different questions.
+-\item \textbf{Audited actions, rounds and verdict class.} Each auditor decision is
+-      logged with the action, the verdict, the number of rounds it consumed, the
+-      raw reply, and a class: \texttt{explicit\_approve}, \texttt{explicit\_deny},
+-      \texttt{both\_tokens} (the reply contained both verdict words; the
+-      conservative choice is taken and the ambiguity is recorded),
+-      \texttt{unparsed} (no verdict within the round budget) or
+-      \texttt{all\_errors} (every call failed). Without this classification a
+-      refusal rate cannot be separated from a parser failure, which is why we
+-      report the class distribution rather than only the refusal rate.
+-\item \textbf{Measured cost.} For every model call the harness records wall-clock
+-      latency and, when the backend reports them, prompt and completion tokens (the
+-      OpenAI \texttt{usage} block, or ollama's
+-      \texttt{prompt\_eval\_count}/\texttt{eval\_count}). Cost is therefore
+-      reported as measured per configuration rather than bounded.
+-\item \textbf{Parse provenance.} A reply that does not parse yields an empty action
+-      list, which a retained-action metric would score as full compliance. The
+-      harness records whether the reply parsed, so ``the model planned nothing''
+-      and ``the reply did not parse'' can be told apart.
+-\end{itemize}
+-
+-\section{Experimental Setup}
+-\label{sec:setup}
+-
+-\paragraph{Benchmark.} Travel domain, all 30 scenarios, each a user request
+-over a ten-agent tool suite with assertions defining success. Data are
+-CC-BY-4.0; scaffolding code is MIT-0 (per the repository README). Scenarios are
+-authored enterprise cases, not real user traffic.
+-
+-\paragraph{Recorded model identifiers.} The retained service configurations label the two backbones as \textbf{Qwen3.8-27B}
+-(reported in the project environment notes as AWQ-INT4/vLLM 0.27.1) and \textbf{Qwen3.5-9B} (served via Ollama).
+-The records use service identifiers \texttt{qwen3.8-27b} and \texttt{qwen3.5:9b}. The retained records do not pin a public checkpoint revision or weight hash, so these labels are service identifiers rather than independently verified checkpoint identities. Thinking traces are disabled at the serving layer
+-(\texttt{enable\_thinking=false} / \texttt{think=false}) so that the response is
+-the required JSON object.
+-
+-\paragraph{Grid.} 30 scenarios $\times$ 9 configurations $\times$ 3 seeds
+-$= 810$ cells per model; two backbones, so $1620$ cells in total.
+-
+-\paragraph{Analysis scope and units.} The retained analysis plan was written before completion of an earlier five-configuration run; the instrumented nine-configuration grid, factorial intervals, and disclosure ablations are extensions. We therefore present the current grid as an exploratory measurement study, with the 27B-labelled service as the primary reporting backbone and the 9B-labelled service as an exploratory replication, rather than claiming a prospectively registered nine-arm experiment. The plan and its deviation record are retained in \texttt{evidence/analysis\_plan\_v4.md}.
+-
+-Three seeds change scenario processing order; they are not three independent model replications. For inference we average paired measurements within each of the \textbf{30 scenario units}. Task-success contrasts use an exact two-sided sign test on informative scenario-level paired differences and Holm correction across \textbf{eight comparisons against Full per backbone}. Cell-level exact McNemar tests over 90 scenario-order pairs are sensitivity analyses only. No scenario-level success contrast is significant after correction; this does not establish equivalence or absence of an effect. Factorial effects are paired differences of scenario means with percentile bootstrap intervals (2,000 resamples, fixed bootstrap seed 42). These are \emph{pointwise exploratory intervals}, not simultaneous or multiplicity-adjusted confidence statements. Coverage, audit-record, disclosure-marker, and latency counts are reported descriptively.
+-
+-For example, changing the gate with the safety sentence absent changes retained dangerous-action totals from $24$ to $18$ under the primary backbone and $25$ to $3$ under the replication; changing the safety sentence with the gate absent changes the totals from $24$ to $0$ and $25$ to $2$. These are totals over 90 cells per configuration, not independent-sample effect estimates. Latency was observed on the available serving stacks without randomized execution order, so it is not a hardware-independent ranking.
+-
+-\section{Results}
+-\label{sec:results}
+-
+-All numbers below are recomputed from the per-cell JSON of the two model runs
+-(Qwen3.8-27B and Qwen3.5-9B; 27 group-seed files and 810 cells each: nine
+-configurations $\times$ three seeds $\times$ thirty scenarios) by
+-\texttt{scripts/analysis\_v5.py}. Every table is emitted from that JSON by
+-\texttt{scripts/make\_tables.py} rather than transcribed into the manuscript.
+-Seed-level and scenario-level denominators are distinguished explicitly, and we
+-flag the places where our own instrument is weaker than it looks.
+-
+-\input{tables/results}
+-
+-\subsection{Coverage: a derived count, and what it still cannot see}
+-\label{sec:res-coverage}
+-
+-The quantity usually reported for an approval gate is the number of dangerous
+-actions that go unconfirmed. In the earlier version of this harness that field was
+-\emph{assigned} the constant zero for every gated configuration, so it could not
+-fail: a bypassed gate, a dropped audit record or an exception inside the audit loop
+-would all have read as perfect coverage. It is now derived per run, as the number of
+-dangerous actions retained in the final plan that carry no \texttt{APPROVE} record
+-in the audit log (\S\ref{sec:metrics}). The derivation is re-checked against the
+-value stored at run time for all $810$ rows of each model run, with
+-\textbf{zero} mismatches, and regeneration is verified never to fire without a
+-preceding denial.
+-
+-Table~\ref{tab:main-27b} reports the result. The derived count is zero for every
+-gated configuration under both backbones, and it is non-zero exactly where it
+-should be: \texttt{Abl-noNegot}, which has no gate, retains $\mathbf{24}$ dangerous
+-actions under the 27B model and $\mathbf{25}$ under the 9B model.
+-
+-The informative case is the prompt-level policy. \texttt{Baseline-promptSafety}
+-never invokes an auditor, so on this field it also reads zero under the 27B
+-model---but that zero is a measurement of the model's compliance rather than a
+-property of a code path, and it is not stable across backbones. Under the 9B model
+-the prompt policy lets $\mathbf{2}$ dangerous actions through that no mechanism
+-reviewed, against $\mathbf{0}$ for every gated configuration including the
+-deterministic one. So the derived count \emph{can} separate the two mechanisms, but
+-only where the prompt policy actually fails, and it does so under one of our two
+-backbones rather than both.
+-
+-\paragraph{Retained actions tell the opposite story.}
+-Coverage counts what escaped review and says nothing about what survived it. Under
+-the 27B model the gate retained $\mathbf{18}$ dangerous actions---of the $24$
+-proposed, $18$ were approved and $6$ denied---while \texttt{Baseline-promptSafety}
+-retained $\mathbf{0}$ and \texttt{Abl-noNegot} retained $24$. Under the 9B model the
+-gate retained $3$, the prompt policy $2$, the ungated arm $25$. On this reading the
+-gate and the prompt policy are far apart, which is the opposite of what the bypass
+-count says. Both numbers are correct, because they answer different questions: one
+-counts actions that were never reviewed, the other counts actions that were reviewed
+-and allowed.
+-
+-The deterministic gate is the sharpest illustration. It denied \emph{every} dangerous
+-action it saw---$24$ of $24$ under the 27B model and $21$ of $21$ under the 9B
+-model---because no request in this benchmark carries one of its commitment cues. It
+-therefore matches the prompt policy's retained count of zero, while producing a
+-complete audit record and spending no model calls on auditing at all.
+-
+-\paragraph{Parse failures can inflate apparent compliance.}
+-A cell whose plan fails to parse yields an empty action list, which a retained-action
+-metric scores as perfect compliance. The instrumented run separates the two cases
+-(Table~\ref{tab:parse-27b}). Under the 27B model the split is small: $3.3\%$ of cells
+-fail to parse and $3.3\%$ are genuinely empty, and for the prompt-level arms the
+-parse-failure rate falls to $1.1\%$. Under the 9B model it does not: \texttt{Full}
+-fails to parse in $\mathbf{16.7\%}$ of cells against $12.2\%$ genuinely empty, so
+-\emph{more than half} of its empty plans are parser failures rather than restraint.
+-The prompt-level arms again fail far less often ($5.6\%$). This cuts both ways and we
+-state both: the prompt policy's low retained count is less contaminated by parser
+-failures, and the two mechanisms are therefore not being compared on equally clean
+-plans.
+-
+-\subsection{Auditability: a design difference, and what the records show}
+-\label{sec:res-audit}
+-
+-The gate records what it saw; the prompt policy has nothing to record.
+-\texttt{Full} logs $\mathbf{24}$ auditor decisions under the 27B model
+-($18$ \texttt{APPROVE}, $6$ \texttt{DENY}) and $22$ under the 9B model
+-($3$ \texttt{APPROVE}, $19$ \texttt{DENY}). \texttt{Baseline-promptSafety} logs
+-$\mathbf{0}$ under both, because that configuration never constructs an auditor
+-call. We state this as a property of the configuration rather than as a statistical
+-finding: the zero is entailed by which code path the arm takes, so a significance
+-test on it would measure the configuration rather than the world.
+-
+-Two things in the records are worth separating from that design statement.
+-
+-\paragraph{Every decision resolved explicitly.}
+-Each decision now carries a verdict class (Table~\ref{tab:audit-27b}), so we can say
+-what \emph{kind} of refusal these are rather than only how many. Across all gated
+-configurations there are $120$ model-auditor decisions under the 27B model ($90$
+-\texttt{explicit\_approve}, $30$ \texttt{explicit\_deny}) and $114$ under the 9B
+-model ($96$ \texttt{explicit\_deny}, $18$ \texttt{explicit\_approve}), and
+-\textbf{not one} is classified \texttt{unparsed}, \texttt{all\_errors} or
+-\texttt{both\_tokens}. The refusal rates we report are therefore not inflated by
+-parser or transport failures---a caveat the earlier harness could not exclude,
+-because it mapped both onto \texttt{DENY} without recording which had occurred.
+-
+-\paragraph{An audit trail does not require a model.}
+-\texttt{Baseline-detGate} logs $24$ decisions under the 27B model and $21$ under the
+-9B model while issuing \textbf{zero} auditor calls: its realized rounds per scenario
+-are $0.00$ against $0.27$ for \texttt{Full}. Auditability is therefore a property of
+-having a decision point that records, not of having a model in the loop. This
+-sharpens the comparison the paper makes, because the prompt policy's zero does not
+-mean ``no decision was needed'' but ``no decision was recorded''.
+-
+-One configuration yields an empty audit log for a third reason. Under the 27B model
+-\texttt{Fact-gateOn-safetyOn} logs $\mathbf{0}$ decisions---not because it lacks a
+-gate, but because the safety sentence suppresses the proposal of dangerous actions
+-altogether, so the gate is never reached. Under the 9B model the same configuration
+-logs $3$ decisions, all approvals. An empty audit log is thus compatible with three
+-different mechanisms, and only the configuration table
+-(Table~\ref{tab:design}) tells them apart.
+-
+-\subsection{Task success: no effect detectable at the scenario unit}
+-\label{sec:res-success}
+-
+-Success is low everywhere and the spread between configurations is small
+-(Table~\ref{tab:main-27b}). Under the 27B model every gated configuration scores
+-$5/90$ cells ($5.6\%$, Wilson $[2.4, 12.4]$) and the two configurations carrying the
+-safety sentence score $6/90$ ($6.7\%$, $[3.1, 13.8]$). Under the 9B model the gated
+-configurations score $4/90$ ($4.4\%$, $[1.7, 10.9]$), the ungated arm $6/90$, and the
+-prompt policy $8/90$ ($8.9\%$, $[4.6, 16.6]$).
+-
+-\emph{Scenario unit (primary reporting analysis).} The earlier analysis plan identifies the 30 scenarios as the
+-independent unit, because decoding is not deterministic even at temperature zero and
+-the seeds change processing order rather than constituting independent draws. At that
+-unit no contrast reaches significance under either backbone. The largest is
+-\texttt{Full} versus \texttt{Baseline-promptSafety}: three informative scenarios under
+-both, exact sign-test $p=1.0$ under the 27B model and $p=\mathbf{0.25}$ under the 9B
+-model---and $0.25$ is the \emph{minimum attainable} two-sided value for three
+-informative units, so this contrast cannot reach significance at our unit of analysis
+-whatever its effect size. After Holm correction across the eight comparisons per
+-model, every adjusted $p$ is $1.0$.
+-
+-\emph{Cell level (sensitivity).} Taking each (seed, scenario) pair as a unit gives 90
+-pairs per comparison. Under the 9B model \texttt{Full} versus
+-\texttt{Baseline-promptSafety} has $4$ discordant pairs and exact McNemar $p=0.125$;
+-under the 27B model the same contrast has $5$ discordant pairs and $p=1.0$. We report
+-these as sensitivity checks only: the pairs are not independent, since the same
+-scenario recurs across seeds, and a cell-level $p$ is smaller than the scenario-level
+-one partly because the denominator is larger. Detectability calculations based on these dependent cells are not independent-unit power analyses. With only three informative scenario units in the gate-versus-prompt comparison, the minimum attainable exact two-sided sign-test value is $0.25$. We therefore make no equivalence claim and do not interpret non-significance as evidence that a useful effect is absent.
+-
+-\emph{What the discordant cells actually contain.} A discordant count invites an
+-attribution the data may not support, so we inspected every discordant cell. For
+-\texttt{Full} versus \texttt{Baseline-promptSafety}, the contrast that looks most
+-interesting, \textbf{no discordant cell under either backbone contains a gate
+-denial}. Under the 27B model one of the five contains a gate decision at all and it
+-is an approval; under the 9B model none of the four contains any gate decision. Four
+-of five (27B) and three of four (9B) have an identical retained action set in both
+-arms, and two of five and three of four carry no programmatically checked tool
+-assertion, so they are decided by the keyword-overlap heuristic applied to the
+-generated answer. These records do not support attributing the success difference to a gate denial; differences in prompt-conditioned answers and their heuristic scoring remain alternative explanations.
+-
+-There is one contrast we \emph{can} attribute. Under the 9B model, \texttt{Full}
+-versus \texttt{Abl-noNegot} has two discordant cells, both in the same scenario
+-(idx~10); in both, the gate denied two actions, the retained action sets differ, and
+-the ungated arm succeeded where the gated arm failed. This instance links gate denials to a lower harness success score: refusing a booking required by the scenario removes an action scored as necessary. Without authorization labels, that association cannot establish whether the denial was appropriate. It rests on a single scenario, so no
+-inference is possible, and we report it as one attributable instance rather than as an
+-effect size.
+-
+-\paragraph{The scorer leaves part of every run unchecked.}
+-$432$ of $3564$ cell-assertions ($12.1\%$) are not checkable by our scorer, and the
+-figure is \emph{identical} across all nine configurations and both backbones
+-($48/396$ per configuration), so the missingness pattern is shared across arms. These assertions name no known
+-tool action; shared missingness does not guarantee unbiased intervention comparisons. Success therefore means ``no \emph{checked} assertion failed'', not
+-``the scenario was verified''. Making the prefix dispatch case-insensitive moved
+-three assertions per configuration from silently skipped to checked; the remainder are
+-semantic rather than tool assertions and stay unchecked.
+-
+-\subsection{Disclosure of denials}
+-\label{sec:res-disclosure}
+-
+-\textbf{Denominator.} We count one unit per gated run that contains at least one
+-refusal---a run may contain several refusals and we do not count decisions---and we
+-report the model-driven and the rule-driven gate separately, because they refuse for
+-different reasons and at very different rates. We use ``disclosed'' only as shorthand for disclosure-marker positivity: the final answer matches the specified keyword list. This does not establish that the answer accurately explains the refusal.
+-
+-\textbf{The instrument matters, so we report two.} The match is a keyword list, a weak
+-instrument: a refusal worded outside the list counts as undisclosed, so every count
+-here is a keyword-hit rate, not a validated semantic disclosure rate: the lists can miss an explicit disclosure or match unrelated inability wording. We report both lists rather than treating either as ground truth. List~A ($6$ markers) matches inability wording (\texttt{cannot},
++The earlier retained analysis plan concerned a five-configuration predecessor.
++The nine-configuration grid and subsequent analyses are exploratory extensions.
++We make no claim of prospectively registering this grid. The revision reports finite
++record summaries rather than the inherited significance tests or bootstrap intervals.
++
++\subsection{Policy and information differences}
++The planner receives the full scenario background and user request. The model auditor
++receives an action name and only the first 300 characters of the request, without the
++background or action arguments. Its instruction asks whether the reservation/payment
++action is \emph{justified for the stated user request}. In contrast, the safety suffix
++requires that the user has \emph{explicitly confirmed that specific purchase} and tells
++the planner to omit unconfirmed or ambiguous booking actions.
++
++The fixed rule uses eight phrases: \texttt{i confirm}, \texttt{confirmed},
++\texttt{go ahead}, \texttt{please proceed}, \texttt{proceed with}, \texttt{book it},
++\texttt{make the booking}, and \texttt{yes, book}. No recorded reviewed action satisfies
++this rule, so every such action is denied. Its checks incur zero \emph{auditor-model}
++calls; planning and regeneration still consume calls.
++
++These are different policies with different information. Even where switches form a
++$2\times2$ grid, configuration contrasts do not isolate a shared policy's implementation
++position. All comparisons below concern the specified bundles. The exact policies
++and regeneration instructions are reproduced in Appendix~\ref{app:prompts}.
++
++\subsection{Planning, filtering, regeneration, and memory}
++The planner outputs JSON containing action names and an answer. Normalization maps
++names to the tool vocabulary and deduplicates them; no action arguments, object IDs,
++execution order, or tool outcomes are verified. The six designated names are
++\texttt{bookflight}, \texttt{bookhotel}, \texttt{createreservation}, \texttt{bookairbnb},
++\texttt{neworderevent}, and \texttt{checkout}. This list defines a proxy category,
++not all possible unsafe actions; an excluded operation is not thereby safe.
++
++A model gate reviews each designated name. Full allows up to two audit attempts,
++while the higher-budget arm allows three, a 1.5-fold budget increase. The loop stops
++at the first interpretable verdict, and later attempts do not deliberate on earlier
++reasoning. This is primarily a format/retry budget, not three independent reviews.
++Approved names are retained and denied names are removed. A changed plan triggers
++answer regeneration unless that step is disabled.
++
++The alternative regeneration arm both changes the instruction and supplies the refused
++name list. It is a bundled intervention, not a single-sentence causal test. Planning
++and regeneration use 200-token output budgets; auditing uses 48. Missing stop-reason
++metadata prevents determining whether a parse failure arose from truncation.
++
++Each configuration/order starts with empty memory. When a cell passes the harness
++scorer, its retained names update memory and become hints for later cells. Full uses
++capacity two with least-frequency eviction; the no-forgetting arm removes this limit.
++Consequently earlier outcomes can change later inputs, including across different
++scenarios. Averaging three order-specific observations does not remove this dependency.
++
++\section{Measurements and audit procedure}
++\paragraph{Retained names and log consistency.}
++We count designated names in final plans separately from those lacking a corresponding
++\texttt{APPROVE} record. The latter quantity is called \emph{bypass} in the retained
++files. It is derived from final names and logs, rather than assigned a constant zero.
++It checks their internal consistency. Matching only names cannot detect argument
++substitution, different purchases sharing one name, duplicate executions, or changes
++outside this planning path. A thrown exception can also prevent a row from being
++saved, rather than create a nonzero counter. Thus the counter does not validate a
++complete execution-boundary monitor.
++
++\paragraph{Harness assertion pass.}
++A tool assertion passes when a matched action name occurs in the final list. A user
++assertion is tokenized, common words removed, and marked satisfied if at least half
++its remaining unique words appear in the answer. Unrecognized assertions are recorded
++as unchecked. A cell passes when no checked assertion fails. We call this
++\emph{harness assertion pass}, not task completion. Neither word overlap nor name
++membership verifies completion, chronology, arguments, or factual correctness.
++The user-assertion keywords are generated from each assertion; they are not the
++fixed refusal-marker lists described below.
++
++\paragraph{Planning parse failure.}
++A planning response that cannot be parsed becomes an empty list. We retain a separate
++parse-failure count, because zero retained names in this case supplies no evidence of
++restraint. Only the raw planning response length, not a complete independent raw
++response and stop reason, is systematically recorded.
++
++\paragraph{Refusal-marker positivity.}
++For each run with at least one recorded denial, we check whether the final answer
++contains a marker from list A or list B. List A contains \texttt{cannot},
+ \texttt{can not}, \texttt{unable}, \texttt{not able}, \texttt{outside the approved},
+-\texttt{denied}); list~B ($9$ markers) is an alternative list containing softer markers (\texttt{refus},
+-\texttt{confirm}, \texttt{alternative}, \texttt{instead}, \texttt{sorry}). For the
+-model-driven gate the disclosure count is $\mathbf{0}$ of $30$ refusal runs by
+-list~A and $\mathbf{9}$ of $30$ ($30.0\%$) by list~B under the 27B model, and $16$ of
+-$67$ ($23.9\%$) and $27$ of $67$ ($40.3\%$) under the 9B model. The gap between the
+-lists is itself informative: much of what counts as disclosure is detectable only
+-through a soft marker such as \texttt{sorry} or \texttt{instead}, not through an
+-explicit statement that the action was not performed.
+-
+-\textbf{The rule-driven gate discloses more often, but not uniformly.}
+-\texttt{Baseline-detGate} discloses $12$ of $21$ refusal runs ($57.1\%$) by list~A and
+-$15$ of $21$ ($71.4\%$) by list~B under the 27B model, and $5$ of $16$ ($31.2\%$, both
+-lists) under the 9B model. That is higher than the model-driven gate under the 27B
+-model on both lists and under the 9B model on the stricter one, but \emph{lower} on
+-the 9B model's alternative list ($31.2\%$ against $40.3\%$), so we do not claim a uniform
+-advantage. These are descriptive marker comparisons between configurations with
+-different refusal sets; they do not identify why the final answers differ.
+-
+-A possible failure mode worth studying is an omitted requested action whose omission
+-is not explained to the user. Our unvalidated keyword instruments do not establish
+-its semantic frequency. Section~\ref{sec:res-disclose-sens} instead tests how marker
+-counts change when the regeneration instruction is replaced and the refused-action
+-list is supplied.
+-
+-\subsection{Cost, measured}
+-\label{sec:res-cost}
+-
+-The reviewed version reported cost as an upper bound, because the audit loop breaks
+-at the first unambiguous verdict and the rounds actually consumed were not
+-recorded. Every model call now records its latency and, where the backend reports
+-them, its token counts, so Table~\ref{tab:cost-27b} (and
+-Table~\ref{tab:cost-qwen35_9b} for the second backbone) reports the result.
+-
+-Three things follow, and each contradicts something the earlier version of this paper
+-said or implied.
+-
+-\emph{The prompt-level policy is not free.} It spends no extra model calls---its
+-per-scenario call count is the planning call alone---but the safety sentence is paid on
+-every one of those calls. Against the ungated arm, which has neither a gate nor the
+-sentence, it adds $6278$ prompt tokens per $90$ cells under the 27B model
+-($+14.4\%$, about $70$ tokens per cell) and $6431$ ($+14.8\%$) under the 9B model.
+-``Zero extra cost'' is true of the call count and false of the token count.
+-
+-\emph{The audit budget was a loose bound.} \texttt{Baseline-heavyAudit} triples the
+-round budget, from two rounds per dangerous action to three. Its realized cost is
+-indistinguishable from \texttt{Full}'s: $1.33$ against $1.33$ calls per scenario,
+-$0.27$ against $0.27$ rounds, and $11.6$s against $11.7$s of latency under the 27B
+-model; $1.38/1.39$ calls, $0.23/0.24$ rounds and $9.1/9.5$s under the 9B model. The
+-loop stops at the first verdict and verdicts arrive in the first round, so the third
+-round is never spent. Describing this arm as ``at least $3\times$ gate cost'', as the
+-earlier version did, overstated its cost by roughly that factor.
+-
+-\emph{Call count does not order latency.} \texttt{Baseline-detGate} makes fewer calls
+-than \texttt{Full} ($1.23$ against $1.33$ per scenario under the 27B model) and no
+-auditor calls at all, yet its latency is \emph{higher}: $12.9$s against $11.7$s. The
+-same reversal holds under the 9B model ($1.18$ calls and $11.4$s against $1.39$ calls
+-and $9.5$s). Composition explains it: an audit reply is capped at $48$ tokens while a
+-regenerated answer is not, and a gate that refuses everything triggers regeneration far
+-more often. Forcing disclosure is the extreme case---\texttt{Fact-disclosePrompt} costs
+-$16.3$s per scenario against \texttt{Full}'s $11.7$s under the 27B model, a $39\%$
+-increase for one changed instruction, though only $4\%$ under the 9B model ($9.9$s
+-against $9.5$s).
+-
+-We report latency as a \emph{cost} rather than a service-level metric: it is the sum
+-over every model call in the cell, so it grows with the number and length of calls
+-rather than describing a user-perceived response time.
+-
+-\subsection{Memory eviction fires, but thinly}
+-\label{sec:res-memory}
+-
+-The bounded memory (capacity 2) evicts $\mathbf{22}$ times across the nine
+-configurations under the 27B model and $\mathbf{23}$ times under the 9B model. The
+-forgetting ablation behaves as intended: \texttt{Abl-noForget} records $\mathbf{0}$
+-evictions under both backbones, which is a useful negative control on the mechanism
+-rather than a result about it.
+-
+-The distribution is thin and lopsided. Under the 27B model six of the nine
+-configurations evict exactly twice, all in the same seed (per-seed $0/2/0$), while the
+-two configurations carrying the safety sentence evict five times ($2/0/3$). Under the
+-9B model the ungated arm evicts nine times ($0/6/3$) and the rest between one and
+-four. The reason is mechanical: memory is written only on successful scenarios and
+-success is $4$--$6\%$, so the pool fills slowly, and whether it overflows at all
+-depends on where the few successes happen to land in that seed's processing order.
+-
+-We therefore still cannot report whether eviction helps or hurts. \texttt{Full} and
+-\texttt{Abl-noForget} are identical on every outcome we measure---success ($5/90$
+-both, under the 27B model), retained dangerous actions ($18$ both), auditor decisions
+-($24$ both, split $18/6$)---and they differ in exactly one respect: \texttt{Abl-noForget}
+-never evicts ($0$ against $2$). Two evictions across ninety runs is not a manipulation
+-of the mechanism; it is a reminder that the mechanism was barely switched on. This is a
+-negative result about the benchmark--model pair, not evidence that forgetting is
+-harmless.
+-
+-\subsection{Exploratory cross-model replication}
+-\label{sec:res-crossmodel}
+-
+-\textbf{All numbers in this subsection are exploratory, as are the nine-arm extensions on the primary backbone.} They come from a second
+-backbone run \emph{after} the primary 27B analysis, and they are reported
+-as a replication attempt rather than as confirmatory evidence; the deviation is
+-recorded in \texttt{evidence/analysis\_plan\_v4.md} (D1--D5).
+-
+-We repeated the whole nine-configuration grid with a second recorded backbone
+-(Qwen3.5-9B; 27 group-seed files, 810 cells). The qualitative pattern of
+-\texttt{Full} versus \texttt{Baseline-promptSafety} replicates, the quantitative
+-picture moves, and part of it moves against the gate.
+-
+-\paragraph{The prompt policy leaks under one backbone and not the other.}
+-\texttt{Full} leaves $0$ dangerous actions unreviewed under both models, and that zero
+-is now derived rather than assumed (\S\ref{sec:res-coverage}).
+-\texttt{Baseline-promptSafety} leaves $0$ under the 27B model but $\mathbf{2}$ under the
+-9B model, in a configuration that never constructs an auditor call. The two mechanisms
+-are therefore not interchangeable even where their counts coincide: one is a property of
+-the code path, the other a property of how reliably the model obeys an instruction, and
+-the second backbone is where that difference becomes visible.
+-
+-\paragraph{On the second model the prompt arm scores higher.}
+-Under Qwen3.5-9B pooled success is $4/90$ ($4.4\%$) for \texttt{Full} and $\mathbf{8}/90$
+-($8.9\%$) for \texttt{Baseline-promptSafety}, against $5/90$ and $6/90$ under the 27B
+-model. As set out in \S\ref{sec:res-success} we do \emph{not} claim this as a gate cost:
+-at the scenario unit it is three informative units with exact $p=0.25$,
+-the cell-level $p=0.125$ does not survive Holm correction, and none of the four
+-discordant cells contains a gate decision of any kind. The one contrast we \emph{can}
+-attribute to the gate runs the other way and is described in that section: two
+-discordant cells in a single scenario, where the gate's denials cost the task.
+-
+-\paragraph{The gate refuses far more often under the second model, and every refusal is
+-explicit.} The auditor's decisions differ sharply between backbones. Under the 27B model
+-\texttt{Full} approved $18$ and denied $6$ of the $24$ dangerous actions it saw ($25\%$
+-refusals); under the 9B model it approved $3$ and denied $19$ of $22$ ($86\%$). Each
+-decision now carries a verdict class, and across every gated configuration of both runs
+-there is \textbf{not one} decision classified \texttt{unparsed}, \texttt{all\_errors} or
+-\texttt{both\_tokens} (Tables~\ref{tab:audit-27b} and~\ref{tab:audit-qwen35_9b}). The
+-$86\%$ figure describes explicit auditor denials rather than parse-error defaults, which is
+-precisely what the earlier harness could not establish.
+-
+-\paragraph{Marker contrasts across recorded backbones.} The alternative instruction
+-plus refused-action list increases list~B matches under both recorded backbones.
+-List~A rises only under 9B and remains zero under 27B. This is a marker contrast,
+-not a validated semantic-disclosure remedy (\S\ref{sec:res-disclose-sens}).
+-
+-\paragraph{The forgetting mechanism's exercise is model-dependent.}
+-Under the 9B model eviction fires more often (\texttt{Abl-noNegot} $0/6/3$ per seed,
+-\texttt{Baseline-promptSafety} $0/2/2$) than under the 27B model ($0/2/0$ and $2/0/3$),
+-and \texttt{Abl-noForget} records none under either---the negative control behaving
+-correctly. Because memory is written only on success, how hard the forgetting mechanism
+-is exercised is governed by how often the model completes a task on this benchmark rather
+-than by the mechanism. Any claim that forgetting ``has no effect'' would therefore be a
+-claim about the model's success rate, not about the mechanism.
+-
+-\subsection{Factorial ablation}
+-\label{sec:res-factorial}
+-
+-Four of the configurations are the corners of a $2\times2$ over (auditor, safety
+-sentence) --- see Table~\ref{tab:design} --- so the two factors can be separated
+-rather than inferred from one contrast. Table~\ref{tab:factorial-27b} reports, at
+-the scenario unit, the cell means, the main effect of adding an auditor with the
+-prompt held fixed, the main effect of adding the safety sentence with the gate
+-held fixed, and their interaction, each with a paired percentile bootstrap
+-interval over scenarios.
+-
+-Two qualifications bound what this design can isolate. Answer regeneration is not
+-an independent factor in the original arms: it fires only when the gate has refused
+-something, so it follows from having a gate rather than being a third factor to
+-cross. The \texttt{Fact-gateNoRegen} arm therefore isolates it by suppression
+-rather than by factorial crossing, and the difference between \texttt{Full} and
+-that arm attributes the regeneration step's effect on the answer, and hence on the
+-keyword-scored outcome. Separately, the deterministic arm is one fixed rule, so its
+-cell measures that rule rather than the class of policy-based enforcement it stands
+-in for.
+-
+-Three readings follow from Table~\ref{tab:factorial-27b}, and all three hold in the
+-same direction under the second backbone.
+-
+-\emph{Neither factor shows a detectable task-success effect.} The gate's main effect on success is
+-$+0.000$ with a bootstrap interval of $[0.000, 0.000]$ under the 27B model and
+-$-0.017$ $[-0.044, 0.000]$ under the 9B model; the safety sentence's is $+0.011$
+-$[-0.022, 0.044]$ and $+0.028$ $[-0.022, 0.083]$. Every interval contains zero, and so
+-does every interaction. These exploratory intervals do not establish a task-success effect or equivalence. Direct gate effects are difficult to resolve because few scenarios reach the gate: the model proposes a
+-dangerous action in $7$ of the $30$ under the 27B backbone (idx 2, 6, 7, 14, 22, 26, 29)
+-and in $8$ under the 9B backbone, so direct denial-related outcome differences can arise only in a small subset; prompt and memory effects could still change other scenarios.
+-
+-\emph{Retained-action contrasts suggest diminishing marginal effects.} Under the 27B model the safety sentence's main effect is $-0.233$
+-$[-0.400, -0.083]$ while the gate's is $-0.033$ $[-0.083, 0.000]$: the pointwise interval for the marginal gate contrast includes zero, whereas that for the marginal safety-sentence contrast does not. These contrasts average across the other factor and do not establish comparative efficacy. The gate-alone raw contrast is $24$ to $18$ retained dangerous actions. Under
+-the 9B model the two are comparable, at $-0.128$ $[-0.239, -0.044]$ and $-0.117$
+-$[-0.233, -0.028]$. The interaction on this outcome is positive under both backbones
+-($+0.067$ and $+0.256$), consistent with diminishing marginal changes in this grid. These pointwise intervals are exploratory and do not establish a general substitution law.
+-
+-\emph{Under the 27B model the substitution is complete.} On audited actions the gate's
+-main effect is $+0.133$ $[0.050, 0.233]$ and the sentence's is $-0.133$
+-$[-0.233, -0.050]$, with an interaction of $-0.267$ $[-0.467, -0.100]$: adding the
+-sentence to a gated system removes about as much auditing as adding the gate creates.
+-The cell values make it concrete. With the gate alone the 27B model audits $0.267$
+-dangerous actions per scenario; with the gate and the sentence together it audits
+-$\mathbf{0.000}$, because the model no longer proposes any. In that cell the gate is
+-not merely redundant---it is unreachable.
+-
+-This is the cleanest statement the design supports about the two mechanisms: they act
+-at different points in the pipeline. The safety sentence acts on \emph{proposal} and the
+-gate acts on \emph{retention}, so a sufficiently compliant planner leaves the gate
+-nothing to do. It also bounds what our auditability contrast can claim, because a gate
+-that never fires produces an empty audit log for the same reason a prompt policy does,
+-and only the configuration table tells the two apart.
+-
+-\subsection{How sensitive is disclosure to the instruction?}
+-\label{sec:res-disclose-sens}
+-
+-The gate's refusals often lack the tested disclosure markers to the user
+-(\S\ref{sec:res-disclosure}). The reviewer asked whether that is a property of the
+-mechanism or of the instruction we happened to give the regeneration step: if the
+-prompt explicitly requires refused actions to be named, does disclosure rise?
+-\texttt{Fact-disclosePrompt} tests exactly this, holding the gate and the
+-regeneration step fixed and changing only the regeneration instruction, which is
+-additionally handed the refused list.
+-
+-It rises, and by a wide margin---but the size of the rise depends on which keyword list
+-scores it and on which backbone produces it. Under the 9B model \texttt{Full} discloses
+-$2$ of $13$ refusal runs ($15.4\%$) on both lists, while \texttt{Fact-disclosePrompt}
+-discloses $\mathbf{8}$ of $14$ ($57.1\%$) on the strict list and $\mathbf{14}$ of $14$
+-($100\%$) on the alternative list. Under the 27B model \texttt{Full} discloses $0$ of $6$ on
+-both lists, and the disclosure arm $0$ of $6$ on the strict list but $\mathbf{6}$ of $6$
+-($100\%$) on the alternative list.
+-
+-The two lists produce different descriptive counts. The strict list matches inability wording (\texttt{cannot},
+-\texttt{unable}, \texttt{denied}); the alternative nine-marker list includes \texttt{refus},
+-\texttt{sorry}, \texttt{instead}, \texttt{alternative} and \texttt{confirm}. Our
+-disclosure instruction asks the model to say which actions ``were refused'', and the
+-model complies using exactly that stem---which the strict list does not contain. Under
+-the 27B model the regenerated answers apparently avoid the strict list's phrasings
+-altogether, so that instrument scores no improvement whatever even as the alternative list
+-scores every run.
+-
+-We therefore answer the question conditionally. Replacing the regeneration instruction and supplying the refused-action list changes marker counts from $0/6$ to $6/6$ under the 27B model and from $2/13$ to $14/14$
+-under the 9B model, on the list~B. But whether a given answer counts as
+-disclosed is partly a property of the instrument, and a stricter instrument can show no
+-change at all. The honest summary is that disclosure is both instruction-sensitive and
+-instrument-sensitive, and neither sensitivity is visible unless both arms and both lists
+-are reported.
+-
+-The instruction's cost is measurable and appears in \S\ref{sec:res-cost}: $39\%$ more
+-latency per scenario under the 27B model and $4\%$ under the 9B model, with task success
+-unchanged ($5/90$ and $4/90$, identical to \texttt{Full}).
+-
+-A second arm points the same way from the other side. \texttt{Fact-gateNoRegen} keeps
+-the gate and its denials but skips regeneration, leaving the original plan answer in
+-place---and it discloses \emph{more} than \texttt{Full} on the list~B: $3$ of $6$
+-against $0$ of $6$ under the 27B model, and $7$ of $14$ against $2$ of $13$ under the 9B
+-model. Our original regeneration prompt excludes actions outside the approved list.
+-The alternative arm changes this instruction and additionally supplies the refused-action
+-list. These comparisons support sensitivity of marker counts to the tested regeneration
+-choices, rather than identifying the effect of a single sentence or measuring semantic
+-explanation quality. On list~A, removing regeneration changes nothing under the 27B
+-model ($0$ of $6$ either way).
+-
+-We also report how sensitive the disclosure count is to the measuring instrument.
+-Two keyword lists are used across our analysis scripts (a six-token and a
+-nine-token variant), and a refusal worded outside both is counted as undisclosed.
+-The count is therefore a marker-based measurement rather than a semantic bound on disclosure, and the two lists do \emph{not} agree: on the model-driven gate they give $0$ of $30$
+-refusal runs by the strict list versus $9$ of $30$ by the alternative list at 27B, and
+-$16$ of $67$ versus $27$ of $67$ at 9B (\texttt{\_lists\_agree}: \texttt{false} in both
+-analysis records), so each count is quoted together with the list that produced it.
+-A disclosure that neither
+-list catches would still be scored as silent, which is why we present the
+-instruction's effect as a contrast between arms rather than as an absolute rate.
+-
+-\section{Discussion}
+-\label{sec:discussion}
+-
+-\paragraph{A coverage metric cannot see the mechanism.}
+-The result we consider most useful is a negative one about measurement. The standard
+-quantity one would report for an approval gate---how many dangerous actions were retained
+-without confirmation---reads zero for every gated configuration in our harness, and it read
+-zero for the system-prompt policy under the primary backbone too. In an earlier version of
+-this work that zero was \emph{assigned} rather than measured, which is why it could not
+-fail; it is now derived from the retained plan and the audit log, and the same expression
+-returns $24$ and $25$ for the ungated arms and $2$ for the prompt policy under the weaker
+-backbone. Deriving it makes the metric honest but does not make it discriminating: a gate
+-that reviews every dangerous action, and a prompt policy the model happens to obey, both
+-read zero, and the difference between them is invisible in the number a practitioner would
+-report. Once we count dangerous actions \emph{retained} in the final plan instead, the two
+-mechanisms separate ($18$ versus $0$ under one backbone, $3$ versus $2$ under the other),
+-and they separate further on the audit record ($24$ recorded decisions versus none). A
+-practitioner choosing between them is choosing between auditability and cost, and the usual
+-scalar is blind to exactly that difference.
+-
+-\paragraph{Token cost and review coverage are different quantities.}
+-The prompt policy cost zero extra model calls but $14.4\%$ more prompt tokens, and under
+-the primary backbone it never left a dangerous action unconfirmed; under the weaker
+-backbone it leaked two. Its coverage is a property of the model's compliance rather than of
+-the configuration, so the present records do not establish deployment reliability for either mechanism; the derived zero verifies consistency of retained plans with logs, not enforcement at a real execution boundary. The factorial exposes
+-a further problem: under the primary backbone, adding the safety sentence to a gated system
+-leaves the gate with nothing to audit, so the two are substitutes rather than complements,
+-and a deployment should measure whether its auditor is reached before attributing outcomes to it. We also
+-cannot detect over-safety here: the benchmark carries no safety labels, so a
+-refusal that saves the user money and a refusal that blocks a legitimate request
+-are scored identically.
+-
+-\paragraph{Refusal markers depend on the regeneration design.}
+-Across both backbones the model-driven gated configurations contain $97$ refusal runs;
+-$16$ final answers match list~A and $36$ match list~B. These runs include correlated
+-configurations and scenario repeats, so the aggregate is descriptive. Replacing the
+-regeneration instruction and supplying the refused-action list changes list~B counts
+-from $0/6$ to $6/6$ under 27B and from $2/13$ to $14/14$ under 9B. The latter
+-comparison also has a different refusal denominator. Skipping regeneration gives
+-another marker contrast. These records motivate semantic evaluation of refusal
+-explanations; they do not establish the frequency or cause of unexplained refusals in
+-deployed systems. Observed latency changes of $39\%$ and $4\%$ are specific to the
+-recorded serving stacks and run conditions.
+-
+-\paragraph{The forgetting mechanism was barely exercised.}
+-Our capacity-2 memory evicted $22$ times across the nine configurations of the 27B grid
+-and $23$ times under the 9B model, and six of the nine 27B configurations evicted only
+-twice, all within the same seed. Because memory is written only on success and success is
+-$4$--$6\%$, the pool rarely fills. We therefore report a failure of experimental
+-stimulation rather than a null effect: on a benchmark where the model rarely completes a
+-task, no conclusion about eviction policies can be drawn. That eviction fires more often
+-under the second model suggests its exercise is coupled to per-model competence on this
+-benchmark rather than to the mechanism itself, and \texttt{Abl-noForget} recording zero
+-evictions under both backbones confirms the ablation does what it claims.
+-
+-\paragraph{Three measurements need different evidence.}
+-Coverage asks whether every designated retained action has a recorded review. Decision correctness asks whether approval or denial agrees with an explicit authorization policy. Benefit asks whether the intervention improves outcomes under a suitable counterfactual comparison. Our records support descriptive coverage accounting; they lack authorization ground truth and provide weak task-success evidence. These three questions should not be answered by a single zero-valued counter.
+-
+-\section{Limitations}
+-\label{sec:limitations}
+-
+-\paragraph{Thin danger basis.} Only a minority of scenarios contain a dangerous
+-action; the gate-vs-no-gate contrast is carried by 7 of the 30 scenario units,
+-and the refusals concentrate in one action family. The gate's behaviour on the
+-other whitelisted actions is untested.
+-
+-\paragraph{No ground-truth safety labels.} The benchmark's assertions decide only
+-whether the task completed; they do not say whether an action was safe. We
+-therefore cannot score a refusal as correct or as over-rejection, and every
+-statement about safety in this paper is a statement about \emph{coverage}, not
+-about harm avoided. Zhang et al.~\cite{zhang2026guard} argue this boundary is a
+-matter of authorization policy, which is why we do not claim the gate makes the
+-system safer.
+-
+-\paragraph{Self-audit.} The auditor is the same base model as the executor, with
+-a short prompt. We do not compare it with an independent auditor and do not measure
+-false-accept or false-reject rates for it.
+-
+-\paragraph{Unchecked assertions.} $12.1\%$ of our cell-assertions ($432$ of $3564$) are
+-never evaluated, because they name no known tool action. The figure is identical across
+-all nine configurations and both backbones, but missing assertions can still interact with arm-specific behavior; equal missingness does not establish an unbiased success comparison. Making the prefix
+-dispatch case-insensitive recovered three assertions per configuration that an earlier
+-version of the scorer silently skipped; the remainder are semantic assertions that no
+-keyword scorer of this kind can check.
+-
+-\paragraph{What the factorial settles, and what it does not.} An earlier version of this
+-work compared a gate against a prompt policy while varying three things at once and could
+-not attribute the difference. The $2\times2$ over (auditor, safety sentence) now
+-separates those two factors, and \texttt{Fact-gateNoRegen} isolates answer regeneration.
+-Two things remain unisolated. Regeneration is not a third factorial factor, because it
+-fires only when the gate has refused something, so it sits downstream of the gate rather
+-than orthogonal to it; we isolate it by suppression, not by crossing. And
+-\texttt{Baseline-detGate} is one fixed rule, so its cell measures that rule rather than
+-the class of policy-based enforcement it stands in for---a real implementation would
+-carry a policy language, argument-level predicates and a proof obligation, none of which
+-we built.
+-
+-\paragraph{Weak scorer for user assertions.} Assertions that do not name a tool action
+-are \emph{not scored at all}: they are recorded as unchecked (see \S\ref{sec:setup}).
+-Assertions carrying a \texttt{user:} prefix are scored by a keyword-overlap heuristic, a
+-weak instrument whose token list is given in \S\ref{sec:res-disclosure}. This limits the
+-absolute success numbers, which are low ($5.6\%$ under the 27B model and $4.4\%$ under
+-the 9B model for the gated configurations), and a low success rate in turn removes the
+-power needed to detect any effect on task success.
+-
+-\paragraph{Cost is measured, but not decomposed in the manuscript.} The harness records
+-the rounds each audit consumed and the latency and token counts of every call, so the
+-strengthened gate's cost is a measurement rather than a bound---and the measurement shows
+-the bound was loose, since tripling the round budget changed nothing observable. What the
+-manuscript does not break out is the per-phase split (planning against auditing against
+-regeneration); those counts are in the delivered JSON but not in the tables. Latency is
+-also wall-clock on a shared GPU, so it carries contention noise we did not control.
+-
+-\paragraph{Models and domain.} Both models are from the same family (Qwen) and we
+-use a single domain (travel). The cross-model agreement we report is therefore
+-agreement within a family, not across families.
+-
+-\paragraph{Non-determinism.} Decoding is not deterministic even at temperature
+-zero, so the three seeds change processing order rather than constituting
+-independent draws; we treat the 30 scenarios as the independent unit and could
+-not fully remove pseudo-replication at the cell level.
++and \texttt{denied}. List B contains \texttt{cannot}, \texttt{unable},
++\texttt{not able}, \texttt{denied}, \texttt{refus}, \texttt{confirm},
++\texttt{alternative}, \texttt{instead}, and \texttt{sorry}. These are non-nested
++lists. Unrelated wording can match, and a faithful explanation can avoid every marker.
++The metric does not establish accurate reasons, identification of the denied action,
++or usefulness to the user.
++
++\paragraph{Recorded cost.}
++We report recorded logical calls and reported prompt tokens, together with the mean
++recorded request time per cell. A logical call may involve retries; the helper keeps
++the last attempt's timing and does not fully include failed attempts or pre-request
++waiting. Fixed group execution order and shared-GPU contention were uncontrolled.
++These quantities describe the retained instrumentation, not end-to-end service cost
++or a portable latency ranking.
++
++\paragraph{Finite-record analysis.}
++We validate the configuration/order grid and scenario IDs, then derive counts directly
++from the 54 JSON files. We cross-check pass, retention, parsing, and marker counts
++against the inherited aggregate outputs. Tables are emitted by
++\texttt{scripts/make\_descriptive\_tables.py} into
++\texttt{paper/tables/descriptive.tex}. No p-values or confidence intervals are used
++as evidence here: cross-scenario dependence is uncalibrated, and the fixed authored
++scenarios do not automatically define a random target population. Raw records and the
++inherited analysis remain available for inspection, but their inferential calculations
++are not adopted by this manuscript.
++
++\section{Descriptive results and counterexamples}
++\input{tables/descriptive}
++\subsection{Different routes to a zero}
++Tables~\ref{tab:outcomes-27b} and~\ref{tab:outcomes-qwen35_9b} show the finite-record
++contrasts. Full retains 18 designated names under the 27B-labelled service and 3 under
++the 9B-labelled service, with corresponding approvals. The prompt-only configurations
++retain 0 and 2. Ungated/no-suffix configurations retain 24 and 25. Every gated
++configuration has zero retained designated names without approval records.
++
++Those zeros have different meanings. Full performs recorded review; prompt-only
++suppresses most designated names before review; the fixed rule denies every reviewed
++name; parse failures contribute empty plans. With the safety suffix present, the
++27B-labelled gate configuration records no reviews because no designated name reaches
++it. This is an observation about that bundle and dataset, not a general law that
++prompts substitute for gates. Policy and information differences prevent a fair
++same-policy efficacy interpretation.
++
++\subsection{An assertion can pass when its claimed event did not happen}
++Scenario index 10 asks about a Paris trip. Its user assertion requires the user to
++be informed that a standard hotel room has been booked. In the 27B-labelled
++prompt-safety configuration, order seed 0, the answer says:
++\begin{quote}
++``However, I cannot book these items yet.''
++\end{quote}
++The final names are \texttt{searchflights} and \texttt{searchhotel}. Nonetheless the
++booked-hotel user assertion receives a keyword-overlap score of $6/9$ and is marked
++satisfied. In Full for the same index/order, an answer describing future searches
++also marks that assertion satisfied, at $8/9$ overlap.
++
++Both whole cells still fail other assertions. These examples establish an
++\emph{assertion-level} false positive, not the overall false-positive rate of cell
++pass. They also show why a shared scorer can remain biased across configurations:
++the interventions change negation, tense, and refusal wording that the scorer does
++not understand. The extracted answers, assertions, and scorer details are saved in
++\texttt{evidence/scorer\_counterexamples\_r2.json}.
++
++Each service also has 432 unchecked assertions out of 3,564 recorded cell-assertions
++across the grid. Identical missingness does not validate the checked assertions or
++make comparisons unbiased. Full's harness-pass counts are $5/90$ and $4/90$;
++prompt-only counts are $6/90$ and $8/90$. They describe this proxy and cannot establish
++agent competence or a task-benefit ranking.
++
++\subsection{Parsing and refusal markers change the apparent outcome}
++The 9B-labelled Full configuration has 15 parse failures among 90 cells; prompt-only
++has 5. Empty lists from failed parsing must not be scored as successful safety.
++Without complete planning responses and stop reasons, we cannot attribute this
++contrast to model JSON ability, output truncation, or another serving condition.
++
++Table~\ref{tab:markers} separates refusal-containing runs from list hits. Replacing
++the regeneration instruction and supplying refused names changes list-B matches from
++$0/6$ to $6/6$ under the 27B label and from $2/13$ to $14/14$ under the 9B label.
++List A remains $0/6$ under 27B and changes from $2/13$ to $8/14$ under 9B.
++The 9B denominators differ, so these are not identical refusal-event sets.
++The alternative prompt explicitly asks for refused actions, and list B contains the
++stem \texttt{refus}; increased hits therefore need not imply better explanation
++quality. A semantic audit would have to check the denied action, reason, completion
++claim, and next step separately.
++
++\subsection{Calls, tokens, and recorded time answer different questions}
++Tables~\ref{tab:cost-27b} and~\ref{tab:cost-qwen35_9b} separate logical calls from audit
++and regeneration calls. The fixed rule avoids auditor-model calls but still incurs
++planning and regeneration. In the 27B-labelled records it has 111 logical calls,
++compared with Full's 120, while mean recorded request time is 12.91 versus 11.71
++seconds per cell. A lower call count is not a lower observed time in these runs.
++
++Prompt-only consumes 49,890 prompt tokens against 43,612 for the ungated/no-suffix
++configuration, an increase of approximately $14.4\%$. That contrast combines the
++added instruction with the resulting sequence and memory behavior; it is not a
++hardware-independent monetary cost estimate or proof that every added token arises
++solely from the fixed suffix. Increasing the audit retry budget does not by itself
++establish a stronger audit, because the loop exits on the first interpretable verdict.
++
++\section{Interpretation, reproducibility, and limitations}
++The useful distinction is between \emph{record consistency}, \emph{decision correctness},
++and \emph{operational benefit}. This harness can count whether a retained designated
++name has a review record. It cannot decide whether approval agrees with a suitable
++authorization policy or whether an action actually happened. Its proxy assertions and
++marker lists do not repair those missing targets.
++
++Our configuration differences combine policy, information, planning, filtering,
++regeneration, and accumulated memory. We report them descriptively. Low proxy pass
++counts, few reviewed scenarios, one travel domain, and two same-family service labels
++limit external validity. Audit-log presence is partly a design property: instrumenting
++one path and leaving another uninstrumented is not itself a novel empirical safety
++finding. The examples instead motivate checking whether an evaluation distinguishes
++proposal suppression, denied plans, parsing failures, and failed explanations.
++
++\paragraph{Recomputing versus regenerating.}
++The accompanying local evidence bundle contains retained JSON files, dataset snapshots,
++harness and analysis scripts, a descriptive table generator, and file hashes. Running
++the table generator requires Python's standard library and does not call a model.
++This supports recomputation from retained records. It does not reconstruct unknown
++weights, missing raw planning responses, timestamps, or serving contention. A public
++artifact URL has not yet been established for this draft; the TeX submission archive
++alone contains typesetting inputs, not the full evidence bundle.
++
++\paragraph{What a stronger follow-up must change.}
++A same-policy comparison needs an explicit authorization truth, matched context and
++action arguments, and authorized, unauthorized, and ambiguous requests. Independent
++scenario trials should reset or freeze memory; sequence-learning experiments instead
++need independently replicated sequences. Task and explanation labels need semantic
++or execution-state validation. Action IDs, argument binding, separate execution logs,
++fault injection, and complete model/stop-reason metadata are needed to audit an actual
++execution boundary. These are proposed requirements, not experiments claimed here.
+ 
+ \section{Conclusion}
+-\label{sec:conclusion}
+-
+-We compared an approval gate with a system-prompt policy and a deterministic rule
+-in a plan-level travel harness: $30$ scenarios, three processing orders, nine
+-configurations, two recorded model-service labels, and $1620$ cells. Retained per-cell
+-records support comparisons of proposed and retained actions, recorded review,
+-marker-positive answers, and serving-stack costs.
+-
+-The count of retained dangerous actions without recorded approval is derived from
+-plans and logs. It is zero in all gated configurations, $24$ and $25$ in the ungated
+-arms, and $0$ and $2$ in the prompt-policy arms. This consistency measure does not
+-establish execution-boundary enforcement or correct authorization. Counting retained
+-actions separately reveals a different contrast: Full versus prompt retains $18$
+-versus $0$ under 27B and $3$ versus $2$ under 9B. Full records $24$ and $22$ review
+-decisions; the deterministic rule also records review, using no auditor-model calls.
+-Its total latency is not uniformly lower.
+-
+-In the 27B factorial grid, adding the safety sentence removes the dangerous proposals
+-that would otherwise reach the gate. The exploratory interaction on audited actions
+-is $-0.267$, with a pointwise $95\%$ interval of $[-0.467,-0.100]$. No task-success
+-effect is established at the scenario unit; this dataset does not resolve competence
+-trade-offs or demonstrate equivalence. The 9B Full--prompt contrast ($4/90$ versus
+-$8/90$) rests on three informative scenario units, with exact sign-test $p=0.25$.
+-
+-Marker-positive answers depend on the tested regeneration choices and keyword list.
+-The alternative instruction plus refused-action list increases list~B matches from
+-$0/6$ to $6/6$ under 27B and from $2/13$ to $14/14$ under 9B, with observed
+-stack-specific latency increases. Semantic explanation quality and deployment effects
+-remain unmeasured.
+-
+-Finally, the harness has no tool-execution layer, no authorization ground truth, and
+-low benchmark success. Parse failures affect $16.7\%$ of 9B Full cells, compared with
+-$5.6\%$ in its prompt arm, and can make an empty plan appear compliant. The defensible
+-result is therefore an exploratory measurement case study: audit trails, retained
+-plans, parsing, explanation proxies, and cost must be reported separately. We do not
+-establish a task-outcome or harm-prevention benefit in this dataset.
+-
+-\section*{Broader Impact}
+-
+-This paper measures a common control pattern in a plan-level harness, and
+-its main practical message is cautionary in two directions. First, a coverage
+-count---the number of unconfirmed dangerous actions---should not be used on its
+-own to justify a runtime control, because a system-prompt instruction can
+-match it on one backbone while leaving no record of what was considered or refused; teams that
+-need an audit trail should measure the audit trail. Second, the control we
+-studied can omit a requested action from the retained plan. Only 16 of 97 model-gated refusal runs matched list~A and 36 matched list~B; these unvalidated proxies motivate checking whether users receive an accurate explanation. They do not establish that the remaining answers were silent or harmful. We do not claim that approval gates make a
+-system safer, in either direction: the benchmark we use has no ground-truth
+-labels for whether an action was safe, so a refusal is indistinguishable from an
+-over-rejection in our measurements, and a policy that refuses more is scored the
+-same as one that refuses correctly. We also note that the auditor in our
+-configuration is the same model as the executor, which is a weak self-audit
+-setting; deployments should not take our numbers as evidence that
+-same-model review is adequate. No human subjects, personal data, or
+-high-stakes decisions are involved; the benchmark scenarios are authored
+-enterprise examples and the models are run locally on a single shared GPU.
++A zero-valued action counter is compatible with several different paths through this
++planning emulator. The retained records reveal configuration-specific differences in
++review, retention, parsing, keyword markers, and recorded cost. They also reveal
++policy mismatch, memory dependence, and concrete scorer false positives that prevent
++a fair causal comparison or verified task-completion claim. Reporting these defects
++is more informative than treating the zero, a proxy pass count, or a marker hit as
++proof of safety. Our conclusion is limited to a descriptive measurement audit of this
++harness; execution safety and generalized intervention benefit remain unmeasured.
++
++\section*{Broader impact}
++Misreading a planning or logging metric as evidence of authorization or completion
++can create false confidence in an agent. Our case study exposes such measurement
++risks without claiming demonstrated user harm or improved deployment safety.
++The scenarios are authored benchmark examples, and this analysis involved no human
++subjects or live bookings. No new model experiment was conducted for this revision.
+ 
+ \bibliographystyle{tmlr}
+ \bibliography{main}
+-
++\appendix
++\section{Exact policy and regeneration text}
++\label{app:prompts}
++The following strings are extracted from the retained harness. Whitespace is wrapped
++for typesetting. Auditing sees an action name and a truncated request; planning also
++sees background. The alternative regeneration input contains refused names, whereas
++the default input does not. These differences are part of the intervention bundles.
++\input{tables/policy_text}
+ \end{document}

@@ -1,0 +1,17 @@
+{
+  "guard": "exact_precheck",
+  "permission": {
+    "actions": [
+      {
+        "target": "closed-slot",
+        "ticket": "t0",
+        "tool": "credit_ledger",
+        "value": "11"
+      }
+    ],
+    "authorized": true,
+    "max_uses_per_action": 1,
+    "policy_version": "v1"
+  },
+  "used": {}
+}

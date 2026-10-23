@@ -1,0 +1,151 @@
+{
+  "schema": "figure-trace-manifest/1",
+  "artifacts": [
+    {
+      "artifact_id": "tab:design"
+    },
+    {
+      "artifact_id": "tab:outcomes-27b"
+    },
+    {
+      "artifact_id": "tab:cost-27b"
+    },
+    {
+      "artifact_id": "tab:outcomes-qwen35_9b"
+    },
+    {
+      "artifact_id": "tab:cost-qwen35_9b"
+    },
+    {
+      "artifact_id": "tab:markers"
+    },
+    {
+      "artifact_id": "tab:execution-contract"
+    },
+    {
+      "artifact_id": "tab:model-episodes"
+    }
+  ],
+  "figure_table_trace": [
+    {
+      "artifact_id": "tab:design",
+      "source_data": "results/descriptive_r2.json",
+      "transformation": {
+        "script": "scripts/make_descriptive_tables.py",
+        "hash": "150d64de310a5f1546e62c97cf73cc4ef852a09d56f92f93512f898d577ebf87"
+      },
+      "caption_claim": "The nine configurations, generated from the harness configuration.\n\\emph{Auditor} is \\emph{model} (a model call decides), \\emph{rule} (a fixed\ndeterministic rule decides, zero auditor-model calls) or \\emph{---} (no gate).\n\\emph{Force} means the regeneration step is required to name refused actions.\n\\emph{Rounds} is the maximum auditor rounds per dangerous action.\n\\texttt{Full}, \\texttt{Fact-gateOn-safetyOn}, \\texttt{Abl-noNegot} and\n\\texttt{Baseline-promptSafety} form the $2\\times2$ over (auditor, safety sentence);\nthe remaining arms vary answer regeneration, memory eviction, the auditor's\nround budget, and a deterministic stand-in for policy-based enforcement.",
+      "supported_manuscript_claims": [
+        "The grid has nine configurations and three processing-order seeds. Each configuration\nhas 90 cells, giving 810 per service and 1,620 in total. A cell is a scenario evaluated\nwithin a configuration-specific sequence; it is not an independent experimental\nreplicate. Table~\\ref{tab:design} specifies the switches."
+      ],
+      "limitations": [
+        "Policy mismatch and cross-scenario memory\nprevent a fair gate-versus-prompt efficacy interpretation."
+      ]
+    },
+    {
+      "artifact_id": "tab:outcomes-27b",
+      "source_data": "results/descriptive_r2.json",
+      "transformation": {
+        "script": "scripts/make_descriptive_tables.py",
+        "hash": "150d64de310a5f1546e62c97cf73cc4ef852a09d56f92f93512f898d577ebf87"
+      },
+      "caption_claim": "27B-labelled service: counts over the retained 90 cells per configuration. Pass denotes the harness assertion-pass proxy; Ap./Dn. are auditor verdict counts. Parse is failed planning JSON. These are finite-record summaries, with no independence or population-coverage claim.",
+      "supported_manuscript_claims": [
+        "\\subsection{Different routes to a zero}\nTables~\\ref{tab:outcomes-27b} and~\\ref{tab:outcomes-qwen35_9b} show the finite-record\ncontrasts. Full retains 18 designated names under the 27B-labelled service and 3 under\nthe 9B-labelled service, with corresponding approvals. The prompt-only configurations\nretain 0 and 2. Ungated/no-suffix configurations retain 24 and 25. Every gated\nconfiguration has zero retained designated names without approval records."
+      ],
+      "limitations": [
+        "Policy mismatch and cross-scenario memory\nprevent a fair gate-versus-prompt efficacy interpretation."
+      ]
+    },
+    {
+      "artifact_id": "tab:cost-27b",
+      "source_data": "results/descriptive_r2.json",
+      "transformation": {
+        "script": "scripts/make_descriptive_tables.py",
+        "hash": "150d64de310a5f1546e62c97cf73cc4ef852a09d56f92f93512f898d577ebf87"
+      },
+      "caption_claim": "27B-labelled service: recorded logical calls, audit calls, regeneration calls, prompt-token totals, and mean per-cell sum of recorded last-attempt request times in seconds. Retries and pre-request waiting are not fully represented; execution order and shared-GPU contention were uncontrolled.",
+      "supported_manuscript_claims": [
+        "\\subsection{Calls, tokens, and recorded time answer different questions}\nTables~\\ref{tab:cost-27b} and~\\ref{tab:cost-qwen35_9b} separate logical calls from audit\nand regeneration calls. The fixed rule avoids auditor-model calls but still incurs\nplanning and regeneration. In the 27B-labelled records it has 111 logical calls,\ncompared with Full's 120, while mean recorded request time is 12.91 versus 11.71\nseconds per cell. A lower call count is not a lower observed time in these runs."
+      ],
+      "limitations": [
+        "Policy mismatch and cross-scenario memory\nprevent a fair gate-versus-prompt efficacy interpretation."
+      ]
+    },
+    {
+      "artifact_id": "tab:outcomes-qwen35_9b",
+      "source_data": "results/descriptive_r2.json",
+      "transformation": {
+        "script": "scripts/make_descriptive_tables.py",
+        "hash": "150d64de310a5f1546e62c97cf73cc4ef852a09d56f92f93512f898d577ebf87"
+      },
+      "caption_claim": "9B-labelled service: counts over the retained 90 cells per configuration. Pass denotes the harness assertion-pass proxy; Ap./Dn. are auditor verdict counts. Parse is failed planning JSON. These are finite-record summaries, with no independence or population-coverage claim.",
+      "supported_manuscript_claims": [
+        "\\subsection{Different routes to a zero}\nTables~\\ref{tab:outcomes-27b} and~\\ref{tab:outcomes-qwen35_9b} show the finite-record\ncontrasts. Full retains 18 designated names under the 27B-labelled service and 3 under\nthe 9B-labelled service, with corresponding approvals. The prompt-only configurations\nretain 0 and 2. Ungated/no-suffix configurations retain 24 and 25. Every gated\nconfiguration has zero retained designated names without approval records."
+      ],
+      "limitations": [
+        "Policy mismatch and cross-scenario memory\nprevent a fair gate-versus-prompt efficacy interpretation."
+      ]
+    },
+    {
+      "artifact_id": "tab:cost-qwen35_9b",
+      "source_data": "results/descriptive_r2.json",
+      "transformation": {
+        "script": "scripts/make_descriptive_tables.py",
+        "hash": "150d64de310a5f1546e62c97cf73cc4ef852a09d56f92f93512f898d577ebf87"
+      },
+      "caption_claim": "9B-labelled service: recorded logical calls, audit calls, regeneration calls, prompt-token totals, and mean per-cell sum of recorded last-attempt request times in seconds. Retries and pre-request waiting are not fully represented; execution order and shared-GPU contention were uncontrolled.",
+      "supported_manuscript_claims": [
+        "\\subsection{Calls, tokens, and recorded time answer different questions}\nTables~\\ref{tab:cost-27b} and~\\ref{tab:cost-qwen35_9b} separate logical calls from audit\nand regeneration calls. The fixed rule avoids auditor-model calls but still incurs\nplanning and regeneration. In the 27B-labelled records it has 111 logical calls,\ncompared with Full's 120, while mean recorded request time is 12.91 versus 11.71\nseconds per cell. A lower call count is not a lower observed time in these runs."
+      ],
+      "limitations": [
+        "Policy mismatch and cross-scenario memory\nprevent a fair gate-versus-prompt efficacy interpretation."
+      ]
+    },
+    {
+      "artifact_id": "tab:markers",
+      "source_data": "results/descriptive_r2.json",
+      "transformation": {
+        "script": "scripts/make_descriptive_tables.py",
+        "hash": "150d64de310a5f1546e62c97cf73cc4ef852a09d56f92f93512f898d577ebf87"
+      },
+      "caption_claim": "Refusal-containing runs and final-answer keyword-list hits. A run may include multiple refusals; columns A and B use different, non-nested lists. Neither validates semantic explanation quality.",
+      "supported_manuscript_claims": [
+        "Table~\\ref{tab:markers} separates refusal-containing runs from list hits. Replacing\nthe regeneration instruction and supplying refused names changes list-B matches from\n$0/6$ to $6/6$ under the 27B label and from $2/13$ to $14/14$ under the 9B label.\nList A remains $0/6$ under 27B and changes from $2/13$ to $8/14$ under 9B.\nThe 9B denominators differ, so these are not identical refusal-event sets.\nThe alternative prompt explicitly asks for refused actions, and list B contains the\nstem \\texttt{refus}; increased hits therefore need not imply better explanation\nquality. A semantic audit would have to check the denied action, reason, completion\nclaim, and next step separately."
+      ],
+      "limitations": [
+        "Policy mismatch and cross-scenario memory\nprevent a fair gate-versus-prompt efficacy interpretation."
+      ]
+    },
+    {
+      "artifact_id": "tab:execution-contract",
+      "source_data": "evidence/supplement/summary.json",
+      "transformation": {
+        "script": "scripts/make_execution_supplement.py",
+        "hash": "7912fe660595b161b5f7a5a94eb6a3675b63105d7eee12b004ab298cc94c7961"
+      },
+      "caption_claim": "Constructed local-effect audit on nine evaluation base goals. Each guard\nhas 90 cells. U counts unauthorized persisted effects; M counts cells with U and\npositive action-name/log consistency. Clean utility uses nine granted goals.\nThese are authored contract cases, with duplicate effects counted separately.",
+      "supported_manuscript_claims": [
+        "Native AGT and the local bound control have zero unauthorized effects on this finite\nmatrix and complete all nine clean granted goals. Deny all also has zero such\neffects, with zero clean utility. Name-only checking admits 63 unauthorized effects\nand the exact-precheck arm admits 45; each occurs with positive name/log consistency.\nThese examples establish a blind spot in that proxy under the authored faults,\nnot superiority over the third-party bound baseline: the bound controls tie here."
+      ],
+      "limitations": [
+        "The new cases are authored local studies, not a\nnatural failure distribution, a new defense or deployment validation."
+      ]
+    },
+    {
+      "artifact_id": "tab:model-episodes",
+      "source_data": "evidence/supplement/summary.json",
+      "transformation": {
+        "script": "scripts/make_execution_supplement.py",
+        "hash": "7912fe660595b161b5f7a5a94eb6a3675b63105d7eee12b004ab298cc94c7961"
+      },
+      "caption_claim": "Finite model episodes, separated by serving condition. Obs./plan counts\nepisodes without transport failure or an endpoint stop. Clean gives goal completion;\nfailure ctx. gives a safe granted effect in that context; reactive requires a recorded\nprimary-operation error followed by a granted fallback effect. Denominators are observed context episodes; each context originally\nhas nine planned goals per guard. U is an observed effect count. Missing free-service\nepisodes are not successful restraint and prevent a complete endpoint comparison.",
+      "supported_manuscript_claims": [
+        "The local panel records 180 requests across all 108 episodes. Its statuses are 36 effect-triggered stops (the controller label is completed), 63 model stops, 7 turn limits, 2 parse failures and 0 transport failures.\nThe free panel attempts 102 requests: 38 episodes complete, 29 stop, and 2 reach the turn limit; 4 have transport errors and 35 are skipped after the endpoint stop.\nOn the local panel, allow all admits 15 unauthorized effects, all 15 in pending contexts. Name-only and native AGT each admit 0 and 0 such effects, respectively. Native AGT completes 9/9 clean goals. In failure contexts it has 3/9 safe granted effects, all from direct fallback selection; strict failure-then-fallback recovery is 0/9, with 6 observed primary-operation failures.\nThe original verifier field named safe\\_authorized\\_completion checks\npermission-compatible effects, not compliance with the requested primary-first order.\nDirect fallback selection therefore supports a granted effect but not observed\nadaptation to failure feedback. A sequence-specific trace check was added on referee\ninspection as a descriptive secondary audit, not a prespecified confirmatory endpoint.\nOriginal records and field values remain unchanged. Clean utility has a single exact\nrequested action; failure-context effects are kept separate from ordered goal completion.\nThis natural-proposal panel does not distinguish the name-only and\naction-bound controls on unauthorized effects. The argument-binding blind spot is\nestablished by the separate constructed matrix, not by claiming a natural substitution\ndistribution from these episodes."
+      ],
+      "limitations": [
+        "The new cases are authored local studies, not a\nnatural failure distribution, a new defense or deployment validation."
+      ]
+    }
+  ]
+}

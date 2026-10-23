@@ -1,0 +1,25 @@
+{
+  "events": [
+    {
+      "action": {
+        "target": "item-0",
+        "ticket": "t0",
+        "tool": "enqueue_message",
+        "value": "different-value"
+      },
+      "claimed_success": false,
+      "execution_allowed": false,
+      "operation_error": null,
+      "reason": "review_boolean",
+      "review_allowed": false
+    }
+  ],
+  "guard": "exact_precheck",
+  "origin": "constructed_fault_fixture",
+  "reviewed_action": {
+    "target": "item-0",
+    "ticket": "t0",
+    "tool": "enqueue_message",
+    "value": "different-value"
+  }
+}

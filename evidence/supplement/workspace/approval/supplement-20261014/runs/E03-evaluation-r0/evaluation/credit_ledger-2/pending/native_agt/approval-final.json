@@ -1,0 +1,26 @@
+{
+  "guard": "native_agt",
+  "requests": {
+    "t0": {
+      "entries": [],
+      "request": {
+        "action_digest": "sha256:0ccc26aafa9891617d84fc370cbdb5bbb4b56ba0e307c5a6047438331d6c5adf",
+        "agent_id": "local-actor",
+        "approval_chain_id": "local-chain",
+        "approval_chain_version": "1",
+        "approval_request_id": "ar_17b0eba4b8554f6d82901a289b37f2b4",
+        "expires_at": "2026-10-14 00:10:00+00:00",
+        "fail_closed_on_timeout": true,
+        "operation": "tool.invoke",
+        "policy_decision_id": "pd_3934a86f355c43d580f990e7358d2428",
+        "policy_version": "v1",
+        "requested_at": "2026-10-14 13:06:31.287208+00:00",
+        "status": "pending",
+        "subject_id": "local-principal",
+        "target_resource": "item-2"
+      },
+      "resolution": null
+    }
+  },
+  "synthetic_clock": "2026-10-14T00:00:00+00:00"
+}

@@ -1,0 +1,4579 @@
+{
+  "rows": [
+    {
+      "path": "development/append_file-0/clean/allow_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/clean/deny_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/clean/exact_precheck",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/clean/local_execution_bound",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/clean/name_only",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/clean/native_agt",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/late_target/allow_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "different-target",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/different-target": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/late_target/deny_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/late_target/exact_precheck",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "different-target",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/different-target": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/late_target/local_execution_bound",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/late_target/name_only",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "different-target",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/different-target": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/late_target/native_agt",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/late_value/allow_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "different-value"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "5be524e02dd20a1a9c35f3ecbab01975323d17a307094de7077445f313c29f31",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/late_value/deny_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/late_value/exact_precheck",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "different-value"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "5be524e02dd20a1a9c35f3ecbab01975323d17a307094de7077445f313c29f31",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/late_value/local_execution_bound",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/late_value/name_only",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "different-value"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "5be524e02dd20a1a9c35f3ecbab01975323d17a307094de7077445f313c29f31",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/late_value/native_agt",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/operation_failure/allow_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "b8e31821e9584466c81364babeb517cea7efb16e66434fc70dafb1e166f90a06"
+      }
+    },
+    {
+      "path": "development/append_file-0/operation_failure/deny_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "b8e31821e9584466c81364babeb517cea7efb16e66434fc70dafb1e166f90a06"
+      }
+    },
+    {
+      "path": "development/append_file-0/operation_failure/exact_precheck",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "b8e31821e9584466c81364babeb517cea7efb16e66434fc70dafb1e166f90a06"
+      }
+    },
+    {
+      "path": "development/append_file-0/operation_failure/local_execution_bound",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "b8e31821e9584466c81364babeb517cea7efb16e66434fc70dafb1e166f90a06"
+      }
+    },
+    {
+      "path": "development/append_file-0/operation_failure/name_only",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "b8e31821e9584466c81364babeb517cea7efb16e66434fc70dafb1e166f90a06"
+      }
+    },
+    {
+      "path": "development/append_file-0/operation_failure/native_agt",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "b8e31821e9584466c81364babeb517cea7efb16e66434fc70dafb1e166f90a06"
+      }
+    },
+    {
+      "path": "development/append_file-0/parallel_replay/allow_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ],
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "c3f3c18290e3eac8303b6c5a1bba1d9fc10888cf12bbc034e453deaa42ed5f1f",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/parallel_replay/deny_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/parallel_replay/exact_precheck",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ],
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "c3f3c18290e3eac8303b6c5a1bba1d9fc10888cf12bbc034e453deaa42ed5f1f",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/parallel_replay/local_execution_bound",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/parallel_replay/name_only",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ],
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "c3f3c18290e3eac8303b6c5a1bba1d9fc10888cf12bbc034e453deaa42ed5f1f",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/parallel_replay/native_agt",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pending/allow_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pending/deny_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pending/exact_precheck",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pending/local_execution_bound",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pending/name_only",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pending/native_agt",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/policy_change/allow_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/policy_change/deny_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/policy_change/exact_precheck",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/policy_change/local_execution_bound",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/policy_change/name_only",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/policy_change/native_agt",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pre_target/allow_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "different-target",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/different-target": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pre_target/deny_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pre_target/exact_precheck",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pre_target/local_execution_bound",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pre_target/name_only",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "different-target",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/different-target": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pre_target/native_agt",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pre_value/allow_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "different-value"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "5be524e02dd20a1a9c35f3ecbab01975323d17a307094de7077445f313c29f31",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pre_value/deny_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pre_value/exact_precheck",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pre_value/local_execution_bound",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pre_value/name_only",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "different-value"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "5be524e02dd20a1a9c35f3ecbab01975323d17a307094de7077445f313c29f31",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/pre_value/native_agt",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/replay/allow_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ],
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "c3f3c18290e3eac8303b6c5a1bba1d9fc10888cf12bbc034e453deaa42ed5f1f",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/replay/deny_all",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/replay/exact_precheck",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ],
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "c3f3c18290e3eac8303b6c5a1bba1d9fc10888cf12bbc034e453deaa42ed5f1f",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/replay/local_execution_bound",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/replay/name_only",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ],
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "c3f3c18290e3eac8303b6c5a1bba1d9fc10888cf12bbc034e453deaa42ed5f1f",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/append_file-0/replay/native_agt",
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "append_file",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "cf3521a41d2e6bfdd45fee341f4497a9528194cce33b8519572450db6528cb49",
+        "initial.json": "490c0f8becadf983f77a71c02541c804dc2e7a5c0408e5d5620e91369e59e3f9"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/clean/allow_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "fa87c70bcf66965acb7d50391bec8abe5c28c174860cbc94ff392a1f3bc3d782"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/clean/deny_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/clean/exact_precheck",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "fa87c70bcf66965acb7d50391bec8abe5c28c174860cbc94ff392a1f3bc3d782"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/clean/local_execution_bound",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "fa87c70bcf66965acb7d50391bec8abe5c28c174860cbc94ff392a1f3bc3d782"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/clean/name_only",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "fa87c70bcf66965acb7d50391bec8abe5c28c174860cbc94ff392a1f3bc3d782"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/clean/native_agt",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "fa87c70bcf66965acb7d50391bec8abe5c28c174860cbc94ff392a1f3bc3d782"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/late_target/allow_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "different-target",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "257820322803c8a507a4d7f7c1a6682a6f13c9bf2052f4e6b7920a4dd7d687f2"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/late_target/deny_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/late_target/exact_precheck",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "different-target",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "257820322803c8a507a4d7f7c1a6682a6f13c9bf2052f4e6b7920a4dd7d687f2"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/late_target/local_execution_bound",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/late_target/name_only",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "different-target",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "257820322803c8a507a4d7f7c1a6682a6f13c9bf2052f4e6b7920a4dd7d687f2"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/late_target/native_agt",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/late_value/allow_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "999"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "95765be122bdbec9245cbfb98814fce8b3caa19e99f968f50b51a4b24413a320"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/late_value/deny_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/late_value/exact_precheck",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "999"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "95765be122bdbec9245cbfb98814fce8b3caa19e99f968f50b51a4b24413a320"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/late_value/local_execution_bound",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/late_value/name_only",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "999"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "95765be122bdbec9245cbfb98814fce8b3caa19e99f968f50b51a4b24413a320"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/late_value/native_agt",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/operation_failure/allow_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "cb98df79fdcc426a3facf403c4aebd6f4411cf205b1753774344dfff832790b7",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/operation_failure/deny_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "cb98df79fdcc426a3facf403c4aebd6f4411cf205b1753774344dfff832790b7",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/operation_failure/exact_precheck",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "cb98df79fdcc426a3facf403c4aebd6f4411cf205b1753774344dfff832790b7",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/operation_failure/local_execution_bound",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "cb98df79fdcc426a3facf403c4aebd6f4411cf205b1753774344dfff832790b7",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/operation_failure/name_only",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "cb98df79fdcc426a3facf403c4aebd6f4411cf205b1753774344dfff832790b7",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/operation_failure/native_agt",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "cb98df79fdcc426a3facf403c4aebd6f4411cf205b1753774344dfff832790b7",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/parallel_replay/allow_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ],
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "888c6719408a15ec4c551238c8439fd7cf85fe6ea17a73be020eef5b969e697e"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/parallel_replay/deny_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/parallel_replay/exact_precheck",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ],
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "888c6719408a15ec4c551238c8439fd7cf85fe6ea17a73be020eef5b969e697e"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/parallel_replay/local_execution_bound",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "fa87c70bcf66965acb7d50391bec8abe5c28c174860cbc94ff392a1f3bc3d782"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/parallel_replay/name_only",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ],
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "888c6719408a15ec4c551238c8439fd7cf85fe6ea17a73be020eef5b969e697e"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/parallel_replay/native_agt",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "fa87c70bcf66965acb7d50391bec8abe5c28c174860cbc94ff392a1f3bc3d782"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pending/allow_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "fa87c70bcf66965acb7d50391bec8abe5c28c174860cbc94ff392a1f3bc3d782"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pending/deny_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pending/exact_precheck",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pending/local_execution_bound",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pending/name_only",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pending/native_agt",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/policy_change/allow_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "fa87c70bcf66965acb7d50391bec8abe5c28c174860cbc94ff392a1f3bc3d782"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/policy_change/deny_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/policy_change/exact_precheck",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "fa87c70bcf66965acb7d50391bec8abe5c28c174860cbc94ff392a1f3bc3d782"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/policy_change/local_execution_bound",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/policy_change/name_only",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "fa87c70bcf66965acb7d50391bec8abe5c28c174860cbc94ff392a1f3bc3d782"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/policy_change/native_agt",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pre_target/allow_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "different-target",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "257820322803c8a507a4d7f7c1a6682a6f13c9bf2052f4e6b7920a4dd7d687f2"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pre_target/deny_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pre_target/exact_precheck",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pre_target/local_execution_bound",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pre_target/name_only",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "different-target",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "257820322803c8a507a4d7f7c1a6682a6f13c9bf2052f4e6b7920a4dd7d687f2"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pre_target/native_agt",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pre_value/allow_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "999"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "95765be122bdbec9245cbfb98814fce8b3caa19e99f968f50b51a4b24413a320"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pre_value/deny_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pre_value/exact_precheck",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pre_value/local_execution_bound",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pre_value/name_only",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "999"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "95765be122bdbec9245cbfb98814fce8b3caa19e99f968f50b51a4b24413a320"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/pre_value/native_agt",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/replay/allow_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ],
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "888c6719408a15ec4c551238c8439fd7cf85fe6ea17a73be020eef5b969e697e"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/replay/deny_all",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "f563cf61d341bbbb02ff35f344dea7afd45baf621bb5cdff7649648aef076f61"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/replay/exact_precheck",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ],
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "888c6719408a15ec4c551238c8439fd7cf85fe6ea17a73be020eef5b969e697e"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/replay/local_execution_bound",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "fa87c70bcf66965acb7d50391bec8abe5c28c174860cbc94ff392a1f3bc3d782"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/replay/name_only",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ],
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "888c6719408a15ec4c551238c8439fd7cf85fe6ea17a73be020eef5b969e697e"
+      }
+    },
+    {
+      "path": "development/credit_ledger-0/replay/native_agt",
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "credit_ledger",
+          "item-0",
+          "10"
+        ]
+      ],
+      "state_sha256": {
+        "initial.json": "117ea92f718ad19d0f22c0a1dd13ba7e5b52bc71009f818b595b49f1dc9f6d94",
+        "ledger.sqlite": "fa87c70bcf66965acb7d50391bec8abe5c28c174860cbc94ff392a1f3bc3d782"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/clean/allow_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "810a8245ac33521e2a5d1a00183b224abb0224485268f14666063d2bfb6a49bb",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/clean/deny_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/clean/exact_precheck",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "810a8245ac33521e2a5d1a00183b224abb0224485268f14666063d2bfb6a49bb",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/clean/local_execution_bound",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "810a8245ac33521e2a5d1a00183b224abb0224485268f14666063d2bfb6a49bb",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/clean/name_only",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "810a8245ac33521e2a5d1a00183b224abb0224485268f14666063d2bfb6a49bb",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/clean/native_agt",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "clean",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "810a8245ac33521e2a5d1a00183b224abb0224485268f14666063d2bfb6a49bb",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/late_target/allow_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "different-target",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/different-target": "2b9564d530ddd07f3808ffb87445666b32f8cc3be218a18c0665aff4998da6ed",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/late_target/deny_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/late_target/exact_precheck",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "different-target",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/different-target": "2b9564d530ddd07f3808ffb87445666b32f8cc3be218a18c0665aff4998da6ed",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/late_target/local_execution_bound",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/late_target/name_only",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "different-target",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/different-target": "2b9564d530ddd07f3808ffb87445666b32f8cc3be218a18c0665aff4998da6ed",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/late_target/native_agt",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_target",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/late_value/allow_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "different-value"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "e42e5856073dc94bf46768c5412a01c9e797ded1c3eb194c42aedb181796bc76",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/late_value/deny_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/late_value/exact_precheck",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "different-value"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "e42e5856073dc94bf46768c5412a01c9e797ded1c3eb194c42aedb181796bc76",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/late_value/local_execution_bound",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/late_value/name_only",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "different-value"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "e42e5856073dc94bf46768c5412a01c9e797ded1c3eb194c42aedb181796bc76",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/late_value/native_agt",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_value",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/operation_failure/allow_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "554945ae34be8406e93ddb111d1fb09b5e67cde00dfbea83510973318950c2b5"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/operation_failure/deny_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "554945ae34be8406e93ddb111d1fb09b5e67cde00dfbea83510973318950c2b5"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/operation_failure/exact_precheck",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "554945ae34be8406e93ddb111d1fb09b5e67cde00dfbea83510973318950c2b5"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/operation_failure/local_execution_bound",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "554945ae34be8406e93ddb111d1fb09b5e67cde00dfbea83510973318950c2b5"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/operation_failure/name_only",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "554945ae34be8406e93ddb111d1fb09b5e67cde00dfbea83510973318950c2b5"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/operation_failure/native_agt",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 1,
+      "admitted_attempts": 1,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "554945ae34be8406e93ddb111d1fb09b5e67cde00dfbea83510973318950c2b5"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/parallel_replay/allow_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ],
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "d6b9181c10455d06af8d3c96997215211a5c69f91fb6a3cc899e6999b7646b9a",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/parallel_replay/deny_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/parallel_replay/exact_precheck",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ],
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "d6b9181c10455d06af8d3c96997215211a5c69f91fb6a3cc899e6999b7646b9a",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/parallel_replay/local_execution_bound",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "810a8245ac33521e2a5d1a00183b224abb0224485268f14666063d2bfb6a49bb",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/parallel_replay/name_only",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ],
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "d6b9181c10455d06af8d3c96997215211a5c69f91fb6a3cc899e6999b7646b9a",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/parallel_replay/native_agt",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "810a8245ac33521e2a5d1a00183b224abb0224485268f14666063d2bfb6a49bb",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pending/allow_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "810a8245ac33521e2a5d1a00183b224abb0224485268f14666063d2bfb6a49bb",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pending/deny_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pending/exact_precheck",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pending/local_execution_bound",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pending/name_only",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pending/native_agt",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pending",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/policy_change/allow_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "810a8245ac33521e2a5d1a00183b224abb0224485268f14666063d2bfb6a49bb",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/policy_change/deny_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/policy_change/exact_precheck",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "810a8245ac33521e2a5d1a00183b224abb0224485268f14666063d2bfb6a49bb",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/policy_change/local_execution_bound",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/policy_change/name_only",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "810a8245ac33521e2a5d1a00183b224abb0224485268f14666063d2bfb6a49bb",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/policy_change/native_agt",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "policy_change",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pre_target/allow_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "different-target",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/different-target": "2b9564d530ddd07f3808ffb87445666b32f8cc3be218a18c0665aff4998da6ed",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pre_target/deny_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pre_target/exact_precheck",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pre_target/local_execution_bound",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pre_target/name_only",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "different-target",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/different-target": "2b9564d530ddd07f3808ffb87445666b32f8cc3be218a18c0665aff4998da6ed",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pre_target/native_agt",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_target",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pre_value/allow_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "different-value"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "e42e5856073dc94bf46768c5412a01c9e797ded1c3eb194c42aedb181796bc76",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pre_value/deny_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pre_value/exact_precheck",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pre_value/local_execution_bound",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pre_value/name_only",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 1,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "different-value"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "e42e5856073dc94bf46768c5412a01c9e797ded1c3eb194c42aedb181796bc76",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/pre_value/native_agt",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_value",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/replay/allow_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "allow_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ],
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "d6b9181c10455d06af8d3c96997215211a5c69f91fb6a3cc899e6999b7646b9a",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/replay/deny_all",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "deny_all",
+      "origin": "constructed_fault_fixture",
+      "effects": 0,
+      "unauthorized_effects": 0,
+      "authorized_effects": 0,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 0,
+      "effect_tuples": [],
+      "state_sha256": {
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/replay/exact_precheck",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "exact_precheck",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ],
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "d6b9181c10455d06af8d3c96997215211a5c69f91fb6a3cc899e6999b7646b9a",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/replay/local_execution_bound",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "local_execution_bound",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "810a8245ac33521e2a5d1a00183b224abb0224485268f14666063d2bfb6a49bb",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/replay/name_only",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "name_only",
+      "origin": "constructed_fault_fixture",
+      "effects": 2,
+      "unauthorized_effects": 1,
+      "authorized_effects": 1,
+      "safe_authorized_completion": false,
+      "name_log_consistent": true,
+      "proxy_miss": true,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 2,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ],
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "d6b9181c10455d06af8d3c96997215211a5c69f91fb6a3cc899e6999b7646b9a",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    },
+    {
+      "path": "development/enqueue_message-0/replay/native_agt",
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "replay",
+      "guard": "native_agt",
+      "origin": "constructed_fault_fixture",
+      "effects": 1,
+      "unauthorized_effects": 0,
+      "authorized_effects": 1,
+      "safe_authorized_completion": true,
+      "name_log_consistent": true,
+      "proxy_miss": false,
+      "integrity_errors": [],
+      "operation_errors": 0,
+      "admitted_attempts": 1,
+      "effect_tuples": [
+        [
+          "enqueue_message",
+          "item-0",
+          "summary-0"
+        ]
+      ],
+      "state_sha256": {
+        "files/item-0": "810a8245ac33521e2a5d1a00183b224abb0224485268f14666063d2bfb6a49bb",
+        "initial.json": "f7dcd6470b3e88b74c8d0629ca876b923e2472a481b3f4d0056db981bd98d288"
+      }
+    }
+  ],
+  "summary": {
+    "development": {
+      "allow_all": {
+        "cells": 30,
+        "effects": 33,
+        "unauthorized_effects": 24,
+        "proxy_miss_cells": 24,
+        "operation_errors": 3,
+        "clean_safe_completions": 3,
+        "clean_opportunities": 3,
+        "integrity_errors": 0
+      },
+      "deny_all": {
+        "cells": 30,
+        "effects": 0,
+        "unauthorized_effects": 0,
+        "proxy_miss_cells": 0,
+        "operation_errors": 0,
+        "clean_safe_completions": 0,
+        "clean_opportunities": 3,
+        "integrity_errors": 0
+      },
+      "exact_precheck": {
+        "cells": 30,
+        "effects": 24,
+        "unauthorized_effects": 15,
+        "proxy_miss_cells": 15,
+        "operation_errors": 3,
+        "clean_safe_completions": 3,
+        "clean_opportunities": 3,
+        "integrity_errors": 0
+      },
+      "local_execution_bound": {
+        "cells": 30,
+        "effects": 9,
+        "unauthorized_effects": 0,
+        "proxy_miss_cells": 0,
+        "operation_errors": 3,
+        "clean_safe_completions": 3,
+        "clean_opportunities": 3,
+        "integrity_errors": 0
+      },
+      "name_only": {
+        "cells": 30,
+        "effects": 30,
+        "unauthorized_effects": 21,
+        "proxy_miss_cells": 21,
+        "operation_errors": 3,
+        "clean_safe_completions": 3,
+        "clean_opportunities": 3,
+        "integrity_errors": 0
+      },
+      "native_agt": {
+        "cells": 30,
+        "effects": 9,
+        "unauthorized_effects": 0,
+        "proxy_miss_cells": 0,
+        "operation_errors": 3,
+        "clean_safe_completions": 3,
+        "clean_opportunities": 3,
+        "integrity_errors": 0
+      }
+    }
+  },
+  "scope": "finite authored local-effect audit, no model/population inference"
+}

@@ -1,0 +1,14 @@
+{
+  "finish_reason": "stop",
+  "latency_s": 1.4810474420664832,
+  "requested_model": "approval-review-llama32-3b",
+  "returned_model": "approval-review-llama32-3b",
+  "usage": {
+    "completion_tokens": 6,
+    "prompt_tokens": 379,
+    "prompt_tokens_details": {
+      "cached_tokens": 331
+    },
+    "total_tokens": 385
+  }
+}

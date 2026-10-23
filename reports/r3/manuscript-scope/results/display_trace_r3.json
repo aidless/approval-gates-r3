@@ -1,0 +1,28 @@
+{
+  "mean_recorded_seconds": {
+    "27b": {
+      "Full": 11.71,
+      "Abl-noForget": 11.71,
+      "Abl-noNegot": 11.12,
+      "Baseline-promptSafety": 10.96,
+      "Baseline-heavyAudit": 11.57,
+      "Fact-gateOn-safetyOn": 10.83,
+      "Fact-gateNoRegen": 11.68,
+      "Baseline-detGate": 12.91,
+      "Fact-disclosePrompt": 16.29
+    },
+    "qwen35_9b": {
+      "Full": 9.52,
+      "Abl-noForget": 8.97,
+      "Abl-noNegot": 8.18,
+      "Baseline-promptSafety": 7.93,
+      "Baseline-heavyAudit": 9.14,
+      "Fact-gateOn-safetyOn": 7.8,
+      "Fact-gateNoRegen": 9.06,
+      "Baseline-detGate": 11.35,
+      "Fact-disclosePrompt": 9.89
+    }
+  },
+  "prompt_only_increase_percent_27b": 14.4,
+  "audit_retry_budget_ratio": 1.5
+}

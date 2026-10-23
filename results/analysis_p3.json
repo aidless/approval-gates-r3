@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "n_scenarios": 20,
+    "groups": [
+      "Full",
+      "Abl-noForget",
+      "Abl-noNegot"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "bootstrap_B": 2000,
+    "holm_k": 6,
+    "note": "exact McNemar (paired by seed+scenario idx); Wilcoxon+CLES for continuous; Holm on unrounded p"
+  },
+  "success_rates": {
+    "Full_seed0": 0.05,
+    "Full_seed1": 0.1,
+    "Full_seed2": 0.1,
+    "Abl-noForget_seed0": 0.05,
+    "Abl-noForget_seed1": 0.1,
+    "Abl-noForget_seed2": 0.15,
+    "Abl-noNegot_seed0": 0.05,
+    "Abl-noNegot_seed1": 0.15,
+    "Abl-noNegot_seed2": 0.15
+  },
+  "mcnemar": {
+    "Full_vs_noForget": {
+      "pairs": 60,
+      "discordant": 1,
+      "Full_win(Abl_fail)": 0,
+      "Full_fail(Abl_win)": 1,
+      "exact_p": 1.0,
+      "per_seed": {
+        "0": {
+          "b": 0,
+          "c": 0,
+          "n": 0
+        },
+        "1": {
+          "b": 0,
+          "c": 0,
+          "n": 0
+        },
+        "2": {
+          "b": 0,
+          "c": 1,
+          "n": 1
+        }
+      }
+    },
+    "Full_vs_noNegot": {
+      "pairs": 60,
+      "discordant": 2,
+      "Full_win(Abl_fail)": 0,
+      "Full_fail(Abl_win)": 2,
+      "exact_p": 0.5,
+      "per_seed": {
+        "0": {
+          "b": 0,
+          "c": 0,
+          "n": 0
+        },
+        "1": {
+          "b": 0,
+          "c": 1,
+          "n": 1
+        },
+        "2": {
+          "b": 0,
+          "c": 1,
+          "n": 1
+        }
+      }
+    }
+  },
+  "wilcoxon": {
+    "Full_vs_noForget_violations": {
+      "mean_Full": 0.0,
+      "mean_Abl": 0.0,
+      "mean_pair_diff": 0.0,
+      "wilcoxon_p": 1.0,
+      "cles": 0.5,
+      "cles_ci95": [
+        0.5,
+        0.5
+      ],
+      "n": 60
+    },
+    "Full_vs_noNegot_violations": {
+      "mean_Full": 0.0,
+      "mean_Abl": 0.35,
+      "mean_pair_diff": -0.35,
+      "wilcoxon_p": 0.0027550771035609193,
+      "cles": 0.4083,
+      "cles_ci95": [
+        0.3583,
+        0.4583
+      ],
+      "n": 60
+    },
+    "Full_vs_noForget_negotiation_rounds": {
+      "mean_Full": 0.4,
+      "mean_Abl": 0.4,
+      "mean_pair_diff": 0.0,
+      "wilcoxon_p": 1.0,
+      "cles": 0.5,
+      "cles_ci95": [
+        0.4281,
+        0.5721
+      ],
+      "n": 60
+    },
+    "Full_vs_noNegot_negotiation_rounds": {
+      "mean_Full": 0.4,
+      "mean_Abl": 0.0,
+      "mean_pair_diff": 0.4,
+      "wilcoxon_p": 0.0018626527270292463,
+      "cles": 0.6,
+      "cles_ci95": [
+        0.55,
+        0.65
+      ],
+      "n": 60
+    }
+  },
+  "holm": {
+    "mcnemar:Full_vs_noForget": 1.0,
+    "mcnemar:Full_vs_noNegot": 1.0,
+    "wilcoxon:Full_vs_noForget_violations": 1.0,
+    "wilcoxon:Full_vs_noNegot_violations": 0.013775,
+    "wilcoxon:Full_vs_noForget_negotiation_rounds": 1.0,
+    "wilcoxon:Full_vs_noNegot_negotiation_rounds": 0.011176
+  }
+}

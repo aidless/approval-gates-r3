@@ -1,0 +1,50 @@
+{
+  "guard": "native_agt",
+  "requests": {
+    "t0": {
+      "entries": [
+        {
+          "approval_request_id": "ar_b65b036c93ed4b9ca4c4e942bddff8d6",
+          "approver_identity": "did:example:trusted-harness",
+          "approver_kind": "service",
+          "chain_entry_id": "ace_b3e713c4bf48406ebf132ce652b5cfaa",
+          "decided_at": "2026-10-14 13:08:00.179590+00:00",
+          "decision": "allow",
+          "entry_digest": "sha256:f4351dd38de51770653cdcdd5e0fbddf385b7d874fb4bc3abbe4e0fb1a6d053b",
+          "identity_assurance": "synthetic trusted fixture",
+          "input_digest": "sha256:8b4b59c1c68d709c132dd1d03bd33df172ef3707c82b9916e9496ad046d4cf7f",
+          "previous_entry_digest": null,
+          "reason_code": "",
+          "stage_index": 0
+        }
+      ],
+      "request": {
+        "action_digest": "sha256:a2a9a3f78ab5e00d6082ac5af139327ebf845e6c2f3eeadc486b423f6ff37d92",
+        "agent_id": "local-actor",
+        "approval_chain_id": "local-chain",
+        "approval_chain_version": "1",
+        "approval_request_id": "ar_b65b036c93ed4b9ca4c4e942bddff8d6",
+        "expires_at": "2026-10-14 00:10:00+00:00",
+        "fail_closed_on_timeout": true,
+        "operation": "tool.invoke",
+        "policy_decision_id": "pd_4c6ebe6501b642438e5501971b903a46",
+        "policy_version": "v1",
+        "requested_at": "2026-10-14 13:08:00.179530+00:00",
+        "status": "consumed",
+        "subject_id": "local-principal",
+        "target_resource": "item-0"
+      },
+      "resolution": {
+        "action_digest": "sha256:a2a9a3f78ab5e00d6082ac5af139327ebf845e6c2f3eeadc486b423f6ff37d92",
+        "approval_chain_version": "1",
+        "approval_request_id": "ar_b65b036c93ed4b9ca4c4e942bddff8d6",
+        "approval_resolution_id": "apr_6c6f55fa549f4a53b3f79448b53e0ea8",
+        "final_entry_digest": "sha256:f4351dd38de51770653cdcdd5e0fbddf385b7d874fb4bc3abbe4e0fb1a6d053b",
+        "outcome": "allow",
+        "policy_version": "v1",
+        "resolved_at": "2026-10-14 13:08:00.179638+00:00"
+      }
+    }
+  },
+  "synthetic_clock": "2026-10-14T00:00:00+00:00"
+}

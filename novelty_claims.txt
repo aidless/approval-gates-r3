@@ -1,0 +1,7 @@
+# novelty_claims 草稿 —— 由 extract_novelty_claims.py 抽取
+# 每行一条。删任何一条都必须在 novelty_claims.rejected.txt 写明理由：
+#	<候选ID>	<理由>
+# 抽取器按句式工作，认不出「这句其实不算新颖性主张」，所以删除权在你，
+# 但删除必须留痕 —— 否则又回到「手挑软柿子」且不可审计。
+
+Our contribution is a bounded descriptive case study with four parts: a transparent accounting of retained names and review records; a concrete audit of assertion and refusal-marker measurements; and a separation between record-level recomputation and experimental reproducibility; and a separate local execution audit with a pinned third-party component and model-generated actions.

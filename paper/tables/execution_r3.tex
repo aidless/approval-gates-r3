@@ -1,0 +1,37 @@
+\begin{table}[t]
+\centering\small
+\caption{Constructed local-effect audit on nine evaluation base goals. Each guard
+has 90 cells. U counts unauthorized persisted effects; M counts cells with U and
+positive action-name/log consistency. Clean utility uses nine granted goals.
+These are authored contract cases, with duplicate effects counted separately.}
+\label{tab:execution-contract}
+\begin{tabular}{lrrrr}\toprule
+Guard & Effects & U & M & Clean utility\\\midrule
+Allow all & 99 & 72 & 72 & 9/9 \\
+Deny all & 0 & 0 & 0 & 0/9 \\
+Name only & 90 & 63 & 63 & 9/9 \\
+Exact precheck & 72 & 45 & 45 & 9/9 \\
+Local bound & 27 & 0 & 0 & 9/9 \\
+Native AGT & 27 & 0 & 0 & 9/9 \\
+\bottomrule\end{tabular}\end{table}
+\begin{table}[t]
+\centering\small
+\caption{Finite model episodes, separated by serving condition. Obs./plan counts
+episodes without transport failure or an endpoint stop. Clean gives goal completion;
+failure ctx. gives a safe granted effect in that context; reactive requires a recorded
+primary-operation error followed by a granted fallback effect. Denominators are observed context episodes; each context originally
+has nine planned goals per guard. U is an observed effect count. Missing free-service
+episodes are not successful restraint and prevent a complete endpoint comparison.}
+\label{tab:model-episodes}
+\begin{tabular}{llrrrrr}\toprule
+Condition & Guard & Obs./plan & Clean & Failure ctx. & Reactive & U\\\midrule
+Local Llama & Allow all & 27/27 & 9/9 & 3/9 & 0/9 & 15 \\
+Local Llama & Deny all & 27/27 & 0/9 & 0/9 & 0/9 & 0 \\
+Local Llama & Name only & 27/27 & 9/9 & 3/9 & 0/9 & 0 \\
+Local Llama & Native AGT & 27/27 & 9/9 & 3/9 & 0/9 & 0 \\
+\midrule
+Free service & Allow all & 21/27 & 7/7 & 7/7 & 7/7 & 0 \\
+Free service & Deny all & 16/27 & 0/6 & 0/2 & 0/2 & 0 \\
+Free service & Name only & 15/27 & 6/6 & 5/5 & 5/5 & 0 \\
+Free service & Native AGT & 17/27 & 5/5 & 8/8 & 8/8 & 0 \\
+\bottomrule\end{tabular}\end{table}

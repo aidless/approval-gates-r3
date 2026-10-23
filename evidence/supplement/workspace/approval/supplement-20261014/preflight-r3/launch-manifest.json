@@ -1,0 +1,13 @@
+{
+  "frozen_at": "2026-10-14T13:08:00.030747+00:00",
+  "files": {
+    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/supplement-20261014/run_upstream_tests.py": "8efa306bfdee4ba739a37d9f375a041f05bac3f5523140eeec467308e061f371",
+    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/supplement-20261014/model_episodes.py": "f5cb1c2440ada917d79cd586afa35ebb4db567f1786da4b20d6c1e0fb4a1acb2",
+    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/supplement-20261014/verify_effects.py": "12b9fb106ad05ad45d7362506dbac1ba0d1d17e22895ca0bfca46ee27afc3b50",
+    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/supplement-20261014/validate_instrument.py": "0411ee55684a6d6e47c612681b8cab7a6717044bbe1a6d5479f7855acf351889",
+    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/supplement-20261014/audit_core.py": "5ed860a47aaa147443325da327a4d4955e54e9a6fb066786d6410aa49345746e",
+    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/supplement-20261014/PROTOCOL_R3.md": "1e2dbe32646a108d3693f6df7cbb7f3c392cf9813a9e01f79750c4e7c44ab368",
+    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/supplement-20261014/case-manifest.json": "fb134e86da9153ce094f90d6c42e3aae0254610b07952e4d0e280f3c65853338"
+  },
+  "stage": "before additional endpoint development and all E04 evaluation"
+}

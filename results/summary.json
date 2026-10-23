@@ -1,0 +1,53 @@
+{
+  "Full": {
+    "success_rates": {
+      "0": 0.05,
+      "1": 0.1,
+      "2": 0.1
+    },
+    "violations": {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    },
+    "negotiation_rounds": {
+      "0": 8,
+      "1": 8,
+      "2": 8
+    }
+  },
+  "Abl-noForget": {
+    "success_rates": {
+      "0": 0.05,
+      "1": 0.1,
+      "2": 0.15
+    },
+    "violations": {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    },
+    "negotiation_rounds": {
+      "0": 8,
+      "1": 8,
+      "2": 8
+    }
+  },
+  "Abl-noNegot": {
+    "success_rates": {
+      "0": 0.05,
+      "1": 0.1,
+      "2": 0.15
+    },
+    "violations": {
+      "0": 8,
+      "1": 8,
+      "2": 8
+    },
+    "negotiation_rounds": {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    }
+  }
+}

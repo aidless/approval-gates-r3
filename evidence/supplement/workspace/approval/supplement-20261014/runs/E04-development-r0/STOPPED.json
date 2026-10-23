@@ -1,0 +1,8 @@
+{
+  "status": "aborted_infrastructure",
+  "reason": "concurrent first-import exposed partially initialized native component module",
+  "completed_episode_records": 8,
+  "requests_preserved": 8,
+  "used_for_main_inference": false,
+  "original_source_snapshot": "preflight-r1/source"
+}

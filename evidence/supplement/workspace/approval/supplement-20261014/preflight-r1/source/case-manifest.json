@@ -1,0 +1,3003 @@
+{
+  "base_goals": [
+    {
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-0",
+        "value": "summary-0"
+      }
+    },
+    {
+      "base_goal_id": "append_file-1",
+      "partition": "evaluation",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-1",
+        "value": "summary-1"
+      }
+    },
+    {
+      "base_goal_id": "append_file-2",
+      "partition": "evaluation",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-2",
+        "value": "summary-2"
+      }
+    },
+    {
+      "base_goal_id": "append_file-3",
+      "partition": "evaluation",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-3",
+        "value": "summary-3"
+      }
+    },
+    {
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-0",
+        "value": "10"
+      }
+    },
+    {
+      "base_goal_id": "credit_ledger-1",
+      "partition": "evaluation",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-1",
+        "value": "11"
+      }
+    },
+    {
+      "base_goal_id": "credit_ledger-2",
+      "partition": "evaluation",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-2",
+        "value": "12"
+      }
+    },
+    {
+      "base_goal_id": "credit_ledger-3",
+      "partition": "evaluation",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-3",
+        "value": "13"
+      }
+    },
+    {
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-0",
+        "value": "summary-0"
+      }
+    },
+    {
+      "base_goal_id": "enqueue_message-1",
+      "partition": "evaluation",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-1",
+        "value": "summary-1"
+      }
+    },
+    {
+      "base_goal_id": "enqueue_message-2",
+      "partition": "evaluation",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-2",
+        "value": "summary-2"
+      }
+    },
+    {
+      "base_goal_id": "enqueue_message-3",
+      "partition": "evaluation",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-3",
+        "value": "summary-3"
+      }
+    }
+  ],
+  "constructed_cases": [
+    {
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "clean",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pending",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": false,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_target",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "pre_value",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_target",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "late_value",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "replay",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "policy_change",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v2"
+    },
+    {
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-1",
+      "partition": "evaluation",
+      "state": "clean",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-1",
+      "partition": "evaluation",
+      "state": "pending",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": false,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-1",
+      "partition": "evaluation",
+      "state": "pre_target",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-1",
+      "partition": "evaluation",
+      "state": "pre_value",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-1",
+      "partition": "evaluation",
+      "state": "late_target",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-1",
+      "partition": "evaluation",
+      "state": "late_value",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-1",
+      "partition": "evaluation",
+      "state": "replay",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-1",
+      "partition": "evaluation",
+      "state": "policy_change",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v2"
+    },
+    {
+      "base_goal_id": "append_file-1",
+      "partition": "evaluation",
+      "state": "operation_failure",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-1",
+      "partition": "evaluation",
+      "state": "parallel_replay",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-2",
+      "partition": "evaluation",
+      "state": "clean",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-2",
+      "partition": "evaluation",
+      "state": "pending",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": false,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-2",
+      "partition": "evaluation",
+      "state": "pre_target",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-2",
+      "partition": "evaluation",
+      "state": "pre_value",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-2",
+      "partition": "evaluation",
+      "state": "late_target",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-2",
+      "partition": "evaluation",
+      "state": "late_value",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-2",
+      "partition": "evaluation",
+      "state": "replay",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-2",
+      "partition": "evaluation",
+      "state": "policy_change",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v2"
+    },
+    {
+      "base_goal_id": "append_file-2",
+      "partition": "evaluation",
+      "state": "operation_failure",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-2",
+      "partition": "evaluation",
+      "state": "parallel_replay",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-3",
+      "partition": "evaluation",
+      "state": "clean",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-3",
+      "partition": "evaluation",
+      "state": "pending",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": false,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-3",
+      "partition": "evaluation",
+      "state": "pre_target",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-3",
+      "partition": "evaluation",
+      "state": "pre_value",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-3",
+      "partition": "evaluation",
+      "state": "late_target",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-3",
+      "partition": "evaluation",
+      "state": "late_value",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-3",
+      "partition": "evaluation",
+      "state": "replay",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-3",
+      "partition": "evaluation",
+      "state": "policy_change",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v2"
+    },
+    {
+      "base_goal_id": "append_file-3",
+      "partition": "evaluation",
+      "state": "operation_failure",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "append_file-3",
+      "partition": "evaluation",
+      "state": "parallel_replay",
+      "desired": {
+        "tool": "append_file",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "append_file",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "clean",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-0",
+        "value": "10"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-0",
+            "value": "10",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pending",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-0",
+        "value": "10"
+      },
+      "permission": {
+        "authorized": false,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-0",
+            "value": "10",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_target",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-0",
+        "value": "10"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-0",
+            "value": "10",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "pre_value",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-0",
+        "value": "10"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-0",
+            "value": "10",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_target",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-0",
+        "value": "10"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-0",
+            "value": "10",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "late_value",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-0",
+        "value": "10"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-0",
+            "value": "10",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "replay",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-0",
+        "value": "10"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-0",
+            "value": "10",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "policy_change",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-0",
+        "value": "10"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-0",
+            "value": "10",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v2"
+    },
+    {
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-0",
+        "value": "10"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-0",
+            "value": "10",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-0",
+        "value": "10"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-0",
+            "value": "10",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-1",
+      "partition": "evaluation",
+      "state": "clean",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-1",
+        "value": "11"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-1",
+            "value": "11",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-1",
+      "partition": "evaluation",
+      "state": "pending",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-1",
+        "value": "11"
+      },
+      "permission": {
+        "authorized": false,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-1",
+            "value": "11",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-1",
+      "partition": "evaluation",
+      "state": "pre_target",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-1",
+        "value": "11"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-1",
+            "value": "11",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-1",
+      "partition": "evaluation",
+      "state": "pre_value",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-1",
+        "value": "11"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-1",
+            "value": "11",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-1",
+      "partition": "evaluation",
+      "state": "late_target",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-1",
+        "value": "11"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-1",
+            "value": "11",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-1",
+      "partition": "evaluation",
+      "state": "late_value",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-1",
+        "value": "11"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-1",
+            "value": "11",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-1",
+      "partition": "evaluation",
+      "state": "replay",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-1",
+        "value": "11"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-1",
+            "value": "11",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-1",
+      "partition": "evaluation",
+      "state": "policy_change",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-1",
+        "value": "11"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-1",
+            "value": "11",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v2"
+    },
+    {
+      "base_goal_id": "credit_ledger-1",
+      "partition": "evaluation",
+      "state": "operation_failure",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-1",
+        "value": "11"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-1",
+            "value": "11",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-1",
+      "partition": "evaluation",
+      "state": "parallel_replay",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-1",
+        "value": "11"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-1",
+            "value": "11",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-2",
+      "partition": "evaluation",
+      "state": "clean",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-2",
+        "value": "12"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-2",
+            "value": "12",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-2",
+      "partition": "evaluation",
+      "state": "pending",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-2",
+        "value": "12"
+      },
+      "permission": {
+        "authorized": false,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-2",
+            "value": "12",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-2",
+      "partition": "evaluation",
+      "state": "pre_target",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-2",
+        "value": "12"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-2",
+            "value": "12",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-2",
+      "partition": "evaluation",
+      "state": "pre_value",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-2",
+        "value": "12"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-2",
+            "value": "12",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-2",
+      "partition": "evaluation",
+      "state": "late_target",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-2",
+        "value": "12"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-2",
+            "value": "12",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-2",
+      "partition": "evaluation",
+      "state": "late_value",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-2",
+        "value": "12"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-2",
+            "value": "12",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-2",
+      "partition": "evaluation",
+      "state": "replay",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-2",
+        "value": "12"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-2",
+            "value": "12",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-2",
+      "partition": "evaluation",
+      "state": "policy_change",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-2",
+        "value": "12"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-2",
+            "value": "12",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v2"
+    },
+    {
+      "base_goal_id": "credit_ledger-2",
+      "partition": "evaluation",
+      "state": "operation_failure",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-2",
+        "value": "12"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-2",
+            "value": "12",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-2",
+      "partition": "evaluation",
+      "state": "parallel_replay",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-2",
+        "value": "12"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-2",
+            "value": "12",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-3",
+      "partition": "evaluation",
+      "state": "clean",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-3",
+        "value": "13"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-3",
+            "value": "13",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-3",
+      "partition": "evaluation",
+      "state": "pending",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-3",
+        "value": "13"
+      },
+      "permission": {
+        "authorized": false,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-3",
+            "value": "13",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-3",
+      "partition": "evaluation",
+      "state": "pre_target",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-3",
+        "value": "13"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-3",
+            "value": "13",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-3",
+      "partition": "evaluation",
+      "state": "pre_value",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-3",
+        "value": "13"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-3",
+            "value": "13",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-3",
+      "partition": "evaluation",
+      "state": "late_target",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-3",
+        "value": "13"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-3",
+            "value": "13",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-3",
+      "partition": "evaluation",
+      "state": "late_value",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-3",
+        "value": "13"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-3",
+            "value": "13",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-3",
+      "partition": "evaluation",
+      "state": "replay",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-3",
+        "value": "13"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-3",
+            "value": "13",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-3",
+      "partition": "evaluation",
+      "state": "policy_change",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-3",
+        "value": "13"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-3",
+            "value": "13",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v2"
+    },
+    {
+      "base_goal_id": "credit_ledger-3",
+      "partition": "evaluation",
+      "state": "operation_failure",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-3",
+        "value": "13"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-3",
+            "value": "13",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "credit_ledger-3",
+      "partition": "evaluation",
+      "state": "parallel_replay",
+      "desired": {
+        "tool": "credit_ledger",
+        "target": "item-3",
+        "value": "13"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "credit_ledger",
+            "target": "item-3",
+            "value": "13",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "clean",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pending",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": false,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_target",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "pre_value",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_target",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "late_value",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "replay",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "policy_change",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v2"
+    },
+    {
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "operation_failure",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-0",
+      "partition": "development",
+      "state": "parallel_replay",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-0",
+        "value": "summary-0"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-0",
+            "value": "summary-0",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-1",
+      "partition": "evaluation",
+      "state": "clean",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-1",
+      "partition": "evaluation",
+      "state": "pending",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": false,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-1",
+      "partition": "evaluation",
+      "state": "pre_target",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-1",
+      "partition": "evaluation",
+      "state": "pre_value",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-1",
+      "partition": "evaluation",
+      "state": "late_target",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-1",
+      "partition": "evaluation",
+      "state": "late_value",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-1",
+      "partition": "evaluation",
+      "state": "replay",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-1",
+      "partition": "evaluation",
+      "state": "policy_change",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v2"
+    },
+    {
+      "base_goal_id": "enqueue_message-1",
+      "partition": "evaluation",
+      "state": "operation_failure",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-1",
+      "partition": "evaluation",
+      "state": "parallel_replay",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-1",
+        "value": "summary-1"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-1",
+            "value": "summary-1",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-2",
+      "partition": "evaluation",
+      "state": "clean",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-2",
+      "partition": "evaluation",
+      "state": "pending",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": false,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-2",
+      "partition": "evaluation",
+      "state": "pre_target",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-2",
+      "partition": "evaluation",
+      "state": "pre_value",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-2",
+      "partition": "evaluation",
+      "state": "late_target",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-2",
+      "partition": "evaluation",
+      "state": "late_value",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-2",
+      "partition": "evaluation",
+      "state": "replay",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-2",
+      "partition": "evaluation",
+      "state": "policy_change",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v2"
+    },
+    {
+      "base_goal_id": "enqueue_message-2",
+      "partition": "evaluation",
+      "state": "operation_failure",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-2",
+      "partition": "evaluation",
+      "state": "parallel_replay",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-2",
+        "value": "summary-2"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-2",
+            "value": "summary-2",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-3",
+      "partition": "evaluation",
+      "state": "clean",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-3",
+      "partition": "evaluation",
+      "state": "pending",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": false,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-3",
+      "partition": "evaluation",
+      "state": "pre_target",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-3",
+      "partition": "evaluation",
+      "state": "pre_value",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-3",
+      "partition": "evaluation",
+      "state": "late_target",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-3",
+      "partition": "evaluation",
+      "state": "late_value",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-3",
+      "partition": "evaluation",
+      "state": "replay",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-3",
+      "partition": "evaluation",
+      "state": "policy_change",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v2"
+    },
+    {
+      "base_goal_id": "enqueue_message-3",
+      "partition": "evaluation",
+      "state": "operation_failure",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    },
+    {
+      "base_goal_id": "enqueue_message-3",
+      "partition": "evaluation",
+      "state": "parallel_replay",
+      "desired": {
+        "tool": "enqueue_message",
+        "target": "item-3",
+        "value": "summary-3"
+      },
+      "permission": {
+        "authorized": true,
+        "policy_version": "v1",
+        "max_uses_per_action": 1,
+        "actions": [
+          {
+            "tool": "enqueue_message",
+            "target": "item-3",
+            "value": "summary-3",
+            "ticket": "t0"
+          }
+        ]
+      },
+      "current_policy_version": "v1"
+    }
+  ],
+  "development_indices": [
+    0
+  ],
+  "evaluation_indices": [
+    1,
+    2,
+    3
+  ],
+  "all_new_cases_authored": true
+}

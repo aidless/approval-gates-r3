@@ -1,0 +1,24 @@
+{
+  "base_goal_id": "append_file-0",
+  "current_policy_version": "v1",
+  "desired": {
+    "target": "item-0",
+    "tool": "append_file",
+    "value": "summary-0"
+  },
+  "partition": "development",
+  "permission": {
+    "actions": [
+      {
+        "target": "item-0",
+        "ticket": "t0",
+        "tool": "append_file",
+        "value": "summary-0"
+      }
+    ],
+    "authorized": true,
+    "max_uses_per_action": 1,
+    "policy_version": "v1"
+  },
+  "state": "late_target"
+}

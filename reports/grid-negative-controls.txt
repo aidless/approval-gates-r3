@@ -1,0 +1,5 @@
+Positive control: complete unmodified grid accepted
+Negative control rejected: duplicate scenario ID
+Negative control rejected: configuration mismatch
+Negative control rejected: order mismatch
+Restored clean control accepted

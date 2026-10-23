@@ -1,0 +1,6 @@
+{
+  "threads": 16,
+  "instances": 64,
+  "all_initialized_and_reviewable": true,
+  "native_validation_lock_added": false
+}

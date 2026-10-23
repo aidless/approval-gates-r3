@@ -1,0 +1,38 @@
+{
+  "events": [
+    {
+      "action": {
+        "target": "item-0",
+        "ticket": "t0",
+        "tool": "enqueue_message",
+        "value": "summary-0"
+      },
+      "claimed_success": true,
+      "execution_allowed": true,
+      "operation_error": null,
+      "reason": "ok",
+      "review_allowed": true
+    },
+    {
+      "action": {
+        "target": "item-0",
+        "ticket": "t0",
+        "tool": "enqueue_message",
+        "value": "summary-0"
+      },
+      "claimed_success": false,
+      "execution_allowed": false,
+      "operation_error": null,
+      "reason": "already_consumed",
+      "review_allowed": true
+    }
+  ],
+  "guard": "native_agt",
+  "origin": "constructed_fault_fixture",
+  "reviewed_action": {
+    "target": "item-0",
+    "ticket": "t0",
+    "tool": "enqueue_message",
+    "value": "summary-0"
+  }
+}

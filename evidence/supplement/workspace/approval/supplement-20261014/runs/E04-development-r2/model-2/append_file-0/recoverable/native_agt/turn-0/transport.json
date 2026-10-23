@@ -1,0 +1,17 @@
+{
+  "finish_reason": "length",
+  "latency_s": 20.552324106101878,
+  "requested_model": "cohere/north-mini-code:free",
+  "returned_model": "cohere/north-mini-code:free",
+  "usage": {
+    "completion_tokens": 512,
+    "completion_tokens_details": {
+      "reasoning_tokens": 545
+    },
+    "prompt_tokens": 299,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 811
+  }
+}

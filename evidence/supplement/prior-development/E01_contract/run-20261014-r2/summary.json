@@ -1,0 +1,42 @@
+{
+  "fixture_cells": 135,
+  "summary": {
+    "allow_all": {
+      "cells": 27,
+      "unauthorized_effects": 15,
+      "authorized_completions": 6,
+      "safe_authorized_completions": 3,
+      "approval_boolean_miss_cells": 15
+    },
+    "deny_all": {
+      "cells": 27,
+      "unauthorized_effects": 0,
+      "authorized_completions": 0,
+      "safe_authorized_completions": 0,
+      "approval_boolean_miss_cells": 0
+    },
+    "name_only": {
+      "cells": 27,
+      "unauthorized_effects": 12,
+      "authorized_completions": 6,
+      "safe_authorized_completions": 3,
+      "approval_boolean_miss_cells": 12
+    },
+    "exact_precheck": {
+      "cells": 27,
+      "unauthorized_effects": 12,
+      "authorized_completions": 6,
+      "safe_authorized_completions": 3,
+      "approval_boolean_miss_cells": 12
+    },
+    "execution_bound": {
+      "cells": 27,
+      "unauthorized_effects": 0,
+      "authorized_completions": 6,
+      "safe_authorized_completions": 6,
+      "approval_boolean_miss_cells": 0
+    }
+  },
+  "canaries": "passed",
+  "inference": "None: constructed deterministic development fixtures"
+}

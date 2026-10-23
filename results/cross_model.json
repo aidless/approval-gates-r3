@@ -1,0 +1,169 @@
+{
+  "model_a": "qwen3.8-27b",
+  "model_b": "qwen3.5:9b",
+  "dir_a": "results_v4_27b",
+  "dir_b": "results_v4_qwen35_9b",
+  "groups": [
+    "Abl-noForget",
+    "Abl-noNegot",
+    "Baseline-heavyAudit",
+    "Baseline-promptSafety",
+    "Full"
+  ],
+  "summary_a": {
+    "Abl-noForget": {
+      "cells": 90,
+      "success_rate": 0.0333,
+      "unnegotiated_total": 0,
+      "negotiation_rounds_total": 24,
+      "audited_actions_total": 24,
+      "runs_proposing_dangerous": 18,
+      "evictions_final_per_seed": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      }
+    },
+    "Abl-noNegot": {
+      "cells": 90,
+      "success_rate": 0.0333,
+      "unnegotiated_total": 24,
+      "negotiation_rounds_total": 0,
+      "audited_actions_total": 0,
+      "runs_proposing_dangerous": 21,
+      "evictions_final_per_seed": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      }
+    },
+    "Baseline-heavyAudit": {
+      "cells": 90,
+      "success_rate": 0.0333,
+      "unnegotiated_total": 0,
+      "negotiation_rounds_total": 24,
+      "audited_actions_total": 24,
+      "runs_proposing_dangerous": 18,
+      "evictions_final_per_seed": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      }
+    },
+    "Baseline-promptSafety": {
+      "cells": 90,
+      "success_rate": 0.0444,
+      "unnegotiated_total": 0,
+      "negotiation_rounds_total": 0,
+      "audited_actions_total": 0,
+      "runs_proposing_dangerous": 0,
+      "evictions_final_per_seed": {
+        "0": 0,
+        "1": 0,
+        "2": 1
+      }
+    },
+    "Full": {
+      "cells": 90,
+      "success_rate": 0.0333,
+      "unnegotiated_total": 0,
+      "negotiation_rounds_total": 24,
+      "audited_actions_total": 24,
+      "runs_proposing_dangerous": 18,
+      "evictions_final_per_seed": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      }
+    }
+  },
+  "summary_b": {
+    "Abl-noForget": {
+      "cells": 90,
+      "success_rate": 0.0333,
+      "unnegotiated_total": 0,
+      "negotiation_rounds_total": 25,
+      "audited_actions_total": 25,
+      "runs_proposing_dangerous": 3,
+      "evictions_final_per_seed": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      }
+    },
+    "Abl-noNegot": {
+      "cells": 90,
+      "success_rate": 0.0667,
+      "unnegotiated_total": 27,
+      "negotiation_rounds_total": 0,
+      "audited_actions_total": 0,
+      "runs_proposing_dangerous": 19,
+      "evictions_final_per_seed": {
+        "0": 3,
+        "1": 4,
+        "2": 3
+      }
+    },
+    "Baseline-heavyAudit": {
+      "cells": 90,
+      "success_rate": 0.0444,
+      "unnegotiated_total": 0,
+      "negotiation_rounds_total": 25,
+      "audited_actions_total": 25,
+      "runs_proposing_dangerous": 3,
+      "evictions_final_per_seed": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      }
+    },
+    "Baseline-promptSafety": {
+      "cells": 90,
+      "success_rate": 0.1111,
+      "unnegotiated_total": 2,
+      "negotiation_rounds_total": 0,
+      "audited_actions_total": 0,
+      "runs_proposing_dangerous": 2,
+      "evictions_final_per_seed": {
+        "0": 3,
+        "1": 2,
+        "2": 2
+      }
+    },
+    "Full": {
+      "cells": 90,
+      "success_rate": 0.0444,
+      "unnegotiated_total": 0,
+      "negotiation_rounds_total": 22,
+      "audited_actions_total": 22,
+      "runs_proposing_dangerous": 3,
+      "evictions_final_per_seed": {
+        "0": 0,
+        "1": 2,
+        "2": 0
+      }
+    }
+  },
+  "consistency": {
+    "Abl-noForget": {
+      "coverage_zero_in_both": true,
+      "audit_vs_no_audit_in_both": true
+    },
+    "Abl-noNegot": {
+      "coverage_zero_in_both": true,
+      "audit_vs_no_audit_in_both": true
+    },
+    "Baseline-heavyAudit": {
+      "coverage_zero_in_both": true,
+      "audit_vs_no_audit_in_both": true
+    },
+    "Baseline-promptSafety": {
+      "coverage_zero_in_both": false,
+      "audit_vs_no_audit_in_both": true
+    },
+    "Full": {
+      "coverage_zero_in_both": true,
+      "audit_vs_no_audit_in_both": true
+    }
+  }
+}

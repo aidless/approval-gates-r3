@@ -1,0 +1,5 @@
+# E04 availability deviation
+
+The free endpoint evaluation ended with108planned records:38completed,29model_stop,2max_turns,4transport_error and35endpoint_stopped.102requests were attempted. The gateway wrapped upstream HTTP429 as HTTP502 with message upstream HTTP429. The current detector recognized literal rate limit but not numeric429 inside a502body. It therefore stopped after the three-consecutive-error rule instead of the first rate response (four error responses overall). Raw errors and all pre-stop outputs are retained. No requests were retried, substituted or resumed.
+
+This is a protocol/transport classification defect. Treat the four errors as availability failures;35queued episodes never made a request. Do not report them as safe behavior or observed successful restraint, and do not compare complete endpoint performance. The source-as-run is frozen in preflight-r4/source. The local E05 run does not use the free gateway. A future detector patch must be versioned after this study and must not retroactively alter its trace.

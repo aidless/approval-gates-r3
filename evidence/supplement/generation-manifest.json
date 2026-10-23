@@ -1,0 +1,10 @@
+{
+  "generator_sha256": "7912fe660595b161b5f7a5a94eb6a3675b63105d7eee12b004ab298cc94c7961",
+  "inputs": {
+    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/supplement-20261014/runs/E03-evaluation-r0/verified-summary.json": "af33bdc4c66ced543a3b9282e1531ae1dae643110ccd86872e4ced7c41125c35",
+    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/supplement-20261014/runs/E04-evaluation-r0/records.json": "a31f822d31dd0d62ab62479709e7f3444df2439839313919360c3298faec7438",
+    "/home/liuzewen/arxiv-publication/research-upgrade-20261013/approval/supplement-20261014/runs/E05-evaluation-r0/records.json": "fb669dddd7608adbdf17765ff983f5eae5b7939afedcad0c6cd4d9a1b730d441",
+    "/home/liuzewen/arxiv-publication/papers/approval-gates-r2/paper/main.tex": "ac4fa3b96924d7444557fe31dfb989c0ce5bd5adc7f3d4c3d29688fb340ac9df"
+  },
+  "scope": "R3 only; R2 unchanged"
+}

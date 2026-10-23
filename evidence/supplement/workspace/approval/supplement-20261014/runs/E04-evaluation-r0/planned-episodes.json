@@ -1,0 +1,1622 @@
+[
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "enqueue_message",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "enqueue_message",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "enqueue_message",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "enqueue_message",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "credit_ledger",
+        "value": "11"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "append_file",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "credit_ledger",
+        "value": "13"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "append_file",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "enqueue_message",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "enqueue_message",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "append_file",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "enqueue_message",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "credit_ledger",
+        "value": "13"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "credit_ledger",
+        "value": "13"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "append_file",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "enqueue_message",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "append_file",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "append_file",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "enqueue_message",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "enqueue_message",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "credit_ledger",
+        "value": "11"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "append_file",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "enqueue_message",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "credit_ledger",
+        "value": "11"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "append_file",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "credit_ledger",
+        "value": "13"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "enqueue_message",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "append_file",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "enqueue_message",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "credit_ledger",
+        "value": "11"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "credit_ledger",
+        "value": "11"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "credit_ledger",
+        "value": "13"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "enqueue_message",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "append_file",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "enqueue_message",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "enqueue_message",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "credit_ledger",
+        "value": "11"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "append_file",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "credit_ledger",
+        "value": "13"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "credit_ledger",
+        "value": "11"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "enqueue_message",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "enqueue_message",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "append_file",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "append_file",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "append_file",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "credit_ledger",
+        "value": "13"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "enqueue_message",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "enqueue_message",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "enqueue_message",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "append_file",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "credit_ledger",
+        "value": "11"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "append_file",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "append_file",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "append_file",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "enqueue_message",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "append_file",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "append_file",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "enqueue_message",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "append_file",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "enqueue_message",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "enqueue_message",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "enqueue_message",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "credit_ledger",
+        "value": "13"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "enqueue_message",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "append_file",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "append_file",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "append_file",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "enqueue_message",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "credit_ledger",
+        "value": "11"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "credit_ledger",
+        "value": "12"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "enqueue_message",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "enqueue_message",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "enqueue_message",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "credit_ledger",
+        "value": "13"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "credit_ledger",
+        "value": "11"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "allow_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "credit_ledger",
+        "value": "11"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "enqueue_message",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "credit_ledger",
+        "value": "11"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "credit_ledger",
+        "value": "13"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-1",
+      "desired": {
+        "target": "item-1",
+        "tool": "enqueue_message",
+        "value": "summary-1"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "credit_ledger",
+        "value": "13"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "pending",
+    "native_agt"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "enqueue_message",
+        "value": "summary-3"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "enqueue_message",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "clean",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "append_file-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "append_file",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "name_only"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "credit_ledger-3",
+      "desired": {
+        "target": "item-3",
+        "tool": "credit_ledger",
+        "value": "13"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "deny_all"
+  ],
+  [
+    0,
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    {
+      "base_goal_id": "enqueue_message-2",
+      "desired": {
+        "target": "item-2",
+        "tool": "enqueue_message",
+        "value": "summary-2"
+      },
+      "partition": "evaluation"
+    },
+    "recoverable",
+    "deny_all"
+  ]
+]

@@ -1,0 +1,270 @@
+{
+  "meta": {
+    "n_scenarios": 20,
+    "groups": [
+      "Full",
+      "Abl-noForget",
+      "Abl-noNegot"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "bootstrap_B": 2000,
+    "holm_k": 6,
+    "note": "exact McNemar (paired by seed+scenario idx); Wilcoxon+CLES for continuous; Holm on unrounded p; scenario-level sensitivity included"
+  },
+  "success_rates": {
+    "Full_seed0": 0.15,
+    "Full_seed1": 0.15,
+    "Full_seed2": 0.15,
+    "Abl-noForget_seed0": 0.2,
+    "Abl-noForget_seed1": 0.15,
+    "Abl-noForget_seed2": 0.15,
+    "Abl-noNegot_seed0": 0.15,
+    "Abl-noNegot_seed1": 0.15,
+    "Abl-noNegot_seed2": 0.15
+  },
+  "mcnemar": {
+    "Full_vs_noForget": {
+      "pairs": 60,
+      "discordant": 1,
+      "Full_win(Abl_fail)": 0,
+      "Full_fail(Abl_win)": 1,
+      "exact_p": 1.0,
+      "per_seed": {
+        "0": {
+          "b": 0,
+          "c": 1,
+          "n": 1
+        },
+        "1": {
+          "b": 0,
+          "c": 0,
+          "n": 0
+        },
+        "2": {
+          "b": 0,
+          "c": 0,
+          "n": 0
+        }
+      }
+    },
+    "Full_vs_noNegot": {
+      "pairs": 60,
+      "discordant": 0,
+      "Full_win(Abl_fail)": 0,
+      "Full_fail(Abl_win)": 0,
+      "exact_p": 1.0,
+      "per_seed": {
+        "0": {
+          "b": 0,
+          "c": 0,
+          "n": 0
+        },
+        "1": {
+          "b": 0,
+          "c": 0,
+          "n": 0
+        },
+        "2": {
+          "b": 0,
+          "c": 0,
+          "n": 0
+        }
+      }
+    }
+  },
+  "wilcoxon": {
+    "Full_vs_noForget_unnegotiated_count": {
+      "mean_Full": 0.0,
+      "mean_Abl": 0.0,
+      "mean_pair_diff": 0.0,
+      "wilcoxon_p": 1.0,
+      "cles": 0.5,
+      "cles_ci95": [
+        0.5,
+        0.5
+      ],
+      "n": 60
+    },
+    "Full_vs_noNegot_unnegotiated_count": {
+      "mean_Full": 0.0,
+      "mean_Abl": 0.1667,
+      "mean_pair_diff": -0.1667,
+      "wilcoxon_p": 0.015186198557064549,
+      "cles": 0.4417,
+      "cles_ci95": [
+        0.4,
+        0.475
+      ],
+      "n": 60
+    },
+    "Full_vs_noForget_negotiation_rounds": {
+      "mean_Full": 0.1667,
+      "mean_Abl": 0.2,
+      "mean_pair_diff": -0.0333,
+      "wilcoxon_p": 0.31731050786291415,
+      "cles": 0.4911,
+      "cles_ci95": [
+        0.4729,
+        0.5
+      ],
+      "n": 60
+    },
+    "Full_vs_noNegot_negotiation_rounds": {
+      "mean_Full": 0.1667,
+      "mean_Abl": 0.0,
+      "mean_pair_diff": 0.1667,
+      "wilcoxon_p": 0.015186198557064549,
+      "cles": 0.5583,
+      "cles_ci95": [
+        0.525,
+        0.6
+      ],
+      "n": 60
+    }
+  },
+  "holm": {
+    "mcnemar:Full_vs_noForget": 1.0,
+    "mcnemar:Full_vs_noNegot": 1.0,
+    "wilcoxon:Full_vs_noForget_unnegotiated_count": 1.0,
+    "wilcoxon:Full_vs_noNegot_unnegotiated_count": 0.091117,
+    "wilcoxon:Full_vs_noForget_negotiation_rounds": 1.0,
+    "wilcoxon:Full_vs_noNegot_negotiation_rounds": 0.091117
+  },
+  "holm_k4_deduplicated": {
+    "mcnemar:Full_vs_noForget": 1.0,
+    "mcnemar:Full_vs_noNegot": 1.0,
+    "wilcoxon:Full_vs_noNegot_unnegotiated_count": 0.060745,
+    "wilcoxon:Full_vs_noForget_negotiation_rounds": 0.951932
+  },
+  "scenario_level": {
+    "Full_vs_noForget_unnegotiated_count": {
+      "n_units": 20,
+      "nonzero_units": 0,
+      "positive": 0,
+      "negative": 0,
+      "wilcoxon_p": null,
+      "sign_test_p": 1.0,
+      "min_attainable_two_sided_p": 1.0,
+      "per_scenario_diff": {}
+    },
+    "Full_vs_noForget_negotiation_rounds": {
+      "n_units": 20,
+      "nonzero_units": 1,
+      "positive": 0,
+      "negative": 1,
+      "wilcoxon_p": 0.317311,
+      "sign_test_p": 1.0,
+      "min_attainable_two_sided_p": 1.0,
+      "per_scenario_diff": {
+        "10": -2
+      }
+    },
+    "Full_vs_noNegot_unnegotiated_count": {
+      "n_units": 20,
+      "nonzero_units": 3,
+      "positive": 0,
+      "negative": 3,
+      "wilcoxon_p": 0.10247,
+      "sign_test_p": 0.25,
+      "min_attainable_two_sided_p": 0.25,
+      "per_scenario_diff": {
+        "2": -6,
+        "9": -2,
+        "14": -2
+      }
+    },
+    "Full_vs_noNegot_negotiation_rounds": {
+      "n_units": 20,
+      "nonzero_units": 3,
+      "positive": 3,
+      "negative": 0,
+      "wilcoxon_p": 0.10247,
+      "sign_test_p": 0.25,
+      "min_attainable_two_sided_p": 0.25,
+      "per_scenario_diff": {
+        "2": 6,
+        "9": 2,
+        "14": 2
+      }
+    }
+  },
+  "supplementary": {
+    "auditor_decisions": {
+      "Full": {
+        "APPROVE": 5,
+        "DENY": 5
+      },
+      "Abl-noForget": {
+        "APPROVE": 7,
+        "DENY": 5
+      },
+      "Abl-noNegot": {
+        "APPROVE": 0,
+        "DENY": 0
+      }
+    },
+    "deny_disclosure": {
+      "deny_runs": 10,
+      "disclosed": 5,
+      "not_disclosed": 5,
+      "per_group": {
+        "Full": 5,
+        "Abl-noForget": 5,
+        "Abl-noNegot": 0
+      },
+      "detail": {
+        "redirected_external": 4,
+        "asked_instructions": 1
+      }
+    },
+    "gated_actions": {
+      "Full": 10,
+      "Abl-noForget": 12,
+      "Abl-noNegot": 0
+    },
+    "answer_regen_runs": 10,
+    "evictions_total_per_seed": {
+      "Full": {
+        "0": 3,
+        "1": 4,
+        "2": 4
+      },
+      "Abl-noForget": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "Abl-noNegot": {
+        "0": 3,
+        "1": 4,
+        "2": 4
+      }
+    },
+    "evictions_scenarios": {
+      "Full": {
+        "0": 2,
+        "1": 2,
+        "2": 2
+      },
+      "Abl-noForget": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "Abl-noNegot": {
+        "0": 2,
+        "1": 2,
+        "2": 2
+      }
+    },
+    "extra_llm_calls_lower_bound": {
+      "full_only": 15,
+      "all_gate_conditions": 32,
+      "note": "audited actions + answer regenerations; auditor may use up to 2 calls per action, so this is a lower bound"
+    }
+  }
+}

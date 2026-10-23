@@ -1,0 +1,125 @@
+\section{Supplementary local execution audit}
+\label{sec:execution}
+The preceding travel-harness results observe plans. We now add a separate local
+execution study with declared permission truth. It does not retroactively establish
+the correctness of travel bookings or make the original policies comparable.
+The purpose is to test whether log consistency and absence of effects can hide
+different operational outcomes; action binding itself is established prior work.
+
+\subsection{Adapters, permissions, and component baseline}
+Three adapters perform distinct local operations: append one text line to a target
+file; insert a transaction and update an account balance in SQLite; and enqueue a
+structured message in a recipient-specific local outbox. No queued message is sent
+and no real account, booking, or payment is changed. These are three adapter types,
+not three independently sampled application domains.
+
+Each adapter has four authored goals with different object and payload identifiers.
+Index zero is development, while indices one through three form nine evaluation
+base goals. Identifier separation does not establish a new external distribution.
+Every episode resets its state. Permission records grant exact tool, target and
+value tuples under a policy version and permit one use per action. Pending records
+grant nothing. The same full goal/permission is supplied across guards; record IDs
+remain outside model input.
+
+We run the unmodified Microsoft AGT approval\_protocol component at revision
+\texttt{47abed7446d4}, including its actual action binding, coordinator and in-memory
+store~\citep{microsoft2026actionbound}. Its full revision, source hashes and MIT
+licence are retained. The official component test module passes 31 tests under
+import-only package scaffolding. This evaluates a component integration, not the
+complete AGT framework. A trusted synthetic service approver replaces a real human
+authentication flow. A declared fixed component clock controls expiry; wall-time
+metadata from dataclass defaults is not a real grant chronology. Expiry behavior,
+trusted approval presentation, total mediation, cross-process persistence and
+distributed crash consistency are outside this experiment.
+
+\subsection{Constructed faults and separate persisted-state measurement}
+Six guards are allow all, deny all, name-only checking, a one-time exact precheck,
+a local execution-bound implementation control, and native AGT. The local bound
+control is not a proposed new defense. Ten states cover a clean grant, pending
+approval, target/value changes before review, target/value changes after review,
+sequential and two-thread duplicate calls, a policy-version change, and operation
+failure. The evaluation contains 540 cells. These interventions are authored fault
+fixtures; their frequency does not estimate natural failure prevalence.
+
+The exact-precheck arm reuses its review Boolean after a change, while the bound
+arms revalidate the actual action and current policy. A consumed approval is not
+silently restored after operation failure. Threaded native calls rely on the
+upstream store's consumption primitive; only adapter writes are serialized to avoid
+unrelated storage corruption. No barrier or admission-interval trace establishes
+overlap, so this fixture does not certify coverage of race schedules. The actual operation errors are filesystem directory
+append errors or SQLite CHECK failures, rather than injected success labels.
+
+A separately implemented verifier reloads file bytes, transaction rows, balances
+and outbox contents. It compares fields directly with the original permission and
+counts effects beyond its allowed use; it never uses a gate digest or claimed
+success as authorization truth. It checks action-level permissions, not receipt
+authenticity inferred from final effects. A second standalone checker additionally
+derives permission truth from the frozen base-goal manifest and independently
+recomputes native binding hashes. These programs have the same parent author;
+implementation separation is not independent human review. Twenty-three finite
+positive/negative controls include false success claims and corrupted persisted
+state. Neither these controls nor the upstream tests are scientific efficacy trials.
+\input{tables/execution_r3}
+
+Native AGT and the local bound control have zero unauthorized effects on this finite
+matrix and complete all nine clean granted goals. Deny all also has zero such
+effects, with zero clean utility. Name-only checking admits 63 unauthorized effects
+and the exact-precheck arm admits 45; each occurs with positive name/log consistency.
+These examples establish a blind spot in that proxy under the authored faults,
+not superiority over the third-party bound baseline: the bound controls tie here.
+
+\subsection{Model-generated actions and operation-failure feedback}
+We retain an earlier Qwen3-4B development result of 12 abstentions, including six
+explicitly granted tasks. It does not supply efficacy evidence. The new unconstrained
+JSON interface also tests development feasibility before evaluation. The Liquid
+endpoint emits incompatible native tool-call tokens in all six development episodes.
+A subsequently added Cohere candidate has five parse failures, mostly empty content
+at a length finish. Neither candidate qualifies for expansion. These additions and
+format failures remain exploratory, not an initially fixed model comparison.
+
+Two serving conditions enter separate finite panels: a byte-verified local
+Llama3.2-3B GGUF (full hash in the run manifest) and a Nemotron-labelled free endpoint.
+Only the local weights and runtime bytes are independently hashable here; the free
+endpoint supplies requested/returned model labels, without a verified checkpoint.
+These are not two verified model-family replications. Local calls are serialized
+on CPU; free calls use four-way scheduling, precluding a latency comparison.
+
+Each panel schedules nine goals, three contexts and four guards, for 108 episodes.
+The contexts are a clean granted action, a pending action, and a primary operation
+that fails with a separately granted fallback action/ticket. The last is a constructed
+environmental fault, while proposals and recovery choices are model generated.
+The model sees the complete structured permission, gets actual operation feedback,
+and has at most two turns. An exact JSON object, optionally in a JSON fence, is
+required; output is not repaired or constrained by a decoding grammar. Requested
+serving options are temperature zero, seed \texttt{20261014} and 256 output tokens;
+they do not guarantee identical or cap-respecting upstream execution. The declared
+CPU timeout is 180 seconds; the free-service timeout is 40 seconds.
+
+The local panel records 180 requests across all 108 episodes. Its statuses are 36 effect-triggered stops (the controller label is completed), 63 model stops, 7 turn limits, 2 parse failures and 0 transport failures.
+The free panel attempts 102 requests: 38 episodes complete, 29 stop, and 2 reach the turn limit; 4 have transport errors and 35 are skipped after the endpoint stop.
+On the local panel, allow all admits 15 unauthorized effects, all 15 in pending contexts. Name-only and native AGT each admit 0 and 0 such effects, respectively. Native AGT completes 9/9 clean goals. In failure contexts it has 3/9 safe granted effects, all from direct fallback selection; strict failure-then-fallback recovery is 0/9, with 6 observed primary-operation failures.
+The original verifier field named safe\_authorized\_completion checks
+permission-compatible effects, not compliance with the requested primary-first order.
+Direct fallback selection therefore supports a granted effect but not observed
+adaptation to failure feedback. A sequence-specific trace check was added on referee
+inspection as a descriptive secondary audit, not a prespecified confirmatory endpoint.
+Original records and field values remain unchanged. Clean utility has a single exact
+requested action; failure-context effects are kept separate from ordered goal completion.
+This natural-proposal panel does not distinguish the name-only and
+action-bound controls on unauthorized effects. The argument-binding blind spot is
+established by the separate constructed matrix, not by claiming a natural substitution
+distribution from these episodes.
+
+The gateway wrapped upstream HTTP 429 inside HTTP 502. The client detected the
+consecutive-error stopping rule but missed the numeric rate-limit code in the body,
+so it did not stop at the first such response. This is a recorded protocol deviation;
+no failed request was retried and no model was substituted into the missing cells.
+Observed absence of unauthorized effects cannot characterize skipped episodes.
+The unequal availability also prevents a complete model-condition comparison.
+
+The tables separate clean utility, granted effects in failure contexts, strict reactive recovery, observed unauthorized effects
+and availability. Pending tasks have no granted completion target. Model stops,
+parse failures and transport errors are never useful completion. Repeated contexts,
+guards and turns of one base goal are not independent tasks. Because these are
+small, authored panels with adaptive feasibility selection and partial upstream
+availability, we report finite counts without population tests or confidence intervals.

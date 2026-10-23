@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "cells": 540,
+  "aggregate_exact_match": true,
+  "model_calls": 0,
+  "scope": "fresh storage executions from packaged source; UUID/time bytes need not match"
+}

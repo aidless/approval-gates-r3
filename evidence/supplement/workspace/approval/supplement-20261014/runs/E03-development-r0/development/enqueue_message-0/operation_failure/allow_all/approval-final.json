@@ -1,0 +1,17 @@
+{
+  "guard": "allow_all",
+  "permission": {
+    "actions": [
+      {
+        "target": "item-0",
+        "ticket": "t0",
+        "tool": "enqueue_message",
+        "value": "summary-0"
+      }
+    ],
+    "authorized": true,
+    "max_uses_per_action": 1,
+    "policy_version": "v1"
+  },
+  "used": {}
+}

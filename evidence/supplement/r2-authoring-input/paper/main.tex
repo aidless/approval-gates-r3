@@ -1,0 +1,342 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[preprint]{tmlr}
+\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{underscore}
+\title{Approval Gates and Safety Prompts:\\A Descriptive Audit of a Plan-Level Harness}
+\author{Zewen Liu \\ Independent Researcher \\ \texttt{17353895263@163.com}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+A zero count of unapproved actions can arise from review, proposal suppression, or failed parsing. We audit these measurements in a single-model action-name planning emulator adapted from 30 authored travel scenarios in a multi-agent benchmark. Retained records contain nine configurations, three processing orders, and two model-service labels, for 1,620 cells. Model review leaves 18 and 3 designated actions in final plans, while a safety-prompt configuration leaves 0 and 2; all reviewed retained actions have matching approval records. These are descriptive configuration differences: the reviewer asks whether an action is justified, whereas the safety prompt requires explicit purchase confirmation, and their information differs. The task scorer also confuses planned or refused bookings with completed bookings in individual assertions. We therefore report harness assertion-pass counts, not verified task completion. Cross-scenario memory prevents treating the 30 scenarios as automatically independent; no inferential p-values or confidence intervals are claimed. Alternative regeneration changes keyword-marker counts, which do not establish faithful explanations. Missing checkpoint identities, incomplete raw planning traces, and no execution layer further limit interpretation. The contribution is a reproducible audit of retained records and measurement blind spots, rather than a fair same-policy comparison or evidence of safer agent execution.
+\end{abstract}
+
+\section{Introduction}
+A control can leave no unapproved action in a plan for several reasons: it may review
+proposed actions, suppress them before review, reject everything, or fail to obtain a
+valid plan. Those outcomes answer different operational questions. Evaluating them
+with one counter risks confusing a property of the implementation with a useful
+property of the agent.
+
+We examine this problem through retained records from a planning emulator built around
+the travel scenarios of an enterprise multi-agent benchmark\citep{shu2024effective,awsbench2024}.
+A single planning call emits action names and a final answer; optional model review
+filters designated names, and an optional regeneration call revises the answer.
+The emulator does not instantiate the benchmark's specialist agents or execute tools.
+Its records are useful for auditing measurement, but they do not verify bookings,
+payments, authorization correctness, or multi-agent execution safety.
+
+The intended gate-versus-prompt comparison exposes several limitations of its own
+measurement design. The model reviewer and prompt policy use different authorization
+criteria and inputs. Memory persists across scenarios. The task scorer checks names
+and word overlap, and can mark an already-booked assertion true when the answer says
+that booking cannot yet happen. These are substantive findings about this instrument,
+not limitations that a larger number of cells would automatically repair.
+
+Our contribution is a bounded descriptive case study with three parts: a transparent
+accounting of retained names and review records; a concrete audit of assertion and
+refusal-marker measurements; and a separation between record-level recomputation and
+experimental reproducibility. We report what the recorded configurations did, without
+assigning differences to a single mechanism or generalizing to a population of agents.
+
+\section{Related work and scope}
+Tool-safety systems such as GuardAgent and ToolSafe evaluate guard behavior against
+explicit policy or unsafe-action labels\citep{xiang2025guardagent,mou2026toolsafe}.
+StepGuard similarly studies step-level guard decisions\citep{zheng2026stepguard}.
+Our inherited benchmark has task assertions but no authorization truth; consequently
+we cannot estimate false approval, justified refusal, or harm prevention.
+
+Deterministic and policy-based approaches specify constraints beyond action names:
+AgentSpec, Progent, SEAgent, and execution-integrity work address runtime rules,
+privilege, information flow, or binding to action manifests
+\citep{wang2025agentspec,shi2025progent,ji2026seagent,santosgrueiro2026cxi}.
+Our fixed phrase rule implements none of those systems. Its behavior on this dataset
+is a deny-all proxy, not evidence that deterministic enforcement is generally usable
+or superior. Authorization-boundary evaluation also requires an explicitly chosen
+policy\citep{zhang2026guard}.
+
+HarnessAudit evaluates execution trajectories\citep{liu2026harnessaudit}; runtime-contract
+work distinguishes prevention from evidence that work happened\citep{ng2026runtime};
+consent-integrity work studies binding approval to the actual action\citep{weng2026consent}.
+These works motivate a stronger evaluation boundary than ours. Refusal explanations
+can also misrepresent tool failures\citep{singh2026scapegoats}. We do not claim that
+trajectory auditing, approval integrity, or refusal evaluation is new. Here the
+specific object is a small planning emulator and the ways its own reported metrics
+can be mistaken for evidence of completion, authorization, or explanation quality.
+
+\section{Harness and retained records}
+\subsection{Scenarios, services, and configuration grid}
+We use all 30 authored travel scenarios in the retained dataset snapshot. The source
+repository licenses the dataset under CC-BY-4.0 and scaffolding under MIT-0
+\citep{awsbench2024}. These are authored examples, not sampled user traffic. The
+benchmark supplies background, a user request, and assertions involving a ten-agent
+tool suite. Loading that suite's specification is not the same as running those agents.
+
+Records label the services \texttt{qwen3.8-27b} and \texttt{qwen3.5:9b}. We abbreviate
+these as the 27B-labelled and 9B-labelled services. Neither label is an independently
+verified checkpoint identity: public revision IDs and weight hashes were not retained.
+The configurations identify an OpenAI-compatible backend for the former and Ollama
+for the latter. Cross-service differences therefore combine model and serving-stack
+conditions; they are not controlled scaling comparisons.
+
+The grid has nine configurations and three processing-order seeds. Each configuration
+has 90 cells, giving 810 per service and 1,620 in total. A cell is a scenario evaluated
+within a configuration-specific sequence; it is not an independent experimental
+replicate. Table~\ref{tab:design} specifies the switches.
+\input{tables/design}
+
+The earlier retained analysis plan concerned a five-configuration predecessor.
+The nine-configuration grid and subsequent analyses are exploratory extensions.
+We make no claim of prospectively registering this grid. The revision reports finite
+record summaries rather than the inherited significance tests or bootstrap intervals.
+
+\subsection{Policy and information differences}
+The planner receives the full scenario background and user request. The model auditor
+receives an action name and only the first 300 characters of the request, without the
+background or action arguments. Its instruction asks whether the reservation/payment
+action is \emph{justified for the stated user request}. In contrast, the safety suffix
+requires that the user has \emph{explicitly confirmed that specific purchase} and tells
+the planner to omit unconfirmed or ambiguous booking actions.
+
+The fixed rule uses eight phrases: \texttt{i confirm}, \texttt{confirmed},
+\texttt{go ahead}, \texttt{please proceed}, \texttt{proceed with}, \texttt{book it},
+\texttt{make the booking}, and \texttt{yes, book}. No recorded reviewed action satisfies
+this rule, so every such action is denied. Its checks incur zero \emph{auditor-model}
+calls; planning and regeneration still consume calls.
+
+These are different policies with different information. Even where switches form a
+$2\times2$ grid, configuration contrasts do not isolate a shared policy's implementation
+position. All comparisons below concern the specified bundles. The exact policies
+and regeneration instructions are reproduced in Appendix~\ref{app:prompts}.
+
+\subsection{Planning, filtering, regeneration, and memory}
+The planner outputs JSON containing action names and an answer. Normalization maps
+names to the tool vocabulary and deduplicates them; no action arguments, object IDs,
+execution order, or tool outcomes are verified. The six designated names are
+\texttt{bookflight}, \texttt{bookhotel}, \texttt{createreservation}, \texttt{bookairbnb},
+\texttt{neworderevent}, and \texttt{checkout}. This list defines a proxy category,
+not all possible unsafe actions; an excluded operation is not thereby safe.
+
+A model gate reviews each designated name. Full allows up to two audit attempts,
+while the higher-budget arm allows three, a 1.5-fold budget increase. The loop stops
+at the first interpretable verdict, and later attempts do not deliberate on earlier
+reasoning. This is primarily a format/retry budget, not three independent reviews.
+Approved names are retained and denied names are removed. A changed plan triggers
+answer regeneration unless that step is disabled.
+
+The alternative regeneration arm both changes the instruction and supplies the refused
+name list. It is a bundled intervention, not a single-sentence causal test. Planning
+and regeneration use 200-token output budgets; auditing uses 48. Missing stop-reason
+metadata prevents determining whether a parse failure arose from truncation.
+
+Each configuration/order starts with empty memory. When a cell passes the harness
+scorer, its retained names update memory and become hints for later cells. Full uses
+capacity two with least-frequency eviction; the no-forgetting arm removes this limit.
+Consequently earlier outcomes can change later inputs, including across different
+scenarios. Averaging three order-specific observations does not remove this dependency.
+
+\section{Measurements and audit procedure}
+\paragraph{Retained names and log consistency.}
+We count designated names in final plans separately from those lacking a corresponding
+\texttt{APPROVE} record. The latter quantity is called \emph{bypass} in the retained
+files. It is derived from final names and logs, rather than assigned a constant zero.
+It checks their internal consistency. Matching only names cannot detect argument
+substitution, different purchases sharing one name, duplicate executions, or changes
+outside this planning path. A thrown exception can also prevent a row from being
+saved, rather than create a nonzero counter. Thus the counter does not validate a
+complete execution-boundary monitor.
+
+\paragraph{Harness assertion pass.}
+A tool assertion passes when a matched action name occurs in the final list. A user
+assertion is tokenized, common words removed, and marked satisfied if at least half
+its remaining unique words appear in the answer. Unrecognized assertions are recorded
+as unchecked. A cell passes when no checked assertion fails. We call this
+\emph{harness assertion pass}, not task completion. Neither word overlap nor name
+membership verifies completion, chronology, arguments, or factual correctness.
+The user-assertion keywords are generated from each assertion; they are not the
+fixed refusal-marker lists described below.
+
+\paragraph{Planning parse failure.}
+A planning response that cannot be parsed becomes an empty list. We retain a separate
+parse-failure count, because zero retained names in this case supplies no evidence of
+restraint. Only the raw planning response length, not a complete independent raw
+response and stop reason, is systematically recorded.
+
+\paragraph{Refusal-marker positivity.}
+For each run with at least one recorded denial, we check whether the final answer
+contains a marker from list A or list B. List A contains \texttt{cannot},
+\texttt{can not}, \texttt{unable}, \texttt{not able}, \texttt{outside the approved},
+and \texttt{denied}. List B contains \texttt{cannot}, \texttt{unable},
+\texttt{not able}, \texttt{denied}, \texttt{refus}, \texttt{confirm},
+\texttt{alternative}, \texttt{instead}, and \texttt{sorry}. These are non-nested
+lists. Unrelated wording can match, and a faithful explanation can avoid every marker.
+The metric does not establish accurate reasons, identification of the denied action,
+or usefulness to the user.
+
+\paragraph{Recorded cost.}
+We report recorded logical calls and reported prompt tokens, together with the mean
+per-cell sum of recorded last-attempt request times. A logical call may involve retries; the helper keeps
+the last attempt's timing and does not fully include failed attempts or pre-request
+waiting. Fixed group execution order and shared-GPU contention were uncontrolled.
+These quantities describe the retained instrumentation, not end-to-end service cost
+or a portable latency ranking.
+
+\paragraph{Finite-record analysis.}
+We validate the file-key grid, recorded configuration switches, order permutations, and scenario-ID coverage, then derive counts directly
+from the 54 JSON files. We cross-check pass, retention, parsing, and marker counts
+against the inherited aggregate outputs. Tables are emitted by
+\texttt{scripts/make\_descriptive\_tables.py} into
+\texttt{paper/tables/descriptive.tex}. No p-values or confidence intervals are used
+as evidence here: cross-scenario dependence is uncalibrated, and the fixed authored
+scenarios do not automatically define a random target population. Raw records and the
+inherited analysis remain available for inspection, but their inferential calculations
+are not adopted by this manuscript.
+
+\section{Descriptive results and counterexamples}
+\input{tables/descriptive}
+\subsection{Different routes to a zero}
+Tables~\ref{tab:outcomes-27b} and~\ref{tab:outcomes-qwen35_9b} show the finite-record
+contrasts. Full retains 18 designated names under the 27B-labelled service and 3 under
+the 9B-labelled service, with corresponding approvals. The prompt-only configurations
+retain 0 and 2. Ungated/no-suffix configurations retain 24 and 25. Every gated
+configuration has zero retained designated names without approval records.
+
+Those zeros have different meanings. Full contains recorded reviews; prompt-only
+records fewer designated names and has no audit stage; the fixed rule denies every reviewed
+name; parse failures contribute empty plans. With the safety suffix present, the
+27B-labelled gate configuration records no reviews because no designated name reaches
+it. This is an observation about that bundle and dataset, not a general law that
+prompts substitute for gates. Policy and information differences prevent a fair
+same-policy efficacy interpretation.
+
+\subsection{An assertion can pass when its claimed event did not happen}
+Scenario index 10 asks about a Paris trip. Its user assertion requires the user to
+be informed that a standard hotel room has been booked. In the 27B-labelled
+prompt-safety configuration, order seed 0, the answer says:
+\begin{quote}
+``However, I cannot book these items yet.''
+\end{quote}
+The final names are \texttt{searchflights} and \texttt{searchhotel}. Nonetheless the
+booked-hotel user assertion receives a keyword-overlap score of $6/9$ and is marked
+satisfied. In Full for the same index/order, an answer describing future searches
+also marks that assertion satisfied, at $8/9$ overlap.
+
+Both whole cells still fail other assertions. These examples establish an
+\emph{assertion-level} false positive, not the overall false-positive rate of cell
+pass. They also show why a shared scorer can remain biased across configurations:
+the interventions change negation, tense, and refusal wording that the scorer does
+not understand. The extracted answers, assertions, and scorer details are saved in
+\texttt{evidence/scorer\_counterexamples\_r2.json}.
+
+Each service also has 432 unchecked assertions out of 3,564 recorded cell-assertions
+across the grid. Identical missingness does not validate the checked assertions or
+make comparisons unbiased. Full's harness-pass counts are $5/90$ and $4/90$;
+prompt-only counts are $6/90$ and $8/90$. They describe this proxy and cannot establish
+agent competence or a task-benefit ranking.
+
+\subsection{Parsing and refusal markers change the apparent outcome}
+The 9B-labelled Full configuration has 15 parse failures among 90 cells; prompt-only
+has 5. Empty lists from failed parsing must not be scored as successful safety.
+Without complete planning responses and stop reasons, we cannot attribute this
+contrast to model JSON ability, output truncation, or another serving condition.
+
+Table~\ref{tab:markers} separates refusal-containing runs from list hits. Replacing
+the regeneration instruction and supplying refused names changes list-B matches from
+$0/6$ to $6/6$ under the 27B label and from $2/13$ to $14/14$ under the 9B label.
+List A remains $0/6$ under 27B and changes from $2/13$ to $8/14$ under 9B.
+The 9B denominators differ, so these are not identical refusal-event sets.
+The alternative prompt explicitly asks for refused actions, and list B contains the
+stem \texttt{refus}; increased hits therefore need not imply better explanation
+quality. A semantic audit would have to check the denied action, reason, completion
+claim, and next step separately.
+
+\subsection{Calls, tokens, and recorded time answer different questions}
+Tables~\ref{tab:cost-27b} and~\ref{tab:cost-qwen35_9b} separate logical calls from audit
+and regeneration calls. The fixed rule avoids auditor-model calls but still incurs
+planning and regeneration. In the 27B-labelled records it has 111 logical calls,
+compared with Full's 120, while mean recorded request time is 12.91 versus 11.71
+seconds per cell. A lower call count is not a lower observed time in these runs.
+
+Prompt-only consumes 49,890 prompt tokens against 43,612 for the ungated/no-suffix
+configuration, an increase of approximately $14.4\%$. That contrast combines the
+added instruction with the resulting sequence and memory behavior; it is not a
+hardware-independent monetary cost estimate or proof that every added token arises
+solely from the fixed suffix. Increasing the audit retry budget does not by itself
+establish a stronger audit, because the loop exits on the first interpretable verdict.
+
+\section{Interpretation, reproducibility, and limitations}
+The useful distinction is between \emph{record consistency}, \emph{decision correctness},
+and \emph{operational benefit}. This harness can count whether a retained designated
+name has a review record. It cannot decide whether approval agrees with a suitable
+authorization policy or whether an action actually happened. Its proxy assertions and
+marker lists do not repair those missing targets.
+
+Our configuration differences combine policy, information, planning, filtering,
+regeneration, and accumulated memory. We report them descriptively. Low proxy pass
+counts, few reviewed scenarios, one travel domain, and two same-family service labels
+limit external validity. Audit-log presence is partly a design property: instrumenting
+one path and leaving another uninstrumented is not itself a novel empirical safety
+finding. The examples instead motivate checking whether an evaluation distinguishes
+proposal suppression, denied plans, parsing failures, and failed explanations.
+
+\paragraph{Recomputing versus regenerating.}
+The accompanying local evidence bundle contains retained JSON files, dataset snapshots,
+harness and analysis scripts, a descriptive table generator, and file hashes. Running
+the table generator requires Python's standard library and does not call a model.
+This supports recomputation from retained records. It does not reconstruct unknown
+weights, missing raw planning responses, timestamps, or serving contention. The prepared TeX submission package includes an ancillary archive,
+\texttt{retained-records.zip}, containing the data and recomputation code. It is
+intended to accompany the article upon posting; no public arXiv identifier or
+independent artifact URL has yet been issued for this draft.
+
+\paragraph{What a stronger follow-up must change.}
+A same-policy comparison needs an explicit authorization truth, matched context and
+action arguments, and authorized, unauthorized, and ambiguous requests. Independent
+scenario trials should reset or freeze memory; sequence-learning experiments instead
+need independently replicated sequences. Task and explanation labels need semantic
+or execution-state validation. Action IDs, argument binding, separate execution logs,
+fault injection, and complete model/stop-reason metadata are needed to audit an actual
+execution boundary. These are proposed requirements, not experiments claimed here.
+
+\section{Conclusion}
+A zero-valued action counter is compatible with several different paths through this
+planning emulator. The retained records reveal configuration-specific differences in
+review, retention, parsing, keyword markers, and recorded cost. They also reveal
+policy mismatch, memory dependence, and concrete scorer false positives that prevent
+a fair causal comparison or verified task-completion claim. Reporting these defects
+is more informative than treating the zero, a proxy pass count, or a marker hit as
+proof of safety. Our conclusion is limited to a descriptive measurement audit of this
+harness; execution safety and generalized intervention benefit remain unmeasured.
+
+\section*{Broader impact}
+Misreading a planning or logging metric as evidence of authorization or completion
+can create false confidence in an agent. Our case study exposes such measurement
+risks without claiming demonstrated user harm or improved deployment safety.
+The scenarios are authored benchmark examples, and this analysis involved no human
+subjects or live bookings. No new model experiment was conducted for this revision.
+
+\section*{Use of generative AI tools}
+Codex assisted with manuscript revision, descriptive table-generation code, and
+internal review. These tools are not authors. Empirical counts and counterexamples
+come from the retained records identified in the evidence bundle; no new model
+experiment was conducted for this revision. Tool-assisted checks do not constitute
+external peer review or independent verification of unknown checkpoint identities.
+
+\bibliographystyle{tmlr}
+\bibliography{main}
+\appendix
+\section{Exact policy and regeneration text}
+\label{app:prompts}
+The following strings are extracted from the retained harness. Whitespace is wrapped
+for typesetting. Auditing sees an action name and a truncated request; planning also
+sees background. The alternative regeneration input contains refused names, whereas
+the default input does not. These differences are part of the intervention bundles.
+\input{tables/policy_text}
+\end{document}
