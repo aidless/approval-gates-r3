@@ -1,0 +1,6 @@
+# Generated from static import analysis (see AUDIT.md provenance note).
+# Repo: aidless/approval-gates-r3
+# Only top-level third-party imports are listed; stdlib and in-repo modules are excluded.
+# Versions are intentionally unpinned unless a floor is required for API compatibility.
+
+pytest  # evidence/supplement/workspace/approval/supplement-20261014/preflight-r1/source/run_upstream_tests.py:4
