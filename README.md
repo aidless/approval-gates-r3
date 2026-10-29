@@ -16,6 +16,10 @@ python3 evidence/supplement/workspace/approval/supplement-20261014/standalone_re
 
 The R3 generator includes fallback R2 authoring inputs so it does not require an external R2 checkout. Rebuilding manifests records current absolute source paths and times; compare numeric summaries and table bytes, not incidental generation-manifest or UUID/time bytes.
 
+CI also runs `pytest -q tests` to prove that this offline recomputation succeeds and
+recreates the four committed descriptive outputs byte-for-byte. The check does
+not rerun model episodes or make network calls.
+
 ## Execute a fresh local constructed matrix
 
 Choose a new nonexistent output directory:
