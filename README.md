@@ -1,5 +1,17 @@
 # Approval Gates R3 — local manuscript and evidence package
 
+## Overview（面试叙事）
+
+**解决什么问题**：agent 在执行用户授权时，如何区分「用户真正授权的副作用」与「agent 未经授权自行发起的副作用」——这是 agentic 系统从 demo 走向可审计执行的核心缺口。R3 把这个问题做成**可离线复现的构造矩阵**，而不是依赖昂贵在线推理的一次性故事。
+
+**为什么重要**：授权边界（authorization boundary）是 agentic 安全的最小可验证单元；没有它，事后审计无法区分「执行了用户意图」与「agent 自作主张」。
+
+**我用了什么方法**：构造 540 个本地 effect 单元（`evaluation`/`clean` 等分区 × 守卫策略 `allow_all`/`deny_all`/`exact_precheck`/`name_only`/`local_execution_bound`/`native_agt`/`pre_target`/`pre_value`/`replay`/`policy_change` 等 × 基础目标），每个单元记录 effect 元组（authorized/unauthorized）、integrity 错误、admitted attempts；配套 23 个工程控件（instrument controls）作机制自检。全程**零模型调用、零网络、零付费服务**（native AGT 组件是 pinned 官方 MIT 源码）。
+
+**结果如何**：离线复算 `make_descriptive_tables.py` 校验 54 文件 / 1620 行数据集并重建四份描述性输出（字节级一致）；构造矩阵的 aggregate agreement 记录在 `offline-reproduction.json`。**注意**：结果证明的是「机制在构造输入上按预期动作」，不是「真实场景的泛化安全/效用」——见下方 Limits。
+
+**边界在哪**：无人工同行评审、无泛化安全/效用认证、无自然失败率声明、无认证的受试者同意、无过期/竞态覆盖、无新的绑定方法。详见「Limits and historical files」。
+
 Current manuscript: paper/main.pdf. Current author-side round report: ROUND_R3.md. Independent retrospective AI review: reviews/approval-r3-independent-r0.md. Review score 6.2/10 is uncalibrated and below the requested target; no arXiv submission or public artifact URL is claimed.
 
 The retained 54-file / 1,620-cell travel-planning dataset and the new 540-cell constructed local effect matrix are separate studies. E05 retains 108 local model episodes; E04 retains all 108 planned rows including 4 transport-error and 35 endpoint-stopped records. Original attempts, freezes, endpoint failures and abandoned candidate development remain in the supplement workspace.
@@ -18,7 +30,11 @@ The R3 generator includes fallback R2 authoring inputs so it does not require an
 
 CI also runs `pytest -q tests` to prove that this offline recomputation succeeds and
 recreates the four committed descriptive outputs byte-for-byte. The check does
-not rerun model episodes or make network calls.
+not rerun model episodes or make network calls. 本地等价复算：
+
+```bash
+python3 -m pytest tests/ -q     # 期望：2 passed
+```
 
 ## Execute a fresh local constructed matrix
 
