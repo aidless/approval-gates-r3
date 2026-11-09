@@ -1,5 +1,7 @@
 # Approval Gates R3 — local manuscript and evidence package
 
+[![CI](https://github.com/aidless/approval-gates-r3/actions/workflows/static-checks.yml/badge.svg)](https://github.com/aidless/approval-gates-r3/actions/workflows/static-checks.yml)
+
 Current manuscript: paper/main.pdf. Current author-side round report: ROUND_R3.md. Independent retrospective AI review: reviews/approval-r3-independent-r0.md. Review score 6.2/10 is uncalibrated and below the requested target; no arXiv submission or public artifact URL is claimed.
 
 > **Repo scale:** 11,688 tracked files (evidence 7,806 + reports 3,730). Clone with `git clone --depth 1`; start from ROUND_R3.md, not from the directory tree.
