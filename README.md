@@ -8,6 +8,24 @@ Current manuscript: paper/main.pdf. Current author-side round report: ROUND_R3.m
 
 The retained 54-file / 1,620-cell travel-planning dataset and the new 540-cell constructed local effect matrix are separate studies. E05 retains 108 local model episodes; E04 retains all 108 planned rows including 4 transport-error and 35 endpoint-stopped records. Original attempts, freezes, endpoint failures and abandoned candidate development remain in the supplement workspace.
 
+## Directory guide
+
+11,688 tracked files, counted live with `git ls-files | awk -F/ '{print $1}' | sort | uniq -c`
+on 2026-11-10 (root files, `tests/` and `.github/` add 21):
+
+| Files | Path | Contents |
+|---|---|---|
+| 7,806 | `evidence/` | 7,790 in `evidence/supplement/` (workspace archives incl. `supplement-20261014`), 8 in `evidence/dataset/` (the 54-file travel-planning dataset) |
+| 3,730 | `reports/` | 3,683 in `reports/r3/` — per-episode reports, generation manifests |
+| 28 | `results_v5_qwen35_9b/` | Qwen3.5-9B arm: 27 `per_seed/` JSONs + aggregate |
+| 28 | `results_v5_27b/` | 27B arm: 27 `per_seed/` JSONs + aggregate |
+| 22 | `results/` | v1 line: 9 `per_seed/` + aggregates |
+| 22 | `scripts/` | table builders, harnesses (v4/v5), `verify_claim_ledger.py`, readiness checks |
+| 18 | `paper/` | `main.pdf`, TeX sources, 5 `tables/` |
+| 15 | `results_v4_27b/` | v4 arm: 15 `per_seed/` JSONs |
+| 1 each | root | `ROUND_R3.md` (start here), `README_R3.md`, `CLAIM_LEDGER.md`, `EXPERIMENT_SUPPLEMENT.md`, `LITERATURE_REVIEW.md`, `novelty_claims.txt`, `evidence_manifest.json`, `requirements.txt` |
+| 1 | `tests/test_offline_recompute.py` | the offline byte-for-byte recompute CI gate |
+
 ## Recompute without a model or network
 
 From this package root, use Python 3.11+:
