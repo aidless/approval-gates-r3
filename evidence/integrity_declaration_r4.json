@@ -1,0 +1,249 @@
+{
+  "schema": "integrity-declaration/1",
+  "paper": "approval-gates-r3/paper/main.tex",
+  "paper_type": "empirical",
+  "declaration_date": "2026-11-10",
+  "declared_context": "R3 修复轮（目标：TMLR 提交前完整性复核）。稿件哈希 execution_r3.tex=7fb2338e1fd1b1dfd235bb20c99a569c6322686f7e9b32991ed6a9300466f7af 与独立复审验收记录一致；main.tex=e1a354be0c9c2d10448c89da5cb7b441e9300717ca73cc4f32d3de841d743cd8。",
+  "results": [
+    {
+      "claim": "描述表离线重算零漂移：54 files / 1620 rows 对账，五张描述表重生成后与已提交版本字节一致",
+      "value": 1620,
+      "value_kind": "count",
+      "log": "approval-gates-r3/evidence/gates-r4-20261110.log",
+      "exit_code": 0,
+      "warnings": 0,
+      "runs": [
+        1620,
+        1620
+      ],
+      "determinism": "deterministic",
+      "evidence": "scripts/make_descriptive_tables.py 输出 'Validated 54 files / 1620 rows; generated five descriptive tables'; git status 运行后 clean",
+      "output_digests": [
+        "857d9473fbfb8f0cc0f888539f0f20db36658142277c5ae1be6c8110e25f7ddf",
+        "857d9473fbfb8f0cc0f888539f0f20db36658142277c5ae1be6c8110e25f7ddf"
+      ]
+    },
+    {
+      "claim": "执行补录重算对账：constructed_cells=540, local_episodes=108, free_planned_episodes=108, generated_new_numeric_claims=295",
+      "value": 540,
+      "value_kind": "count",
+      "log": "approval-gates-r3/evidence/gates-r4-20261110.log",
+      "exit_code": 0,
+      "warnings": 0,
+      "runs": [
+        540
+      ],
+      "determinism": "deterministic",
+      "evidence": "scripts/make_execution_supplement.py --study evidence/supplement/workspace/approval/supplement-20261014；唯一 diff 为 generation-manifest.json 偶发路径/时间戳字节（README_R3 预先声明不作比较项），已 git checkout 还原"
+    },
+    {
+      "claim": "E03-evaluation 记录核对：540 单元 0 errors（冻结回执一致）",
+      "value": 540,
+      "value_kind": "count",
+      "log": "approval-gates-r3/evidence/gates-r4-20261110.log",
+      "exit_code": 0,
+      "warnings": 0,
+      "runs": [
+        540
+      ],
+      "determinism": "deterministic",
+      "evidence": "standalone_record_check.py 于 /tmp 副本运行；冻结回执 runs/E03-evaluation-r0/standalone-record-check.json 同为 540 cases / 0 errors"
+    },
+    {
+      "claim": "E05-evaluation 记录核对：108 单元 0 errors",
+      "value": 108,
+      "value_kind": "count",
+      "log": "approval-gates-r3/evidence/gates-r4-20261110.log",
+      "exit_code": 0,
+      "warnings": 0,
+      "runs": [
+        108
+      ],
+      "determinism": "deterministic",
+      "evidence": "冻结回执 runs/E05-evaluation-r0/standalone-record-check.json 同为 108 cases / 0 errors"
+    },
+    {
+      "claim": "E04-evaluation 记录核对：108 单元 0 errors",
+      "value": 108,
+      "value_kind": "count",
+      "log": "approval-gates-r3/evidence/gates-r4-20261110.log",
+      "exit_code": 0,
+      "warnings": 0,
+      "runs": [
+        108
+      ],
+      "determinism": "deterministic",
+      "evidence": "本轮复跑输出 /tmp/chk_E04-evaluation-r0.json（临时，结论登记于本声明与 gates-r4 日志）"
+    },
+    {
+      "claim": "PDF 从当前源重建：0 编译错误、无 undefined 引用、14 页、与已提交 PDF 文本语义零差异",
+      "value": 14,
+      "value_kind": "count",
+      "log": "approval-gates-r3/evidence/gates-r4-20261110.log",
+      "exit_code": 0,
+      "warnings": 0,
+      "runs": [
+        14,
+        14
+      ],
+      "determinism": "deterministic",
+      "evidence": "pdflatex×3+bibtex；diff(pdftotext old, pdftotext new) 为空；pdfinfo Pages=14 两版一致；SOURCE_DATE_EPOCH=1762756800 下两跑字节一致，pdftotext 与 git HEAD 版 diff 0 行",
+      "output_digests": [
+        "c39830e31016373078cf65ffebd560f73f9f19214c41a1517c193f4e3b485d0e",
+        "c39830e31016373078cf65ffebd560f73f9f19214c41a1517c193f4e3b485d0e"
+      ]
+    }
+  ],
+  "caveats": [
+    "记录核对在 /tmp 副本上进行：11-01 重物化的证据树丢失了 deny_all/never-written 沙箱下的空 files/ 目录（空目录不进 tar/git），复跑前在副本补建 388 个空 files/ 目录；证据树本体未改动。",
+    "standalone_record_check.py 的设计范围是 evaluation 分区（冻结回执仅存在于 E03/E05/E04 evaluation）；对 development 分区直接运行会因同一空目录问题报错，该报错不是数据缺陷。",
+    "records rows=0：/tmp 副本缺 verified-summary.json 对照（rsync 范围仅 runs/ 子目录），errors=0 判定不受影响，但与冻结回执的 rows 字段口径不同，如实记录。"
+  ],
+  "citations": [
+    {
+      "key": "shu2024effective",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "arxiv": "2412.05449"
+    },
+    {
+      "key": "awsbench2024",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "url": "https://github.com/aws-samples/multiagent-collab-scenario-benchmark"
+    },
+    {
+      "key": "xiang2025guardagent",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "arxiv": "2406.09187"
+    },
+    {
+      "key": "mou2026toolsafe",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "arxiv": "2601.10156"
+    },
+    {
+      "key": "zhang2026guard",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "arxiv": "2608.27009"
+    },
+    {
+      "key": "wang2025agentspec",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "arxiv": "2503.18666"
+    },
+    {
+      "key": "shi2025progent",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "arxiv": "2504.11703"
+    },
+    {
+      "key": "ji2026seagent",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "arxiv": "2601.11893"
+    },
+    {
+      "key": "santosgrueiro2026cxi",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "arxiv": "2607.06000"
+    },
+    {
+      "key": "zheng2026stepguard",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "arxiv": "2608.24777"
+    },
+    {
+      "key": "liu2026harnessaudit",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "arxiv": "2605.14271"
+    },
+    {
+      "key": "ng2026runtime",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "arxiv": "2608.11274"
+    },
+    {
+      "key": "weng2026consent",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "arxiv": "2606.02668"
+    },
+    {
+      "key": "singh2026scapegoats",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/reports/citations-manual-r2.md",
+      "arxiv": "2607.19449"
+    },
+    {
+      "key": "microsoft2026actionbound",
+      "verdict": "FOUND",
+      "receipt": "approval-gates-r3/evidence/supplement/workspace/approval/literature/current-source-snapshot/ADR-0030.md",
+      "note": "官方仓快照 @ commit 47abed7446d47e74cfa76d01a5913bb873ffcad9（PROTOCOL_R0.md:34）"
+    }
+  ],
+  "claim_numbers": [
+    {
+      "text": "Across 540 constructed evaluation cells",
+      "artifact": "approval-gates-r3/evidence/supplement/summary.json",
+      "field": "constructed_cells",
+      "value": 540
+    },
+    {
+      "text": "name-only and exact-precheck controls admit 63 and 45 unauthorized effects",
+      "artifact": "approval-gates-r3/evidence/supplement/summary.json",
+      "field": "e03.name_only.unauthorized_effects",
+      "value": 63
+    },
+    {
+      "text": "name-only and exact-precheck controls admit 63 and 45 unauthorized effects",
+      "artifact": "approval-gates-r3/evidence/supplement/summary.json",
+      "field": "e03.exact_precheck.unauthorized_effects",
+      "value": 45
+    },
+    {
+      "text": "including a complete 108-episode local model panel",
+      "artifact": "approval-gates-r3/evidence/supplement/summary.json",
+      "field": "models.local.planned",
+      "value": 108
+    }
+  ],
+  "shortcut": {
+    "risk": "动作名/日志关键词代理（name-only / exact-precheck 控件与日志正/负向词）可能替代真实状态核对",
+    "shortcut_exclusion_ablation": "approval-gates-r3/evidence/scorer_counterexamples_r2.json",
+    "ablation_note": "name-only vs exact-precheck 对照（63/45 unauthorized effects，代理保持为正而真实状态已越权）+ 记录内 scorer 反例册；关键词覆盖不是本设计的主测点，而是被显式度量的对照组。",
+    "baseline_strong": true,
+    "baseline_strength_note": "name-only / exact-precheck 控件与被检配置同 harness、同预算、同场景，差异只在策略信息（动作名 vs 名字+精确预检），不存在算力差；「赢」的判据是真实持久化状态越权，不是代理分数。"
+  },
+  "methods": {
+    "section_heading": "Planning, filtering, regeneration, and memory",
+    "config": "approval-gates-r3/evidence/supplement/summary.json",
+    "exclude_numbers": [
+      {
+        "value": 1.5,
+        "justification": "审计尝试预算比（Full 2 次 vs 高预算臂 3 次），harness 设计常量，记录在源码而非 summary 汇总里"
+      },
+      {
+        "value": 48,
+        "justification": "审计输出 token 预算（设计常量，harness 源码记录），非运行产物参数"
+      },
+      {
+        "value": 200,
+        "justification": "规划/再生输出 token 预算（设计常量，harness 源码记录），非运行产物参数"
+      }
+    ]
+  },
+  "frame_lock": {
+    "would_change_question": false,
+    "explained_by": "研究问题（审批闸相对于安全提示词的真实约束力与其代理量之间的缺口）由本仓冻结的 540 单元证据直接回答；R3 复审的批评点（自编场景、无外部授权数据）属于外部效度缺口，已在 Limitations 收窄声明，不改变问题本身。"
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "schema": "experiment-provenance-declaration/1",
+  "paper": "approval-gates-r3/paper/main.tex",
+  "experiment_intake_declaration": {
+    "mode": "run_experiments",
+    "note": "R3 修复轮无新科学实验：全部为既有冻结证据的离线复算与重编译（描述表重生成、执行补录重算、三组记录核对、PDF 重建）。原实验 E03/E04/E05 于 2026-10-14 冻结于 evidence/supplement/workspace/approval/supplement-20261014，其归档回执（offline-reproduction.json、reproduction-e03/）未改动。本轮复算挂 experiments[]。"
+  },
+  "experiments": [
+    {
+      "id": "R4-recompute-descriptive",
+      "desc": "描述表离线重算：python3 scripts/make_descriptive_tables.py",
+      "log": "approval-gates-r3/evidence/gates-r4-20261110.log",
+      "config": "approval-gates-r3/scripts/make_descriptive_tables.py",
+      "env": "python3 3.12 @ Linux; 无 GPU; 无 API 花费; 纯本地",
+      "artifact": "approval-gates-r3/paper/tables/descriptive.tex",
+      "runs": 1,
+      "baseline": "git HEAD 中已提交的五张描述表（字节级对照）",
+      "status": "完成。1620 rows 对账，五表字节一致，git clean"
+    },
+    {
+      "id": "R4-recompute-supplement",
+      "desc": "执行补录重算：python3 scripts/make_execution_supplement.py --study evidence/supplement/workspace/approval/supplement-20261014",
+      "log": "approval-gates-r3/evidence/gates-r4-20261110.log",
+      "config": "approval-gates-r3/scripts/make_execution_supplement.py",
+      "env": "python3 3.12 @ Linux; 无 GPU; 无 API 花费; 纯本地",
+      "artifact": "approval-gates-r3/evidence/supplement/summary.json",
+      "runs": 1,
+      "baseline": "ROUND_R3.md 记录的 540/108/108 与冻结 generation-manifest",
+      "status": "完成。constructed_cells=540 local_episodes=108 free_planned_episodes=108 claims=295；generation-manifest 偶发字节已还原"
+    },
+    {
+      "id": "R4-record-check",
+      "desc": "三组评估分区记录核对（E03-eval 540 / E05-eval 108 / E04-eval 108）：standalone_record_check.py",
+      "log": "approval-gates-r3/evidence/gates-r4-20261110.log",
+      "config": "approval-gates-r3/evidence/supplement/workspace/approval/supplement-20261014/standalone_record_check.py",
+      "env": "python3 3.12 @ Linux; /tmp 副本运行（空 files/ 目录补建 388 个，证据树未动）",
+      "artifact": "approval-gates-r3/evidence/supplement/workspace/approval/supplement-20261014/runs/E03-evaluation-r0/standalone-record-check.json",
+      "runs": 3,
+      "baseline": "runs/*/standalone-record-check.json 冻结回执（E03=540/0err, E05=108/0err）",
+      "status": "完成。756 单元 0 errors；E04 为本轮新增核对",
+      "artifact_note": "三份冻结回执：runs/{E03,E05,E04}-evaluation-r0/standalone-record-check.json（E03=540/0err, E05=108/0err, E04 本轮复跑 108/0err）"
+    },
+    {
+      "id": "R4-pdf-rebuild",
+      "desc": "PDF 从当前源重建并语义比对：pdflatex+bibtex+pdflatex×2",
+      "log": "approval-gates-r3/evidence/gates-r4-20261110.log",
+      "config": "approval-gates-r3/paper/main.tex",
+      "env": "pdflatex @ TeX Live; 无 API 花费",
+      "artifact": "approval-gates-r3/paper/main.pdf",
+      "runs": 2,
+      "baseline": "git HEAD 中的 main.pdf（pdftotext 语义 diff）",
+      "status": "完成。0 错误、无 undefined、14 页、文本 diff 为空"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Without complete planning responses and stop reasons",
+      "experiment_ids": [
+        "R4-record-check",
+        "R4-recompute-supplement"
+      ],
+      "covers": "main.tex L400-401 完整句含 cannot（不可归因局限句），锚取强词前半句；句子本体是论文已声明的证据边界而非效应主张"
+    },
+    {
+      "id": "c2",
+      "text": "it is not a hardware-independent monetary cost estimate",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "covers": "main.tex L289-290（token 对比非货币成本估计，无 proof 主张）"
+    },
+    {
+      "id": "c3",
+      "text": "whether approval agrees with a suitable authorization policy or whether an action actually happened",
+      "experiment_ids": [
+        "R4-record-check",
+        "R4-recompute-supplement"
+      ],
+      "covers": "main.tex L300-302（harness 只数 review record，不判授权正确性）"
+    },
+    {
+      "id": "c4",
+      "text": "the local model weights/runtime must be obtained separately",
+      "experiment_ids": [
+        "R4-record-check"
+      ],
+      "covers": "main.tex L318-319（自由端点输出不可再生成，属可用性局限）"
+    },
+    {
+      "id": "c5",
+      "text": "policy mismatch, memory dependence, and concrete scorer false positives that prevent",
+      "experiment_ids": [
+        "R4-record-check",
+        "R4-recompute-supplement"
+      ],
+      "covers": "main.tex L339-341（因果比较被评分器假阳性阻止——声明的是阻碍而非因果主张）"
+    },
+    {
+      "id": "c6",
+      "text": "Reporting these defects is more informative than treating the zero",
+      "experiment_ids": [
+        "R4-record-check"
+      ],
+      "covers": "main.tex L341-342（零值/代理计数不作为 proof of safety）"
+    },
+    {
+      "id": "c7",
+      "text": "no failed request was retried and no model was substituted into the missing cells",
+      "covers": "execution_r3 L578 协议偏差声明（逐字引用记录事实）",
+      "kind": "literature"
+    },
+    {
+      "id": "c8",
+      "text": "Observed absence of unauthorized effects cannot characterize skipped episodes",
+      "covers": "execution_r3 L579 缺失回合局限句",
+      "kind": "literature"
+    },
+    {
+      "id": "c9",
+      "text": "parse failures and transport errors are never useful completion",
+      "covers": "execution_r3 L582-583 判读纪律句",
+      "kind": "literature"
+    },
+    {
+      "id": "c10",
+      "text": "Never present a refused action as completed",
+      "covers": "main.tex 附录逐字引用的安全提示词文本（quote 块，非论文主张）",
+      "kind": "literature"
+    },
+    {
+      "id": "c11",
+      "text": "It compares fields directly with the original permission and counts effects beyond its allowed use",
+      "experiment_ids": [
+        "R4-record-check"
+      ],
+      "covers": "execution_r3 L477-479（独立 verifier 比对原权限字段；never 只出现在后半句的否定性描述）"
+    },
+    {
+      "id": "c12",
+      "text": "zero such effects, with zero clean utility",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "covers": "execution_r3 L527-528（Deny all 对照臂零效应零效用；强词 all 系配置名 Deny all 的一部分）"
+    },
+    {
+      "id": "c14",
+      "text": "\\texttt{can not}, \\texttt{unable}, \\texttt{not able}, \\texttt{outside the approved}, and \\texttt{denied}",
+      "covers": "main.tex L225-227 List A 标记词表的逐字定义（cannot 系词表成员本身，非主张）",
+      "kind": "literature"
+    },
+    {
+      "id": "c15",
+      "text": "However, I cannot book these items yet",
+      "covers": "main.tex L376 逐字引用的模型回答记录（quote 块；逐字记录按 literature 声明，不挂实验）",
+      "kind": "literature"
+    },
+    {
+      "id": "c16",
+      "text": "agent competence or a task-benefit ranking",
+      "experiment_ids": [
+        "R4-recompute-supplement",
+        "R4-record-check"
+      ],
+      "covers": "main.tex L394（代理计数不建立能力排序——否定性局限句）"
+    },
+    {
+      "id": "c17",
+      "text": "checks names and word overlap",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "covers": "main.tex L56 任务评分器描述句（can mark 系能力描述，非效应主张）"
+    },
+    {
+      "id": "c18",
+      "text": "has task assertions but no authorization truth",
+      "experiment_ids": [
+        "R4-recompute-supplement",
+        "R4-record-check"
+      ],
+      "covers": "main.tex L72 继承基准缺授权真值——记录不可归因的局限句"
+    },
+    {
+      "id": "c19",
+      "text": "a bundled intervention, not a single-sentence",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "covers": "main.tex L186 再生臂是捆绑干预的显式声明"
+    },
+    {
+      "id": "c20",
+      "text": "detect argument substitution, different purchases sharing one name",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "covers": "main.tex L201 仅名字匹配的盲区清单（cannot detect 的宾语部分）"
+    },
+    {
+      "id": "c21",
+      "text": "becomes an empty list",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "covers": "main.tex L217 解析失败处置规则句"
+    },
+    {
+      "id": "c22",
+      "text": "\\texttt{unable}, \\texttt{not able}, \\texttt{denied}, \\texttt{refus}",
+      "covers": "main.tex L227 List B 标记词表逐字定义（cannot 系词表成员）",
+      "kind": "literature"
+    },
+    {
+      "id": "c23",
+      "text": "temperature zero, seed \\texttt{20261014} and 256 output tokens",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "covers": "main.tex L555 serving 选项（guarantee 在后半句否定里；前稿 c13 漏了 \\texttt markup 已由本条补齐）"
+    }
+  ]
+}

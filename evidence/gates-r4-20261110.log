@@ -1,0 +1,23 @@
+# gates-r4 recompute log — 2026-11-10 (approval-gates-r3 integrity round 4)
+
+环境备注：harness bash 的 PATH 被裁剪（无 ~/.local/bin），pdflatex 位于 ~/.local/bin（TeX Live 2026）；本轮命令显式前缀 PATH="$HOME/.local/bin:$PATH"。此前日志第 4 节曾在无 PATH 修正下静默短路（pdfinfo 读到的是 11-01 旧构建）——已重跑并按事实改写本节。
+
+## 1. make_descriptive_tables.py（两跑）
+- run1/run2 输出一致：`Validated 54 files / 1620 rows; generated five descriptive tables; cross-checked pass, retention, parsing and markers against inherited analysis.`
+- 五表拼接 sha256 两跑相同：857d9473fbfb8f0c…（完整值见 integrity_declaration_r4.json）
+- 运行后 git status clean（与 HEAD 字节一致）。
+
+## 2. make_execution_supplement.py --study evidence/supplement/workspace/approval/supplement-20261014
+- 输出（JSON 末字段）：constructed_cells=540, local_episodes=108, free_planned_episodes=108, generated_new_numeric_claims=295
+- 脚本 stdout/stderr 无 warning 文本；唯一副作用是 evidence/supplement/generation-manifest.json 的偶发路径/时间戳字节（README_R3 预声明不作比较项），每次运行后 git checkout 还原。
+
+## 3. standalone_record_check（evaluation 分区）
+- 冻结回执 runs/E03-evaluation-r0/standalone-record-check.json：cases=540, errors=0
+- 冻结回执 runs/E05-evaluation-r0/standalone-record-check.json：cases=108, errors=0
+- E04-evaluation-r0 本轮于 /tmp 副本复跑（补建 388 个空 files/ 目录后）：cases=108, errors=0；/tmp 副本缺 verified-summary.json 对照故 rows=0（errors 判定不受影响），详见 integrity_declaration_r4.json caveats。
+
+## 4. PDF 重建（SOURCE_DATE_EPOCH=1762756800，两跑）
+- pdflatex×1 + bibtex + pdflatex×2，两跑字节一致：sha256 = c39830e31016…（完整值见 integrity_declaration_r4.json）
+- pdftotext 语义层 sha256 两跑一致：ef14e0f5606d…
+- 与 git HEAD 中的 main.pdf 文本比对：diff 0 行；pdfinfo Pages=14。
+- 无 SOURCE_DATE_EPOCH 时两次构建字节不同（PDF 内嵌创建时间），属预期，不作为不确定性证据。

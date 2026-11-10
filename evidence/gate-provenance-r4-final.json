@@ -1,0 +1,238 @@
+{
+  "schema": "experiment-provenance-report/1",
+  "intake_mode": "run_experiments",
+  "experiments_seen": [
+    "R4-pdf-rebuild",
+    "R4-recompute-descriptive",
+    "R4-recompute-supplement",
+    "R4-record-check"
+  ],
+  "claims": [
+    {
+      "claim_id": "c1",
+      "text": "Without complete planning responses and stop reasons",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-record-check', 'R4-recompute-supplement'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-record-check",
+        "R4-recompute-supplement"
+      ],
+      "locator": "L400"
+    },
+    {
+      "claim_id": "c2",
+      "text": "it is not a hardware-independent monetary cost estimate",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-recompute-supplement'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "locator": "L422"
+    },
+    {
+      "claim_id": "c3",
+      "text": "whether approval agrees with a suitable authorization policy or whether an action actually happened",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-record-check', 'R4-recompute-supplement'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-record-check",
+        "R4-recompute-supplement"
+      ],
+      "locator": "L592"
+    },
+    {
+      "claim_id": "c4",
+      "text": "the local model weights/runtime must be obtained separately",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-record-check'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-record-check"
+      ],
+      "locator": "L613"
+    },
+    {
+      "claim_id": "c5",
+      "text": "policy mismatch, memory dependence, and concrete scorer false positives that prevent",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-record-check', 'R4-recompute-supplement'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-record-check",
+        "R4-recompute-supplement"
+      ],
+      "locator": "L632"
+    },
+    {
+      "claim_id": "c6",
+      "text": "Reporting these defects is more informative than treating the zero",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-record-check'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-record-check"
+      ],
+      "locator": "L633"
+    },
+    {
+      "claim_id": "c7",
+      "text": "no failed request was retried and no model was substituted into the missing cells",
+      "verdict": "ALIGNED",
+      "detail": "kind=literature：声明里显式记为文献/缺席声明（不强求实验关联，但已对账稿件原文）",
+      "experiment_ids": [],
+      "locator": "L578"
+    },
+    {
+      "claim_id": "c8",
+      "text": "Observed absence of unauthorized effects cannot characterize skipped episodes",
+      "verdict": "ALIGNED",
+      "detail": "kind=literature：声明里显式记为文献/缺席声明（不强求实验关联，但已对账稿件原文）",
+      "experiment_ids": [],
+      "locator": "L579"
+    },
+    {
+      "claim_id": "c9",
+      "text": "parse failures and transport errors are never useful completion",
+      "verdict": "ALIGNED",
+      "detail": "kind=literature：声明里显式记为文献/缺席声明（不强求实验关联，但已对账稿件原文）",
+      "experiment_ids": [],
+      "locator": "L584"
+    },
+    {
+      "claim_id": "c10",
+      "text": "Never present a refused action as completed",
+      "verdict": "ALIGNED",
+      "detail": "kind=literature：声明里显式记为文献/缺席声明（不强求实验关联，但已对账稿件原文）",
+      "experiment_ids": [],
+      "locator": "L674"
+    },
+    {
+      "claim_id": "c11",
+      "text": "It compares fields directly with the original permission and counts effects beyond its allowed use",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-record-check'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-record-check"
+      ],
+      "locator": "L479"
+    },
+    {
+      "claim_id": "c12",
+      "text": "zero such effects, with zero clean utility",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-recompute-supplement'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "locator": "L527"
+    },
+    {
+      "claim_id": "c14",
+      "text": "\\texttt{can not}, \\texttt{unable}, \\texttt{not able}, \\texttt{outside the approved}, and \\texttt{denied}",
+      "verdict": "ALIGNED",
+      "detail": "kind=literature：声明里显式记为文献/缺席声明（不强求实验关联，但已对账稿件原文）",
+      "experiment_ids": [],
+      "locator": "L226"
+    },
+    {
+      "claim_id": "c15",
+      "text": "However, I cannot book these items yet",
+      "verdict": "ALIGNED",
+      "detail": "kind=literature：声明里显式记为文献/缺席声明（不强求实验关联，但已对账稿件原文）",
+      "experiment_ids": [],
+      "locator": "L377"
+    },
+    {
+      "claim_id": "c16",
+      "text": "agent competence or a task-benefit ranking",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-recompute-supplement', 'R4-record-check'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-recompute-supplement",
+        "R4-record-check"
+      ],
+      "locator": "L395"
+    },
+    {
+      "claim_id": "c17",
+      "text": "checks names and word overlap",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-recompute-supplement'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "locator": "L56"
+    },
+    {
+      "claim_id": "c18",
+      "text": "has task assertions but no authorization truth",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-recompute-supplement', 'R4-record-check'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-recompute-supplement",
+        "R4-record-check"
+      ],
+      "locator": "L72"
+    },
+    {
+      "claim_id": "c19",
+      "text": "a bundled intervention, not a single-sentence",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-recompute-supplement'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "locator": "L186"
+    },
+    {
+      "claim_id": "c20",
+      "text": "detect argument substitution, different purchases sharing one name",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-recompute-supplement'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "locator": "L201"
+    },
+    {
+      "claim_id": "c21",
+      "text": "becomes an empty list",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-recompute-supplement'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "locator": "L218"
+    },
+    {
+      "claim_id": "c22",
+      "text": "\\texttt{unable}, \\texttt{not able}, \\texttt{denied}, \\texttt{refus}",
+      "verdict": "ALIGNED",
+      "detail": "kind=literature：声明里显式记为文献/缺席声明（不强求实验关联，但已对账稿件原文）",
+      "experiment_ids": [],
+      "locator": "L227"
+    },
+    {
+      "claim_id": "c23",
+      "text": "temperature zero, seed \\texttt{20261014} and 256 output tokens",
+      "verdict": "ALIGNED",
+      "detail": "claim 挂在实验 ['R4-recompute-supplement'] 上，log/config/env/artifact/status 齐全",
+      "experiment_ids": [
+        "R4-recompute-supplement"
+      ],
+      "locator": "L556"
+    }
+  ],
+  "undeclared_claims": [],
+  "overrides": [],
+  "unresolved_from_first_gate": [],
+  "prior_trustworthy": true,
+  "verdict_counts": {
+    "ALIGNED": 22,
+    "OVERSTATED": 0,
+    "NOT_SUPPORTED_BY_PROVENANCE": 0,
+    "PROVENANCE_INSUFFICIENT": 0,
+    "OVERRIDDEN": 0
+  },
+  "blocked": false,
+  "verdict": "PASS",
+  "block_reasons": [],
+  "scope_note": "本闸只判 provenance 对不对，不评判实验本身对错（沿用 ARS 完整性门的边界）"
+}

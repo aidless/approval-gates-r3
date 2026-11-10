@@ -1,0 +1,71 @@
+{
+  "schema": "integrity-gate-report/1",
+  "schema_decl": "integrity-declaration/1",
+  "paper_type": "empirical",
+  "disabled_modes": [],
+  "findings": [
+    {
+      "mode": "mode1",
+      "verdict": "CLEAR",
+      "detail": "零方差符合确定性声明（2 次运行摘要均为 857d9473fbfb8f0c）",
+      "locator": "results[0]"
+    },
+    {
+      "mode": "mode1",
+      "verdict": "CLEAR",
+      "detail": "零方差符合确定性声明（2 次运行摘要均为 c39830e310163730）",
+      "locator": "results[5]"
+    },
+    {
+      "mode": "mode2",
+      "verdict": "CLEAR",
+      "detail": "15 条引用均已验号且带回执",
+      "locator": ""
+    },
+    {
+      "mode": "mode3",
+      "verdict": "CLEAR",
+      "detail": "4 条数值 claim 均挂到落盘证据；其中 4 条按工件字段当场核对，0 条仍是欠账（JSON 无字段 0 / 文本 0 / 只有 ledger_key 0）",
+      "locator": ""
+    },
+    {
+      "mode": "mode4",
+      "verdict": "CLEAR",
+      "detail": "有排除 shortcut 的受控消融：approval-gates-r3/evidence/scorer_counterexamples_r2.json",
+      "locator": ""
+    },
+    {
+      "mode": "mode5",
+      "verdict": "CLEAR",
+      "detail": "draft 无惊讶措辞",
+      "locator": ""
+    },
+    {
+      "mode": "mode6",
+      "verdict": "CLEAR",
+      "detail": "Methods 段 0 个数字全部能在 run config 中找到",
+      "locator": ""
+    },
+    {
+      "mode": "mode7",
+      "verdict": "CLEAR",
+      "detail": "无 hindsight 措辞，且已显式回答 frame-lock 问句",
+      "locator": ""
+    }
+  ],
+  "overrides": [],
+  "mode3_value_check": {
+    "n_claims": 4,
+    "n_enforced_json_field": 4,
+    "n_debt_json_no_field": 0,
+    "n_debt_txt": 0,
+    "n_debt_ledger_key": 0,
+    "n_missing_field": 0,
+    "enforced_mismatches": []
+  },
+  "unresolved_from_first_gate": [],
+  "prior_trustworthy": null,
+  "blocked": false,
+  "block_reasons": [],
+  "verdict": "PASS"
+}
