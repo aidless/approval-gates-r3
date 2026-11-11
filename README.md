@@ -1,5 +1,7 @@
 # Approval Gates R3 — local manuscript and evidence package
 
+> **English TL;DR**: Local manuscript + evidence package for Approval Gates R3. The offline recompute path is green in this pass (2/2 pytest, `make_descriptive_tables.py` validating 54 files / 1620 rows), while `scripts/verify_claim_ledger.py` fails closed with exit 3 (`CANONICAL_NOT_FOUND`) and is documented here as a known deterministic failure, not fixed in this pass. Live `git ls-files` counts 11,694 files.
+
 [![CI](https://github.com/aidless/approval-gates-r3/actions/workflows/static-checks.yml/badge.svg)](https://github.com/aidless/approval-gates-r3/actions/workflows/static-checks.yml)
 
 Current manuscript: paper/main.pdf. Current author-side round report: ROUND_R3.md. Independent retrospective AI review: reviews/approval-r3-independent-r0.md. Review score 6.2/10 is uncalibrated and below the requested target; no arXiv submission or public artifact URL is claimed.
@@ -62,3 +64,45 @@ A TeX installation with the supplied style dependencies and BibTeX is needed. In
 Historical process documents (including evidence/protocol.md and LITERATURE_REVIEW.md) are retained provenance of older variants. Their old hypotheses, claims and completed/blocking labels are not adopted as R3 scientific outcomes. Current scope is in main.tex, execution_r3.tex, PROTOCOL_R0–R4, CLAIM_LEDGER.md and ROUND_R3.md. Strict reactive recovery was a post-review descriptive trace audit. No human peer review, generalized safety/utility, natural failure prevalence, authenticated human consent, expiry/race coverage, or new binding method is certified.
 
 Model weights/runtime are not redistributed. The byte-verified local model and runtime hashes and original serving properties are archived; the remote endpoint is identified only by its serving label. Regenerating upstream output is not guaranteed. Re-running model episodes is not part of the offline instructions and requires separately configured resources. Author code/publication licenses remain author decisions before public release; upstream licenses are preserved. This bundle is prepared locally for review and reproducibility, not uploaded.
+
+## U1 live re-verification (executed for this pass)
+
+| Live check | Result | Source |
+|---|---|---|
+| `python3 -m pytest tests -q` | `2 passed in 0.19s` (exit 0) | this pass |
+| `python3 scripts/make_descriptive_tables.py` | exit 0, `Validated 54 files / 1620 rows; generated five descriptive tables; cross-checked pass, retention, parsing and markers against inherited analysis.` | this pass |
+| `python3 scripts/verify_claim_ledger.py` | **exit 3** — `CANONICAL_NOT_FOUND: 向上没找到仓根 scripts/verify_claim_ledger.py；本闸无法执行（这不是通过）` | this pass |
+
+The `verify_claim_ledger.py` failure is a **known deterministic failure of this pass**:
+the gate fails closed because it cannot locate the canonical repo root from its own
+position. It is listed here, not fixed, per the U1 scope (test bodies belong to a
+different wave).
+
+Live counts vs. the README's historical snapshot:
+
+| Count | Live value | Historical claim | Source |
+|---|---|---|---|
+| Tracked files (`git ls-files \| wc -l`) | 11694 | 11,688 | live run vs `README.md:7` |
+| `evidence_manifest.json` file entries | 7961 | (manifest created 2026-10-14T14:06:58+00:00) | `evidence_manifest.json` (top-level `files`) |
+| `reproduction-e03` verified rows | 540 | (not stated in README) | `reports/r3/reproduction-e03/verified-summary.json` |
+| — summed `unauthorized_effects` over those 540 rows | 180 | (not stated) | same file, summed `unauthorized_effects` |
+| — rows by partition | evaluation=540 | (not stated) | same file, counted `partition` |
+
+These 540 rows are **constructed fault fixtures** (`"origin": "constructed_fault_fixture"`
+in every row), so the non-zero unauthorized-effect total is the injected fault mass of
+the constructed matrix, not an incident in a live system.
+
+**NOT YET MEASURED in this pass**: fresh model episodes (E05's 108 local episodes and
+E04's 108 planned rows are archived records), the fresh 540-cell constructed matrix
+execution, and any paper rebuild (TeX) — all require resources outside this pass.
+Known-issues list for this pass: `verify_claim_ledger.py` exit 3 as above.
+
+**Reproduce the live checks above**:
+
+```bash
+python3 -m pytest tests -q
+python3 scripts/make_descriptive_tables.py
+python3 scripts/verify_claim_ledger.py
+```
+
+<!-- figure: pending real measurement -->
