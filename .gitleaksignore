@@ -1,0 +1,4 @@
+# Known false positives: vendored test fixtures / evidence JSON (gitleaks generic-api-key, github-pat)
+4dd7493238d435af421a05708323382d14cf14e9:reports/r3/citation-source-check.json:generic-api-key:38
+4dd7493238d435af421a05708323382d14cf14e9:reports/r3/citation-source-check.json:generic-api-key:52
+4dd7493238d435af421a05708323382d14cf14e9:reports/r3/citation-source-check.json:generic-api-key:87

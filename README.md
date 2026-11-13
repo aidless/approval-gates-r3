@@ -12,9 +12,33 @@
 
 **边界在哪**：无人工同行评审、无泛化安全/效用认证、无自然失败率声明、无认证的受试者同意、无过期/竞态覆盖、无新的绑定方法。详见「Limits and historical files」。
 
+> **English TL;DR**: Local manuscript + evidence package for Approval Gates R3. The offline recompute path is green in this pass (2/2 pytest, `make_descriptive_tables.py` validating 54 files / 1620 rows), while `scripts/verify_claim_ledger.py` fails closed with exit 3 (`CANONICAL_NOT_FOUND`) and is documented here as a known deterministic failure, not fixed in this pass. Live `git ls-files` counts 11,694 files.
+
+[![CI](https://github.com/aidless/approval-gates-r3/actions/workflows/static-checks.yml/badge.svg)](https://github.com/aidless/approval-gates-r3/actions/workflows/static-checks.yml)
+
 Current manuscript: paper/main.pdf. Current author-side round report: ROUND_R3.md. Independent retrospective AI review: reviews/approval-r3-independent-r0.md. Review score 6.2/10 is uncalibrated and below the requested target; no arXiv submission or public artifact URL is claimed.
 
+> **Repo scale:** 11,688 tracked files (evidence 7,806 + reports 3,730). Clone with `git clone --depth 1`; start from ROUND_R3.md, not from the directory tree.
+
 The retained 54-file / 1,620-cell travel-planning dataset and the new 540-cell constructed local effect matrix are separate studies. E05 retains 108 local model episodes; E04 retains all 108 planned rows including 4 transport-error and 35 endpoint-stopped records. Original attempts, freezes, endpoint failures and abandoned candidate development remain in the supplement workspace.
+
+## Directory guide
+
+11,688 tracked files, counted live with `git ls-files | awk -F/ '{print $1}' | sort | uniq -c`
+on 2026-11-10 (root files, `tests/` and `.github/` add 21):
+
+| Files | Path | Contents |
+|---|---|---|
+| 7,806 | `evidence/` | 7,790 in `evidence/supplement/` (workspace archives incl. `supplement-20261014`), 8 in `evidence/dataset/` (the 54-file travel-planning dataset) |
+| 3,730 | `reports/` | 3,683 in `reports/r3/` — per-episode reports, generation manifests |
+| 28 | `results_v5_qwen35_9b/` | Qwen3.5-9B arm: 27 `per_seed/` JSONs + aggregate |
+| 28 | `results_v5_27b/` | 27B arm: 27 `per_seed/` JSONs + aggregate |
+| 22 | `results/` | v1 line: 9 `per_seed/` + aggregates |
+| 22 | `scripts/` | table builders, harnesses (v4/v5), `verify_claim_ledger.py`, readiness checks |
+| 18 | `paper/` | `main.pdf`, TeX sources, 5 `tables/` |
+| 15 | `results_v4_27b/` | v4 arm: 15 `per_seed/` JSONs |
+| 1 each | root | `ROUND_R3.md` (start here), `README_R3.md`, `CLAIM_LEDGER.md`, `EXPERIMENT_SUPPLEMENT.md`, `LITERATURE_REVIEW.md`, `novelty_claims.txt`, `evidence_manifest.json`, `requirements.txt` |
+| 1 | `tests/test_offline_recompute.py` | the offline byte-for-byte recompute CI gate |
 
 ## Recompute without a model or network
 
@@ -56,3 +80,45 @@ A TeX installation with the supplied style dependencies and BibTeX is needed. In
 Historical process documents (including evidence/protocol.md and LITERATURE_REVIEW.md) are retained provenance of older variants. Their old hypotheses, claims and completed/blocking labels are not adopted as R3 scientific outcomes. Current scope is in main.tex, execution_r3.tex, PROTOCOL_R0–R4, CLAIM_LEDGER.md and ROUND_R3.md. Strict reactive recovery was a post-review descriptive trace audit. No human peer review, generalized safety/utility, natural failure prevalence, authenticated human consent, expiry/race coverage, or new binding method is certified.
 
 Model weights/runtime are not redistributed. The byte-verified local model and runtime hashes and original serving properties are archived; the remote endpoint is identified only by its serving label. Regenerating upstream output is not guaranteed. Re-running model episodes is not part of the offline instructions and requires separately configured resources. Author code/publication licenses remain author decisions before public release; upstream licenses are preserved. This bundle is prepared locally for review and reproducibility, not uploaded.
+
+## U1 live re-verification (executed for this pass)
+
+| Live check | Result | Source |
+|---|---|---|
+| `python3 -m pytest tests -q` | `2 passed in 0.19s` (exit 0) | this pass |
+| `python3 scripts/make_descriptive_tables.py` | exit 0, `Validated 54 files / 1620 rows; generated five descriptive tables; cross-checked pass, retention, parsing and markers against inherited analysis.` | this pass |
+| `python3 scripts/verify_claim_ledger.py` | **exit 3** — `CANONICAL_NOT_FOUND: 向上没找到仓根 scripts/verify_claim_ledger.py；本闸无法执行（这不是通过）` | this pass |
+
+The `verify_claim_ledger.py` failure is a **known deterministic failure of this pass**:
+the gate fails closed because it cannot locate the canonical repo root from its own
+position. It is listed here, not fixed, per the U1 scope (test bodies belong to a
+different wave).
+
+Live counts vs. the README's historical snapshot:
+
+| Count | Live value | Historical claim | Source |
+|---|---|---|---|
+| Tracked files (`git ls-files \| wc -l`) | 11694 | 11,688 | live run vs `README.md:7` |
+| `evidence_manifest.json` file entries | 7961 | (manifest created 2026-10-14T14:06:58+00:00) | `evidence_manifest.json` (top-level `files`) |
+| `reproduction-e03` verified rows | 540 | (not stated in README) | `reports/r3/reproduction-e03/verified-summary.json` |
+| — summed `unauthorized_effects` over those 540 rows | 180 | (not stated) | same file, summed `unauthorized_effects` |
+| — rows by partition | evaluation=540 | (not stated) | same file, counted `partition` |
+
+These 540 rows are **constructed fault fixtures** (`"origin": "constructed_fault_fixture"`
+in every row), so the non-zero unauthorized-effect total is the injected fault mass of
+the constructed matrix, not an incident in a live system.
+
+**NOT YET MEASURED in this pass**: fresh model episodes (E05's 108 local episodes and
+E04's 108 planned rows are archived records), the fresh 540-cell constructed matrix
+execution, and any paper rebuild (TeX) — all require resources outside this pass.
+Known-issues list for this pass: `verify_claim_ledger.py` exit 3 as above.
+
+**Reproduce the live checks above**:
+
+```bash
+python3 -m pytest tests -q
+python3 scripts/make_descriptive_tables.py
+python3 scripts/verify_claim_ledger.py
+```
+
+<!-- figure: pending real measurement -->
