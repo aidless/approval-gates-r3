@@ -27,7 +27,7 @@ Assertion handling (transparent, auditable):
   - agent:* that names NO known action -> recorded as "agent_semantic", set aside (unchecked)
   - user:* -> keyword-overlap heuristic on the generated answer (weak; disclosed)
 """
-import json, os, sys, time, urllib.request, random, subprocess
+import json, sys, time, urllib.request, random, subprocess
 from pathlib import Path
 
 CFG = {

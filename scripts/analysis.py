@@ -10,7 +10,6 @@
 import json, math, sys
 from pathlib import Path
 import numpy as np
-from scipy import stats
 from scipy.stats import wilcoxon, binom
 
 GROUPS = ["Full", "Abl-noForget", "Abl-noNegot"]

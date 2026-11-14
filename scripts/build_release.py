@@ -26,7 +26,6 @@ Exit: 0 = built and verified, 1 = verification failed.
 """
 from __future__ import annotations
 
-import shutil
 import subprocess
 import sys
 import tempfile

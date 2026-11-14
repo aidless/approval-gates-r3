@@ -1,7 +1,7 @@
 """Generate R3 tables and prose from completed finite-run records."""
 from pathlib import Path
 from collections import Counter
-import argparse,json,re,hashlib,shutil,ast
+import argparse,json,hashlib,shutil,ast
 
 P=Path(__file__).resolve().parents[1]
 R2=P.parent/'approval-gates-r2'

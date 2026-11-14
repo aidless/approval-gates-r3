@@ -27,7 +27,6 @@ import json
 import subprocess
 import sys
 from collections import defaultdict
-from math import comb
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent

@@ -1,6 +1,5 @@
 """Positive and negative controls for the separate persisted-state verifier."""
 from pathlib import Path
-import copy
 import json
 import sqlite3
 import tempfile
